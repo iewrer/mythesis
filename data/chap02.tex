@@ -1,0 +1,26 @@
+\chapter{相关工作}
+\section{软件演进}
+\section{程序间差异分析}
+\section{程序变更影响分析}
+\section{相关工具}
+	主要介绍本文中采用到的相关工具：
+	
+	\begin{itemize}
+		\item git
+
+git是一个分布式的版本控制系统，最初由 Linus Torvalds在2005年为Linux内核而开发，现在已经成为最流行的版本控制系统。
+
+与CVS和SVN等集中式的C/S版本控制系统不同，git是分布式的版本库，每个本地的git工作目录都包含了完整的历史数据和版本追踪能力，无需网络连接或服务器端。
+      
+
+本文中主要考虑以git作为版本管理系统的应用场景，类似于GitHub，假定为项目开发了new version和patch version两个不同的分支，并使用git的分支合并策略实现补丁的版本迁移过程。
+		\item beyond compare
+		
+Beyond Compare 是一款内容比较工具，可以用于文件、目录、压缩包的比较，横跨Windows、Mac OS X、Linux三大操作系统，可用作版本控制系统的文本比较和合并工具，例如git。
+      
+本文中主要采用其作为git的文本比较和合并工具，用于解决补丁版本迁移时的冲突（conflict）问题。
+
+		\item AST Differ
+		\item jpf-regression 
+
+	\end{itemize}

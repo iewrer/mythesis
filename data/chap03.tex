@@ -1,0 +1,28 @@
+\chapter{分析方法}
+\section{问题定义}
+该问题可以拆分为若干个子问题，并分别阐述并定义之：
+
+\subsection{补丁版本迁移}
+\subsection{变更的语义影响分析}
+\subsection{兼容性分析}
+
+\section{应用场景}
+\section{解决方案}
+介绍补丁兼容性分析方法的整体架构：补丁版本迁移、语义影响范围分析（程序差异性分析、程序变更影响分析）、补丁兼容性分析。
+\section{流程}
+介绍补丁兼容性分析的整体流程:【可给出一张抽象的流程图】。
+\subsection{补丁版本迁移}
+\subsection{语义影响范围分析}
+\subsubsection{程序差异性分析}
+\subsubsection{变更影响分析}
+\subsection{实际流程}
+
+	\begin{enumerate}
+		\item 采用git进行版本管理。
+		\item 将新版本和补丁版本两个分支进行合并，得到应用于新版本的补丁版本。
+		\item 采用AST Differ生成程序间差异性文件，XML格式.
+		\item 采用jpf-regression进行变更影响分析，获取三个版本间两两的影响集合，dot格式
+		\item 对两个影响集合求交集，若无交集，则兼容之，若有交集，进一步采用分析算法，看是否确实不兼容
+	\end{enumerate}
+	
+	【此时可给出一张具体的流程图】
