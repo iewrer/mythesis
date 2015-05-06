@@ -1,2 +1,59 @@
 \chapter{方法实现}
-介绍如何将版本管理、程序间差异分析、变更影响分析、兼容性分析算法组合成整体的流程。
+本章中将主要介绍如何将补丁版本迁移、语义影响范围分析、兼容性分析等过程具体实现之，并组合成整体流程。
+
+\section{补丁版本迁移}
+
+如前所述，补丁版本迁移主要用于解决问题\ref {patch_reversion}。我们在实现该过程时，主要采用了git工具和Beyond Compare工具来实现版本合并和冲突解决的过程。
+
+我们下面将利用git的分支功能进行版本合并。首先介绍一些前提假设：
+
+\begin{enumerate}
+	\item 假设git的工作目录如图所示。
+
+	\item 假设补丁$p_1$为old.patch文件，并且采用git diff或其他Unix diff命令生成。
+\end{enumerate}
+
+下面将具体介绍整个版本合并的过程。
+
+
+首先在工作目录下将git切换到主分支master。然后在主分支master中提交代码版本$v_1$。
+
+\begin{lstlisting} [style=BashInputStyle]
+git checkout master
+git add .
+git commit -a -m "old version committed"
+\end{lstlisting}
+
+然后新建并切换到分支new中，并提交代码版本$v_2$。
+\begin{lstlisting} [style=BashInputStyle]
+git checkout -b new
+git add .
+git commit -a -m "new version committed"
+\end{lstlisting}
+
+再次新建并切换到分支patched\_old，然后将补丁$p_1$应用到版本$v_1$，获得旧版本应用补丁后的代码，其版本为$v_3$，并提交代码版本$v_3$。此时我们所应用的补丁$p_1$是专为版本$v_1$设计，所以应用时不会出现问题。
+
+\begin{lstlisting} [style=BashInputStyle]
+git checkout -b patch
+git apply ../patch/old.patch
+git add .
+git commit -a -m "patched version from old version committed"
+\end{lstlisting}
+
+然后再切换回分支new，将分支patch合并入分支new，获得新版本应用补丁后的代码，其版本为$v_4$,并使用Beyond Compare工具解决可能出现的冲突问题。将冲突解决完毕后，再提交版本$v_4$。
+
+\begin{lstlisting} [style=BashInputStyle]
+git checkout new
+git merge patch
+git mergetool
+git commit -a -m "patched version from new version committed"
+\end{lstlisting}
+
+如果确实有冲突，那么git mergetool命令会调用第三方的可视化合并工具并引导你去解决冲突。这里我们采用的合并工具即为Beyond Compare，它会展开一个可视化的界面，并给出冲突位置的提示，方便进行人工选择、合并。
+
+整个过程可以参考图示。
+
+\section{语义影响范围分析}
+\subsection{程序间差异分析}
+\subsection{变更影响分析}
+\section{兼容性分析}
