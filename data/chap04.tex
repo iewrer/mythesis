@@ -8,10 +8,17 @@
 我们下面将利用git的分支功能进行版本合并。首先介绍一些前提假设：
 
 \begin{enumerate}
-	\item 假设git的工作目录如图所示。
+	\item 假设git的工作目录如图\ref {git_work_dir}所示。其中git\_working\_dir为git目录，下属目录包括源代码仓库src和git目录的隐藏文件夹.git。另外与git目录平级的目录patch下面则存储了具体的补丁文件。
 
-	\item 假设补丁$p_1$为old.patch文件，并且采用git diff或其他Unix diff命令生成。
+	\item 假设补丁$p_1 = old.patch$，并且采用git diff或其他Unix diff命令生成。
 \end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{chap04_work_dir}
+	\caption {git工作目录}
+	\label {git_work_dir}	
+\end{figure}
 
 下面将具体介绍整个版本合并的过程。
 
@@ -31,7 +38,7 @@ git add .
 git commit -a -m "new version committed"
 \end{lstlisting}
 
-再次新建并切换到分支patched\_old，然后将补丁$p_1$应用到版本$v_1$，获得旧版本应用补丁后的代码，其版本为$v_3$，并提交代码版本$v_3$。此时我们所应用的补丁$p_1$是专为版本$v_1$设计，所以应用时不会出现问题。
+再次新建并切换到分支patch，然后将补丁$p_1$应用到版本$v_1$，获得旧版本应用补丁后的代码，其版本为$v_3$，并提交代码版本$v_3$。此时我们所应用的补丁$p_1$是专为版本$v_1$设计，所以应用时不会出现问题。
 
 \begin{lstlisting} [style=BashInputStyle]
 git checkout -b patch
@@ -51,9 +58,190 @@ git commit -a -m "patched version from new version committed"
 
 如果确实有冲突，那么git mergetool命令会调用第三方的可视化合并工具并引导你去解决冲突。这里我们采用的合并工具即为Beyond Compare，它会展开一个可视化的界面，并给出冲突位置的提示，方便进行人工选择、合并。
 
-整个过程可以参考图示。
+整个过程可以参考图\ref {git_merge}。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{chap04_git_merge}
+	\caption {git版本合并}
+	\label {git_merge}	
+\end{figure}
 
 \section{语义影响范围分析}
+
+如前所述，语义影响范围分析主要用于解决问题\ref {impacted_area}。语义影响范围分析需要首先定义好影响范围和影响元素的级别。在实际情况中，我们主要采用了较为简单的分析过程，即将影响范围限制在方法内部，但是将受影响元素设置为程序语句级别，以保证精度。
+
+由于我们采用了现有工具来完成具体的程序间差异分析和变更影响分析过程，因而这两个子过程的分析算法已经无需我们自己实现。我们可以将主要精力放在如何整合两个子过程的工作上，并将其工具转化为适用于本问题的具体情况。
+
+在具体的实现过程中，我们发现一些主要需要解决的问题包括：
+\begin{enumerate}
+	\item 修正ASTro的分析结果，以提高精确度。
+	\item 改进jpf-regression工具，包括：
+		\begin{enumerate}
+			\item 修复工具中自带的Bug。
+			\item 修改工具的分析过程。
+			\item 增加影响追踪系统。
+			\item 增加错误记录系统。
+		\end{enumerate}
+	
+	\item 实现实验过程的批量化和自动化。
+\end{enumerate}
+
 \subsection{程序间差异分析}
+
+如前所述，我们在实际工作中采用了ASTro工具来完成具体的程序间差异分析过程，它专为Java语言设计。在实际使用中，为了满足我们的需要，我们进行了一些改进。
+
+首先，我们采用了shell脚本完成了分析过程的批量化和自动化，能够自动对整个软件系统的所有代码进行批量化处理，并循环调用ASTro进行分析。若需要对不同的代码进行修改，只需要修改对应的实验数据存放位置和其代码所依赖的JAR包即可。在这部分工作中，脚本代码主要完成了以下内容：
+
+\begin{itemize}
+	\item 实验数据定位，包括Java源代码和编译后的Class文件等。
+	\item 根据代码的存放路径，计算其对应Class文件的位置。
+	\item 获取代码文件名，以确定本次分析的对象。
+	\item 实验数据的依赖JAR包定位。
+	\item 创建输出文件目录。
+	\item 定义ASTro的输入参数，包括输入文件位置、输出文件位置、查找路径等。
+	\item 调用ASTro进行单次分析。
+\end{itemize}
+
+其中ASTro工具的使用格式可参考如下，其具体各参数的定义参考表\ref {ASTro}。
+
+\begin{lstlisting} [style=BashInputStyle]
+ASTDiffer 3/27/2013
+USAGE: java ASTDiffer -original <file>.java -modified <file>.java 
+-dir <output folder>
+OPTIONAL: -file <fileName> -ocp <classpath> -mcp <classpath> 
+-oco <outputDir> -mco <outputDir> -cs -xml
+\end{lstlisting}	
+
+\begin{table}
+	\caption{ASTro参数对照表}
+	\label{ASTro}
+	\centering
+	\begin{tabular}{llc}
+		\toprule[1.5pt] 
+		{\heiti 参数名} & {\heiti 描述} & {\heiti 启用}\\\midrule[1pt]
+		-file & 分析目标的名字 & 是 \\
+		-dir & 输出路径 & 是 \\
+		-ocp & 旧版本代码的Classpath & 是\\
+		-mcp & 旧版本代码的Classpath & 是\\
+		-original    & 旧版本代码的位置 & 是\\
+		-modified   & 新版本代码的位置 & 是\\
+		-xml   & 以XML格式输出结果 & 是\\
+		-cs   & 以变更脚本（Change Script）格式输出结果 & 否\\
+		-heu   & 以启发式的方式进行匹配 & 是\\
+		\bottomrule[1.5pt]
+	\end{tabular}	
+\end{table}
+
+其次，我们采用了shell脚本完成了对后续分析过程的支持，能够自动批量化创建变更影响分析所需的配置文件。配置文件为自定义的JPF格式，通过类似键值对的方式定义了各项属性的值。JPF文件的格式等来自于Java Path Finder框架的设计，是该框架运行所必须的配置文件。该配置文件的具体属性为自定义设置，可以参考表\ref {JPF_prop}所述。
+
+\begin{table}
+	\caption{JPF属性对照表}
+	\label{JPF_prop}
+	\centering
+	    \begin{tabular*}{\linewidth}{lp{10cm}}
+	    	\toprule[1.5pt]
+	    	{\heiti 属性名} & {\heiti 描述} \\\midrule[1pt]
+	    	target & 分析的目标 \\
+	    	sourcepath & 源代码路径\\
+	    	rse.ASTResults & ASTro工具的输出文件位置\\
+	    	rse.newClass & 新版本代码的Class文件位置\\
+	    	rse.oldClass    & 旧版本代码的Class文件位置\\
+	    	rse.dotFile   & jpf-regression工具的Dot格式输出文件位置\\
+	    	\bottomrule[1.5pt]
+	    \end{tabular*}
+\end{table}
+
+在使用shell脚本调用ASTro工具进行分析和输出变更影响分析的配置文件时，考虑到实际使用中，我们需要将新版本$v_2$作为对比的基准，以获取一致的行号。因而在进行变更影响分析时，我们需要进行相应配置，使得：
+\begin{itemize}
+	\item $s_1 = impact(diff(v_2,v_1),v_2)$，求得补丁$p_1 = diff(v_2,v_1)$对版本$v_2$的影响范围$s_1$。
+	\item $s_2 = impact(diff(v_2,v_4),v_2)$，求得补丁$p_2 = diff(v_2,v_4)$对版本$v_2$的影响范围$s_2$。
+\end{itemize}
+
+实际上，也就是说：
+\begin{itemize}
+	\item 补丁$p_1 = diff(v_2,v_1)$，即将新版本$v_2$视为“旧版本”，将旧版本$v_1$视为“新版本”。
+	\item 补丁$p_2 = diff(v_2,v_4)$，即将新版本$v_2$视为“旧版本”，将新版本应用补丁后的版本$v_4$视为“新版本”。
+\end{itemize}
+
+在实际操作中，我们只需做这样的版本交换即可。
+
+受限于ASTro工具的具体实现，其输出结果的存在一定的问题，主要包括：
+\begin{enumerate}
+	\item 对某些代码文件无法完成差异性分析。
+	\item 对某些代码文件输出结果不准确，存在过高估计（over-estimate）的问题。
+\end{enumerate}
+
+对于第一个问题，由于无法知道该工具的源代码，我们无法解决，不过这只是极少数现象。
+
+对于第二个问题，我们分析其结果可以发现，其结果中存在误报的情况，即某些代码行并未发生变更，然而工具却报告其发生了诸如移动、先删后增之类的伪变更。同样由于无法知道该工具的源代码，我们无法从算法的角度进行修改，不过对于这样的情况，我们可以对其输出结果进行一定的预处理，将这些误报的情况进行过滤，保留一个真变更子集合即可。
+
+预处理算法可以用伪代码\ref {xml}进行描述：
+
+\begin{algorithm}
+	\caption{XML结果过滤算法}
+	\label{xml}
+	\begin{algorithmic}[1]
+		  \REQUIRE $n \geq 0 \vee x \neq 0$
+		  \ENSURE $y = x^n$
+		  \STATE $y \gets 1$
+		  \IF{$n < 0$}
+		  \STATE $X \gets 1 / x$
+		  \STATE $N \gets -n$
+		  \ELSE
+		  \STATE $X \gets x$
+		  \STATE $N \gets n$
+		  \ENDIF
+		  \WHILE{$N \neq 0$}
+		  \IF{$N$ is even}
+		  \STATE $X \gets X \times X$
+		  \STATE $N \gets N / 2$
+		  \ELSE[$N$ is odd]
+		  \STATE $y \gets y \times X$
+		  \STATE $N \gets N - 1$
+		  \ENDIF
+		  \ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+我们可以归纳证明这种预处理操作的正确性。由于变更对于代码的影响是链式的，对于某次变更影响分析的结果集合$s_{i,j} = ia(v_i,v_j)$而言，假设对于其中任意一个受影响的元素$e_k$，其中$k \subset \mathbb{N}$，其影响来源可能包括如下几种可能：
+\begin{enumerate}
+	\item 其影响仅来源于变更$c_1$。
+		\begin{itemize}
+			\item 如果$c_1$为真变更，那么删除所有伪变更对于$e_k$没有影响。
+			\item 如果$c_2$为伪变更，那么删除所有伪变更会导致$e_k$从集合$s_{i,j}$中被删除，但此时$e_k$本身即为伪影响，集合$s_{i,j}$的正确性会得到提高。
+		\end{itemize}
+	\item 其影响来源于多条变更$c_1,c_2\dots,c_m$，其中$m \subset \mathbb{N}$。
+		\begin{itemize}
+			\item 假若所有变更均为真变更，那么删除所有伪变更对于$e_k$没有影响。
+			\item 假若来源变更集合中包括某几条伪变更，那么删除所有伪变更之后，仍然存在其他真变更，这些真变更仍然会在变更影响分析中导致$e_k$被添加到集合$s_{i,j}$中，因而也不会使集合$s_{i,j}$的正确性下降。
+			\item 假若所有变更均为伪变更，那么删除所有伪变更会导致$e_k$从集合$s_{i,j}$中被删除，但此时$e_k$本身即为伪影响，集合$s_{i,j}$的正确性会得到提高。
+		\end{itemize}
+\end{enumerate}
+
+可见，我们的预处理操作是正确的，它不会导致结果集合$s_{i,j} = ia(v_i,v_j)$的正确性降低。
+
+整个程序间差异性分析过程可以参考图\ref {diff}。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{chap04_git_merge}
+	\caption {程序间差异性分析流程}
+	\label {diff}	
+\end{figure}
+
 \subsection{变更影响分析}
+
+目前发现的已知Bug包括：
+\begin{enumerate}
+	\item 内部类无法匹配方法名，忽略
+	\item 只有单个文件存在该方法时无法匹配方法名，已修复
+	\item 映射$CFG_{old}$时判断条件出错，已修复
+\end{enumerate}
+
+存在的已知问题包括：
+\begin{enumerate}
+	\item 有的文件会出现搜索错误，jpf-regression工具的问题，忽略
+	\item XML文件无法找到并装载，ASTro工具的问题，忽略
+\end{enumerate}
 \section{兼容性分析}
