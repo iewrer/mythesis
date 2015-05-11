@@ -28,19 +28,26 @@
 \contentsline {section}{\numberline {4.1}补丁版本迁移}{24}{section.4.1}
 \contentsline {section}{\numberline {4.2}语义影响范围分析}{26}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}程序间差异分析}{27}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}变更影响分析}{31}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}兼容性分析}{32}{section.4.3}
-\contentsline {chapter}{\numberline {第\nobreakspace {}5\nobreakspace {}章}兼容性分析算法}{33}{chapter.5}
-\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}实验}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}补丁版本迁移}{34}{section.6.1}
-\contentsline {section}{\numberline {6.2}语义影响范围分析}{34}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}程序间差异性分析}{34}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}变更影响分析}{34}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}兼容性分析}{34}{section.6.3}
-\contentsline {section}{\numberline {6.4}结论}{34}{section.6.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}结论}{35}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{35}{section.7.1}
-\contentsline {section}{\numberline {7.2}未来工作}{35}{section.7.2}
-\contentsline {chapter}{参考文献}{36}{section*.27}
-\contentsline {chapter}{致\hspace {1em}谢}{37}{section*.29}
-\contentsline {chapter}{声\hspace {1em}明}{38}{section*.31}
+\contentsline {subsection}{\numberline {4.2.2}变更影响分析}{30}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}分析流程}{30}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}影响追踪}{31}{subsubsection.4.2.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.3}错误记录}{31}{subsubsection.4.2.2.3}
+\contentsline {subsubsection}{\numberline {4.2.2.4}大规模分析}{32}{subsubsection.4.2.2.4}
+\contentsline {subsubsection}{\numberline {4.2.2.5}Bug修复}{32}{subsubsection.4.2.2.5}
+\contentsline {section}{\numberline {4.3}兼容性分析}{33}{section.4.3}
+\contentsline {chapter}{\numberline {第\nobreakspace {}5\nobreakspace {}章}实验}{34}{chapter.5}
+\contentsline {section}{\numberline {5.1}实验设计}{34}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}实验平台}{34}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}实验数据}{34}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}补丁版本迁移}{35}{section.5.2}
+\contentsline {section}{\numberline {5.3}语义影响范围分析}{37}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}程序间差异性分析}{37}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}变更影响分析}{37}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}兼容性分析}{37}{section.5.4}
+\contentsline {section}{\numberline {5.5}结果分析}{37}{section.5.5}
+\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}结论}{38}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{38}{section.6.1}
+\contentsline {section}{\numberline {6.2}未来工作}{38}{section.6.2}
+\contentsline {chapter}{参考文献}{39}{section*.31}
+\contentsline {chapter}{致\hspace {1em}谢}{40}{section*.33}
+\contentsline {chapter}{声\hspace {1em}明}{41}{section*.35}

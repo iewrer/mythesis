@@ -33,18 +33,25 @@
 \BOOKMARK [1][-]{section.4.2}{4.2 语义影响范围分析}{chapter.4}% 33
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 程序间差异分析}{section.4.2}% 34
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 变更影响分析}{section.4.2}% 35
-\BOOKMARK [1][-]{section.4.3}{4.3 兼容性分析}{chapter.4}% 36
-\BOOKMARK [0][]{chapter.5}{第 5 章 兼容性分析算法}{ctitle.-1}% 37
-\BOOKMARK [0][]{chapter.6}{第 6 章 实验}{ctitle.-1}% 38
-\BOOKMARK [1][-]{section.6.1}{6.1 补丁版本迁移}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.2}{6.2 语义影响范围分析}{chapter.6}% 40
-\BOOKMARK [2][-]{subsection.6.2.1}{6.2.1 程序间差异性分析}{section.6.2}% 41
-\BOOKMARK [2][-]{subsection.6.2.2}{6.2.2 变更影响分析}{section.6.2}% 42
-\BOOKMARK [1][-]{section.6.3}{6.3 兼容性分析}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.4}{6.4 结论}{chapter.6}% 44
-\BOOKMARK [0][]{chapter.7}{第 7 章 结论}{ctitle.-1}% 45
-\BOOKMARK [1][-]{section.7.1}{7.1 工作总结}{chapter.7}% 46
-\BOOKMARK [1][-]{section.7.2}{7.2 未来工作}{chapter.7}% 47
-\BOOKMARK [0][]{section*.27}{参考文献}{ctitle.-1}% 48
-\BOOKMARK [0][]{section*.29}{致 谢}{ctitle.-1}% 49
-\BOOKMARK [0][]{section*.31}{声 明}{ctitle.-1}% 50
+\BOOKMARK [3][-]{subsubsection.4.2.2.1}{4.2.2.1 分析流程}{subsection.4.2.2}% 36
+\BOOKMARK [3][-]{subsubsection.4.2.2.2}{4.2.2.2 影响追踪}{subsection.4.2.2}% 37
+\BOOKMARK [3][-]{subsubsection.4.2.2.3}{4.2.2.3 错误记录}{subsection.4.2.2}% 38
+\BOOKMARK [3][-]{subsubsection.4.2.2.4}{4.2.2.4 大规模分析}{subsection.4.2.2}% 39
+\BOOKMARK [3][-]{subsubsection.4.2.2.5}{4.2.2.5 Bug修复}{subsection.4.2.2}% 40
+\BOOKMARK [1][-]{section.4.3}{4.3 兼容性分析}{chapter.4}% 41
+\BOOKMARK [0][]{chapter.5}{第 5 章 实验}{ctitle.-1}% 42
+\BOOKMARK [1][-]{section.5.1}{5.1 实验设计}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 实验平台}{section.5.1}% 44
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 实验数据}{section.5.1}% 45
+\BOOKMARK [1][-]{section.5.2}{5.2 补丁版本迁移}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.3}{5.3 语义影响范围分析}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 程序间差异性分析}{section.5.3}% 48
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 变更影响分析}{section.5.3}% 49
+\BOOKMARK [1][-]{section.5.4}{5.4 兼容性分析}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.5}{5.5 结果分析}{chapter.5}% 51
+\BOOKMARK [0][]{chapter.6}{第 6 章 结论}{ctitle.-1}% 52
+\BOOKMARK [1][-]{section.6.1}{6.1 工作总结}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.2}{6.2 未来工作}{chapter.6}% 54
+\BOOKMARK [0][]{section*.31}{参考文献}{ctitle.-1}% 55
+\BOOKMARK [0][]{section*.33}{致 谢}{ctitle.-1}% 56
+\BOOKMARK [0][]{section*.35}{声 明}{ctitle.-1}% 57
