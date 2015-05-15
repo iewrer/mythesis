@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  11 MAY 2015 15:35
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  15 MAY 2015 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1890,15 +1890,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 29.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
-t line 62.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3])
@@ -1925,7 +1919,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figures/chap02_03.png Graphic file (type QTm)
 
 <use  "figures/chap02_03.png" >
-Overfull \hbox (28.91003pt too wide) in paragraph at lines 61--62
+Overfull \hbox (28.91003pt too wide) in paragraph at lines 60--61
  [][] 
  []
 
@@ -1936,11 +1930,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figures/chap02_01.png Graphic file (type QTm)
 
 <use  "figures/chap02_01.png" >
-Overfull \hbox (40.95499pt too wide) in paragraph at lines 100--101
- [][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
@@ -1957,6 +1946,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./data/chap03.tex
+Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
+t line 7.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 16.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12
@@ -1964,12 +1958,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: figures/chap03_git_branch.jpg Graphic file (type QTm)
+Missing character: There is no ， in font txr!
 
-<use  "figures/chap03_git_branch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
+File: figures/chap03_git_branch.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_git_branch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
@@ -1979,41 +1975,65 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
 File: figures/chap03_structure.jpg Graphic file (type QTm)
 
 <use  "figures/chap03_structure.jpg" >
-Overfull \hbox (7.79117pt too wide) in paragraph at lines 192--193
+Overfull \hbox (7.79117pt too wide) in paragraph at lines 248--249
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-File: figures/chap03_abstract.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_abstract.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [18]
+File: figures/chap03_all.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_all.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+File: figures/chap03_differ.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_differ.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \hbox (badness 2653) in paragraph at lines 355--356
+[]$\OML/txmi/m/it/12.045 impact[]track\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.04
+5 ia\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 v[]; v[]\OT1/txr/m/n/12.045 )) :
+: (\OML/txmi/m/it/12.045 Code \OMS/txsy/m/n/12.045 ! \OML/txmi/m/it/12.045 Code
+ \OMS/txsy/m/n/12.045 ! \OML/txmi/m/it/12.045 ImpactSet\OT1/txr/m/n/12.045 ) \O
+MS/txsy/m/n/12.045 !
+ []
+
+File: figures/chap03_impact.jpg Graphic file (type QTm)
+<use  "figures/chap03_impact.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 388.
 File: figures/chap03_isCompatible.jpg Graphic file (type QTm)
 
 <use  "figures/chap03_isCompatible.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
+ [25])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
+ [26]
 \openout2 = `data/chap04.aux'.
 
 
@@ -2026,7 +2046,7 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 31.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 33.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/euenc/eu1lmtt.fd
@@ -2034,7 +2054,7 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24
+ [27
 
 
 
@@ -2042,88 +2062,114 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figures/chap04_git_merge.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_git_merge.jpg" >
-Overfull \hbox (138.17798pt too wide) in paragraph at lines 66--67
- [][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 12
+ [29]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 13
 1.
 
-Underfull \hbox (badness 10000) in alignment at lines 143--153
+Underfull \hbox (badness 10000) in alignment at lines 153--163
 [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 183.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
-Missing character: There is no “ in font txr!
-Missing character: There is no ” in font txr!
-
-Underfull \hbox (badness 3989) in paragraph at lines 293--294
-[]\EU1/SimSun(1)/m/n/12.045 在 这 种 情 况 下，|  我 们 采 用 的 命 名 格 式 为 $\OML/txmi/m/it/
-12.045 UniqMethodName \OT1/txr/m/n/12.045 +
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32])
+ [32]
+File: figures/chap04_jpf_launch.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_jpf_launch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
+File: figures/chap04_jpf_old.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_jpf_old.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+File: figures/chap04_depend.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_depend.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+File: figures/chap04_error.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_error.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Missing character: There is no “ in font txr!
+Missing character: There is no ” in font txr!
+File: figures/chap04_run_all.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_run_all.jpg" >
+File: figures/chap04_run_jpf.jpg Graphic file (type QTm)
+ <use  "figures/chap04_run_jpf.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
 \openout2 = `data/chap06.aux'.
 
 
 (./data/chap06.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34
+ [41
 
 
 
 ]
+Missing character: There is no — in font txr!
+Missing character: There is no — in font txr!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
 File: figures/chap07_git_merge.png Graphic file (type QTm)
 
 <use  "figures/chap07_git_merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
+ [43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36])
+ [44]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [45]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
 \openout2 = `data/chap07.aux'.
 
 
 (./data/chap07.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38
+ [48
 
 
 
@@ -2135,7 +2181,7 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39
+ [49
 
 
 
@@ -2152,14 +2198,14 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40
+ [50
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41
+ [51
 
 
 ]
@@ -2183,12 +2229,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 31828 strings out of 493734
- 588024 string characters out of 6146348
- 684432 words of memory out of 5000000
- 34601 multiletter control sequences out of 15000+600000
- 51192 words of font info for 227 fonts, out of 8000000 for 9000
+ 31870 strings out of 493734
+ 588531 string characters out of 6146348
+ 681675 words of memory out of 5000000
+ 34633 multiletter control sequences out of 15000+600000
+ 51208 words of font info for 229 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
- 69i,12n,60p,10351b,1407s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,13n,60p,10351b,1407s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (51 pages).
+Output written on main.pdf (61 pages).

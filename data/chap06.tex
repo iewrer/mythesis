@@ -1,4 +1,5 @@
-\chapter{实验}
+\chapter{实验结果与分析}
+\label {exp}
 本章主要介绍如何对本文中所提出的补丁兼容性分析方法进行实验，并且给出了实验结果和分析。
 \section{实验设计}
 \subsection{实验平台}
@@ -39,11 +40,11 @@
 
 Groovy-Eclipse是一个Eclipse的插件集合，用于为Groovy项目提供Eclipse的工具支持。Groovy是一门类似于Java的面向对象编程语言，Groovy代码可以被编译器转化为Java字节码，从而在JVM上运行。由于这一特性，使得Groovy可以调用其他Java语言编写的库，从而大大丰富了其可用性。
 
-Groovy-Eclipse中提供了一个补丁后的JDT Core版本，该补丁主要用于增强JDT Core的功能，使其能够无缝编译Groovy代码。因而我们选择了该补丁作为实验数据中逻辑版本$v_2$的来源。
+Groovy-Eclipse中提供了一个补丁后的JDT Core版本，该补丁主要用于增强JDT Core的功能，使其能够无缝编译Groovy代码。因而我们选择了该补丁作为实验数据中逻辑版本$v_3$的来源。
 
-JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干个发行版作为实验数据中逻辑版本$v_1$和$v_3$的来源。逻辑版本的具体说明可以参考表\ref {exp_version}，具体的实验数据选择可以参考表\ref {exp_data}，其中由于逻辑版本$v_4$由版本合并而来，因此在表\ref {exp_data}中不予列出。
+JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干个发行版作为实验数据中逻辑版本$v_1$和$v_2$的来源。逻辑版本的具体说明可以参考表\ref {exp_version}，具体的实验数据选择可以参考表\ref {exp_data}，其中由于逻辑版本$v_4$由版本合并而来，因此在表\ref {exp_data}中不予列出。
 
-从表\ref {exp_data}中可见，我们一共选择了8个发行版本作为逻辑版本$v_3$的来源。也就是说，我们将以固定的逻辑版本$v_1$和$v_2$为基准，并选择不断变化的逻辑版本$v_3$来进行实验。
+从表\ref {exp_data}中可见，我们一共选择了7个发行版本作为逻辑版本$v_2$的来源。也就是说，我们将以固定的逻辑版本$v_1$和$v_3$为基准，并选择不断变化的逻辑版本$v_2$来进行实验。
 
 这样做的好处是我们可以更加清晰的了解本文中所提出的补丁兼容性分析方法的实用性，包括：
 \begin{itemize}
@@ -60,15 +61,14 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 		\toprule[1.5pt]
 		{\heiti 代码} & {\heiti 发行版本} & {\heiti 逻辑版本} \\\midrule[1pt]
 		Eclipse JDT Core & 4.3.2 & $v_1$ \\
-		Groovy-Eclipse JDT Core & 4.3.2 & $v_2$\\
-		Eclipse JDT Core & 4.4 & $v_3$\\
-		Eclipse JDT Core & 4.4.1 & $v_3$\\
-		Eclipse JDT Core & 4.4.2 & $v_3$\\
-		Eclipse JDT Core & 4.3 & $v_3$\\
-		Eclipse JDT Core & 4.3.1 & $v_3$\\
-		Eclipse JDT Core & 4.2 & $v_3$\\
-		Eclipse JDT Core & 4.2.1 & $v_3$\\
-		Eclipse JDT Core & 4.2.2 & $v_3$\\
+		Groovy-Eclipse JDT Core & 4.3.2 & $v_3$\\
+		Eclipse JDT Core & 4.4 & $v_2$\\
+		Eclipse JDT Core & 4.4.2 & $v_2$\\
+		Eclipse JDT Core & 4.3 & $v_2$\\
+		Eclipse JDT Core & 4.3.1 & $v_2$\\
+		Eclipse JDT Core & 4.2 & $v_2$\\
+		Eclipse JDT Core & 4.2.1 & $v_2$\\
+		Eclipse JDT Core & 4.2.2 & $v_2$\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -81,17 +81,39 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 		\toprule[1.5pt]
 		{\heiti 逻辑版本} & {\heiti 描述} \\\midrule[1pt]
 		$v_1$ & 旧版本 \\
-		$v_2$ & 应用补丁$p_1$后旧版本\\
-		$v_3$ & 新版本\\
+		$v_2$ & 新版本\\
+		$v_3$ & 应用补丁$p_1$后旧版本\\
 		$v_4$ & 版本$v_2$和版本$v_3$合并后版本，相当于应用补丁$p_1$后新版本\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
 
+\section{实验结果与分析}
+\subsection{补丁版本迁移}
 
-\section{补丁版本迁移}
+根据我们所选择的实验数据，对于所有版本的提交和合并过程可以参考图\ref {exp_git_merge}。可见该过程中我们以Eclipse JDT Core发行版4.3.2作为版本$v_1$，以Groovy-Eclipse JDT Core发行版4.3.2作为版本$v——2$，以其他Eclipse JDT 发行版作为版本$v_3$，并为每个版本$v_3$创建了自己的分支，用于进行版本合并。
 
-所有版本的提交和合并过程可以参考图\ref {exp_git_merge}。
+
+在版本合并的过程中，我们检测到的待解决冲突数量可以参见表\ref {data_git_merge}。根据实验结果，这些冲突95\%以上都可以采用Beyond Compare工具自动给出的方案进行解决，只有极少部分代码需要进行手工操作。
+
+\begin{table}
+	\caption{Patch Reversion结果}
+	\label{data_git_merge}
+	\centering
+	\begin{tabular}{llc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突数量} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4 & 约310\\
+		Eclipse JDT Core & 4.4.2 & 约350\\
+		Eclipse JDT Core & 4.3 & 约40\\
+		Eclipse JDT Core & 4.3.1 & 约40\\
+		Eclipse JDT Core & 4.2 & 约45\\
+		Eclipse JDT Core & 4.2.1 & 约50\\
+		Eclipse JDT Core & 4.2.2 & 约50\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
 
 \begin{figure}[H]
 	\centering
@@ -100,36 +122,172 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\label {exp_git_merge}	
 \end{figure}
 
+在实际操作过程中，由于后续的语义影响范围分析需要提供Java代码编译后产生的Class文件，我们对于合并后的版本$v_4$还需要进行编译。实验过程中，99\%的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。
 
-在实际执行过程中，需要解决的版本合并冲突可能非常多，由于git在引导第三方工具进行冲突解决时采用的是交互式的策略，因而冲突解决需要花费较长时间和较多人力资源。为此本文采用了Apple Script撰写的脚本来辅助完成这个过程，尽可能的将其自动化。
+可见，我们的补丁版本迁移方法是正确且有效的。
 
-由于大部分情况下Beyond Compare提供的解决方案都是可行的，因而我们只需要采纳该解决方案即可，如果该工具无法直接提供完全正确的解决方案，则再进行人工解决即可。因而该脚本主要用于自动化实现与图形化GUI工具的交互过程，如下所述。
+%在实际执行过程中，需要解决的版本合并冲突可能非常多，由于git在引导第三方工具进行冲突解决时采用的是交互式的策略，因而冲突解决需要花费较长时间和较多人力资源。为此本文采用了Apple Script撰写的脚本来辅助完成这个过程，尽可能的将其自动化。
+%
+%由于大部分情况下Beyond Compare提供的解决方案都是可行的，因而我们只需要采纳该解决方案即可，如果该工具无法直接提供完全正确的解决方案，则再进行人工解决即可。因而该脚本主要用于自动化实现与图形化GUI工具的交互过程，如下所述。
+%
+%\begin{lstlisting} [style=BashInputStyle]
+%tell application "System Events"
+%	repeat 300 times
+%		delay 1
+%		set theName to name of the first process
+%			whose frontmost is true	
+%		if theName is "BCompare" then		
+%			delay 1	
+%			keystroke "s" using {command down}	
+%			delay 1	
+%			if theName is "BCompare" then
+%				keystroke "w" using {command down}
+%			end if		
+%			delay 1		
+%		else
+%			delay 1
+%		end if
+%	end repeat
+%end tell
+%\end{lstlisting}
 
-\begin{lstlisting} [style=BashInputStyle]
-tell application "System Events"
-	repeat 300 times
-		delay 1
-		set theName to name of the first process
-			whose frontmost is true	
-		if theName is "BCompare" then		
-			delay 1	
-			keystroke "s" using {command down}	
-			delay 1	
-			if theName is "BCompare" then
-				keystroke "w" using {command down}
-			end if		
-			delay 1		
-		else
-			delay 1
-		end if
-	end repeat
-end tell
+\subsection{语义影响范围分析}
+
+由于整个语义影响范围分析可以分为程序间差异性分析和变更影响分析两个子过程，下面将分别叙述之。
+
+\subsubsection{程序间差异性分析}
+
+在程序间差异性分析过程中，我们主要关注成功进行分析的文件数量。
+
+对于$diff(v_2,v_1)$过程而言，使用预处理器后的结果如表\ref {data_differ_1}所示。
+
+\begin{table}[H]
+	\caption{Program Differ结果}
+	\label{data_differ_1}
+	\centering
+	\begin{tabular}{llllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 预处理数} & {\heiti 输出文件} & {\heiti 实际文件} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4	& & 1077 & 1127	\\		
+		Eclipse JDT Core & 4.4.2 	&  & 1087 & 1127		\\
+		Eclipse JDT Core & 4.3 	& & 1126 & 1127			\\
+		Eclipse JDT Core & 4.3.1 & & 1126 & 1127			\\
+		Eclipse JDT Core & 4.2 		& & 1109 & 1127		\\
+		Eclipse JDT Core & 4.2.1 & & 1115 & 1127			\\
+		Eclipse JDT Core & 4.2.2	& & 1109 & 1127		\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
 
 
-\end{lstlisting}
+对$diff(v_2,v_4)$过程而言，使用预处理器后的结果如表\ref {data_differ_3}所示。
 
-\section{语义影响范围分析}
-\subsection{程序间差异性分析}
-\subsection{变更影响分析}
-\section{兼容性分析}
-\section{结果分析}
+\begin{table}[H]
+	\caption{Program Differ结果}
+	\label{data_differ_3}
+	\centering
+	\begin{tabular}{llllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 预处理数} &{\heiti 输出文件} & {\heiti 实际文件} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4	& & 1077 & 1127			\\		
+		Eclipse JDT Core & 4.4.2 & & 1087 & 1127			\\
+		Eclipse JDT Core & 4.3 	& & 1124 & 1127			\\
+		Eclipse JDT Core & 4.3.1 	& & 1123 & 1127		\\
+		Eclipse JDT Core & 4.2 		& & 1109 & 1127		\\
+		Eclipse JDT Core & 4.2.1 	& & 1116 & 1127		\\
+		Eclipse JDT Core & 4.2.2	& & 1109 & 1127		\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+可见，我们的预处理器算法对原有的Program Differ工具输出结果进行了有效的过滤。
+
+\subsubsection{变更影响分析}
+
+变更影响分析过程中，我们主要关注到底有多少文件成功完成了分析过程。
+
+对$impact(p_1,v_2)$过程而言，应用impact analyzer模块后，分析结果如表\ref {data_impact_1}所述。
+
+\begin{table}[H]
+	\caption{impact analyzer结果}
+	\label{data_impact_1}
+	\centering
+	\begin{tabular}{lllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 分析结果数} & {\heiti 分析文件数} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4	 & 881	& 1127\\
+		Eclipse JDT Core & 4.4.2 & 892	& 1127 	\\
+		Eclipse JDT Core & 4.3	 & 930	& 1127		\\
+		Eclipse JDT Core & 4.3.1 & 930	& 1127 	\\
+		Eclipse JDT Core & 4.2 	 &	918 & 1127		\\
+		Eclipse JDT Core & 4.2.1 & 923	& 1127	\\
+		Eclipse JDT Core & 4.2.2  &	& 1127	\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+对$impact(p_2,v_2)$过程而言，应用impact analyzer模块后，分析结果如表\ref {data_impact_2}所述。
+
+\begin{table}[H]
+	\caption{impact analyzer结果}
+	\label{data_impact_2}
+	\centering
+	\begin{tabular}{lllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 分析结果数} & {\heiti 分析文件数} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4	 & 881	& 1127\\
+		Eclipse JDT Core & 4.4.2 & 892	& 1127 	\\
+		Eclipse JDT Core & 4.3	 & 930	& 1127		\\
+		Eclipse JDT Core & 4.3.1 & 925	& 1127 	\\
+		Eclipse JDT Core & 4.2 	 & 916	& 1127		\\
+		Eclipse JDT Core & 4.2.1 	 & 924	& 1127	\\
+		Eclipse JDT Core & 4.2.2 	 &	& 1127	\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+
+\subsection{冲突分析}
+
+在冲突分析过程中，应用本文提出的冲突分析算法后，再通过影响追踪系统进行辅助人工分析，可以得到如表\ref {data_compatible}的结果。
+
+\begin{table}[H]
+	\caption{结果}
+	\label{data_compatible}
+	\centering
+	\begin{tabular}{llllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数} & {\heiti 影响范围重叠数} & {\heiti 分析文件数} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4 	& 2 & 2 & 881\\
+		Eclipse JDT Core & 4.4.2 & 3 & 3 & 892\\
+		Eclipse JDT Core & 4.3 	& 3 & 3 & 930\\
+		Eclipse JDT Core & 4.3.1 		\\
+		Eclipse JDT Core & 4.2 	& 4 & 4 & 918\\
+		Eclipse JDT Core & 4.2.1 & 3  &	3 & 923\\
+		Eclipse JDT Core & 4.2.2 & 4 & 4 & 932\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+然而，在不使用预处理器的情况下，实验结果如图\ref {data_compatible_2}所示。
+
+\begin{table}[H]
+	\caption{结果}
+	\label{data_compatible_2}
+	\centering
+	\begin{tabular}{llllc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数} & {\heiti 影响范围重叠数} & {\heiti 分析文件数} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4 			\\
+		Eclipse JDT Core & 4.4.2 		\\
+		Eclipse JDT Core & 4.3 	& & 69 & 930 \\
+		Eclipse JDT Core & 4.3.1 & & 66 & 925\\
+		Eclipse JDT Core & 4.2 	& 4 & & 918	\\
+		Eclipse JDT Core & 4.2.1 & 3 & 63 & 923\\
+		Eclipse JDT Core & 4.2.2 & 4 &  & 932\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+
+\section{本章小结}

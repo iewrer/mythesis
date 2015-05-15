@@ -1,5 +1,4 @@
 \chapter{相关工作}
-\section{软件演进}
 \section{程序间差异分析}
 
 对于软件演进分析而言，如何确定一个程序的不同版本之间的变更是一个关键性的问题。程序间差异分析能够通过分析同一程序的不同版本间的差异，来确定版本间的变更集合。
@@ -97,7 +96,7 @@ CIA从分析变更请求和源代码开始，以便获得变更集合(change set
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{chap02_01}
+	\includegraphics[width=.8\columnwidth]{chap02_01}
 	\caption {CIA过程}
 \end{figure}
 
@@ -162,3 +161,4 @@ jpf-regression是DiSE的工具实现，它是基于Java Path Finder框架而实�
 \subsection{ASTro}	
 
 	本文中所采用的AST比较工具是由内布拉斯加大学林肯分校的Josh Reed，Suzette Person和Sebastian Elbaum等人所开发的ASTro，它也是jpf-regression中使用的前置工具，用于对比两个不同版本的源代码，并获取其抽象语法树上的差异，以XML文件的格式进行输出。该工具支持Java语言。
+	
