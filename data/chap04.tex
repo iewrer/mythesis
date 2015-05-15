@@ -1,9 +1,36 @@
 \chapter{工具设计与实现}
-本章中将主要介绍如何将补丁版本迁移、语义影响范围分析、冲突分析等过程具体实现之，并组合成整体流程。
+本章中将主要介绍如何设计与实现补丁兼容性分析工具。
 
 \section{整体架构}
 
-\section{补丁版本迁移}
+该解决方案的整体架构如图\ref {structure}所示。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{chap03_structure}
+	\caption {整体架构}	
+	\label {structure}
+\end{figure}
+
+整个解决方案的整体流程可以参考图\ref {solution_all}。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{chap03_all}
+	\caption {解决方案}
+	\label {solution_all}	
+\end{figure}
+
+其整体流程可以简述如下：
+
+\begin{enumerate}
+	\item 采用版本控制系统进行代码版本管理，并进行补丁版本迁移，得到应用于新版本的补丁后代码版本$v_4$。
+	\item 根据得到的三个版本代码$v_1$、$v_2$、$v_4$，分别分析其程序间差异性，生成对应的程序变更集合。
+	\item 根据得到的程序变更集合，进行不同版本间的变更影响分析，生成程序影响集合。
+	\item 根据得到的语义影响范围，进行冲突分析。
+\end{enumerate}
+
+\section{版本迁移模块}
 
 如前所述，补丁版本迁移主要用于解决问题\ref {patch_reversion}。我们在实现该过程时，主要采用了git工具和Beyond Compare工具来实现版本合并和冲突解决的过程。
 
@@ -70,9 +97,9 @@ git commit -a -m "patched version from new version committed"
 	\label {git_merge}	
 \end{figure}
 
-\section{语义影响范围分析}
+\section{影响域分析模块}
 
-如前所述，语义影响范围分析主要用于解决问题\ref {impacted_area}。语义影响范围分析需要首先定义好影响范围和影响元素的级别。在实际情况中，我们主要采用了较为简单的分析过程，即将影响范围限制在方法内部，但是将受影响元素设置为程序语句级别，以保证精度。
+如前所述，语义影响域分析主要用于解决问题\ref {impacted_area}。需要首先定义好影响范围和影响元素的级别。在实际情况中，我们主要采用了较为简单的分析过程，即将影响范围限制在方法内部，但是将受影响元素设置为程序语句级别，以保证精度。
 
 由于我们采用了现有工具来完成具体的程序间差异分析和变更影响分析过程，因而这两个子过程的分析算法已经无需我们自己实现。我们可以将主要精力放在如何整合两个子过程的工作上，并将其工具转化为适用于本问题的具体情况。
 
@@ -90,7 +117,7 @@ git commit -a -m "patched version from new version committed"
 	\item 实现实验过程的批量化和自动化。
 \end{enumerate}
 
-\subsection{程序间差异分析}
+\subsection{差异性分析模块}
 
 本文中主要采用jpf-regression工具提供的前置工具ASTro进行程序差异性分析工作。
 
@@ -238,7 +265,7 @@ OPTIONAL: -file <fileName> -ocp <classpath> -mcp <classpath>
 	\label {diff}	
 \end{figure}
 
-\subsection{变更影响分析}
+\subsection{影响分析模块}
 
 本文中主要采用jpf-regression工具进行变更影响分析的工作。jpf-regerssion是DiSE方法在Java Path Finder软件框架下的具体实现，提供了方法内和方法间的程序语句级别的变更影响分析。
 
@@ -448,13 +475,13 @@ $MethodName+HashCode(MethodName)+ExtensionName$
 	\end{tabular}
 \end{table}
 
-\section{冲突分析}
+\section{冲突判定模块}
 
 如前所述，本文中给出了一个较为简单的自动化冲突分析方法，就目前而言，更精确的分析结果需要人工分析过程的辅助。
 
 在实现冲突分析的过程中，主要涉及到的流程包括：
 \begin{enumerate}
-	\item 读取语义影响范围分析的结果
+	\item 读取的结果
 	\item 计算是否发生影响范围重叠
 	\item 对于发生了重叠现象的影响范围，判定为冲突
 	\item 回溯不兼容部分代码的影响来源并输出其影响关系链
