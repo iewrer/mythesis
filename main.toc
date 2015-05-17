@@ -51,12 +51,12 @@
 \contentsline {subsection}{\numberline {5.3.1}版本迁移模块}{55}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}影响域分析模块}{57}{subsection.5.3.2}
 \contentsline {subsubsection}{\numberline {5.3.2.1}差异性分析模块}{57}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}影响分析模块}{57}{subsubsection.5.3.2.2}
-\contentsline {subsection}{\numberline {5.3.3}冲突判定模块}{58}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}本章小结}{59}{section.5.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}结论}{60}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{60}{section.6.1}
-\contentsline {section}{\numberline {6.2}未来工作}{60}{section.6.2}
-\contentsline {chapter}{参考文献}{62}{section*.72}
-\contentsline {chapter}{致\hspace {1em}谢}{63}{section*.74}
-\contentsline {chapter}{声\hspace {1em}明}{64}{section*.76}
+\contentsline {subsubsection}{\numberline {5.3.2.2}影响分析模块}{58}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}冲突判定模块}{59}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}本章小结}{60}{section.5.4}
+\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}结论}{61}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}未来工作}{61}{section.6.2}
+\contentsline {chapter}{参考文献}{63}{section*.75}
+\contentsline {chapter}{致\hspace {1em}谢}{64}{section*.77}
+\contentsline {chapter}{声\hspace {1em}明}{65}{section*.79}

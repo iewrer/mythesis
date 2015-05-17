@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  17 MAY 2015 16:22
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  17 MAY 2015 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2245,13 +2245,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [54]
 Missing character: There is no — in font txr!
 Missing character: There is no — in font txr!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55]
 File: figures/chap07_git_merge.png Graphic file (type QTm)
 
 <use  "figures/chap07_git_merge.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [56]
@@ -2260,24 +2259,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [57]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58])
+ [58]
+Overfull \hbox (20.85988pt too wide) in paragraph at lines 322--334
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
+ [59])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
 \openout2 = `data/chap07.aux'.
 
 
 (./data/chap07.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60
+ [61
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
+ [62]
 (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
@@ -2285,7 +2292,7 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62
+ [63
 
 
 
@@ -2297,14 +2304,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./data/ack.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
+ [64
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64
+ [65
 
 
 ]
@@ -2331,12 +2338,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32296 strings out of 493734
- 595251 string characters out of 6146348
- 691781 words of memory out of 5000000
- 35045 multiletter control sequences out of 15000+600000
+ 32317 strings out of 493734
+ 596289 string characters out of 6146348
+ 691914 words of memory out of 5000000
+ 35066 multiletter control sequences out of 15000+600000
  51208 words of font info for 229 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
  69i,13n,60p,10351b,1407s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (74 pages).
+Output written on main.pdf (75 pages).

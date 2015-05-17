@@ -123,22 +123,23 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 可见该过程中我们以Eclipse JDT Core发行版4.3.2作为版本$v_1$，以Groovy-Eclipse JDT Core发行版4.3.2作为版本$v——2$，以其他Eclipse JDT 发行版作为版本$v_3$，并为每个版本$v_3$创建了自己的分支，用于进行版本合并。
 
 
-在版本合并的过程中，我们检测到的待解决冲突数量可以参见表\ref {data_git_merge}。根据实验结果，这些冲突95\%以上都可以采用Beyond Compare工具中推荐的方案进行解决，只有极少部分代码需要进行手工解决。
+在版本合并的过程中，我们检测到的待解决冲突数量可以参见表\ref {data_git_merge}。
+%根据实验结果，这些冲突95\%以上都可以采用Beyond Compare工具中推荐的方案进行解决，只有极少部分代码需要进行手工解决。
 
 \begin{table}
-	\caption{Patch Reversion结果}
+	\caption{版本合并结果结果}
 	\label{data_git_merge}
 	\centering
-	\begin{tabular}{llc}
+	\begin{tabular}{llcc}
 		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突数量} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4 & 约310\\
-		Eclipse JDT Core & 4.4.2 & 约350\\
-		Eclipse JDT Core & 4.3 & 约40\\
-		Eclipse JDT Core & 4.3.1 & 约40\\
-		Eclipse JDT Core & 4.2 & 约45\\
-		Eclipse JDT Core & 4.2.1 & 约50\\
-		Eclipse JDT Core & 4.2.2 & 约50\\
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数量} & {\heiti 所有文件}\\\midrule[1pt]
+		Eclipse JDT Core & 4.4 & 313 & 1285\\
+		Eclipse JDT Core & 4.4.2 & 596 & 1281\\
+		Eclipse JDT Core & 4.3 & 10 & 1209\\
+		Eclipse JDT Core & 4.3.1 & 10 & 1209\\
+		Eclipse JDT Core & 4.2 & 50 & 1205\\
+		Eclipse JDT Core & 4.2.1 & 49 & 1205\\
+		Eclipse JDT Core & 4.2.2 & 49 & 1205\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -152,6 +153,24 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 \end{figure}
 
 在实际操作过程中，由于后续的语义影响域分析需要提供Java代码编译后产生的Class文件，我们对于合并后的版本$v_4$还需要进行编译。实验过程中，99\%的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。
+
+\begin{table}
+	\caption{编译结果}
+	\label{data_git_merge2}
+	\centering
+	\begin{tabular}{llcc}
+		\toprule[1.5pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 编译失败文件} & {\heiti 所有文件}\\\midrule[1pt]
+		Eclipse JDT Core & 4.4 & 23 & 1285\\
+		Eclipse JDT Core & 4.4.2 & 18 & 1281\\
+		Eclipse JDT Core & 4.3 & 0 & 1209\\
+		Eclipse JDT Core & 4.3.1 & 1 & 1209\\
+		Eclipse JDT Core & 4.2 & 4 & 1205\\
+		Eclipse JDT Core & 4.2.1 & 4 & 1205\\
+		Eclipse JDT Core & 4.2.2 & 1 & 1205\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
 
 可见，我们的补丁版本迁移方法是正确且有效的。
 
@@ -192,19 +211,58 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\caption{Program Differ结果}
 	\label{data_differ_1}
 	\centering
-	\begin{tabular}{llllc}
+	\begin{tabular}{llccc}
 		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti 发行版本} & {\heiti 预处理数} & {\heiti 输出文件} & {\heiti 实际文件} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4	& 91 & 1077 & 1127	\\		
-		Eclipse JDT Core & 4.4.2 & 94 & 1087 & 1127		\\
-		Eclipse JDT Core & 4.3 	& 110 & 1126 & 1127			\\
-		Eclipse JDT Core & 4.3.1 & 110 & 1126 & 1127			\\
-		Eclipse JDT Core & 4.2 	& 99 & 1109 & 1127		\\
-		Eclipse JDT Core & 4.2.1 & 99 & 1115 & 1127			\\
-		Eclipse JDT Core & 4.2.2 & 99 & 1109 & 1127		\\
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 预处理数} & {\heiti $diff(v_2,v_1)$文件数} & {\heiti $diff(v_2,v_4)$文件数} \\\midrule[1pt]
+		Eclipse JDT Core & 4.4	& 91 & 1088 & 1172	\\		
+		Eclipse JDT Core & 4.4.2 & 94 & 1097 & 1178		\\
+		Eclipse JDT Core & 4.3 	& 110 & 1126 & 1124			\\
+		Eclipse JDT Core & 4.3.1 & 110 & 1126 & 1123			\\
+		Eclipse JDT Core & 4.2 	& 99 & 1115 & 1117		\\
+		Eclipse JDT Core & 4.2.1 & 99 & 1115 & 1116			\\
+		Eclipse JDT Core & 4.2.2 & 99 & 1115 & 1116		\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
+
+
+\begin{table}[H]
+	\caption{Program Differ结果}
+	\label{data_differ_2}
+	\centering
+	\begin{tabular}{llccc}
+		\toprule[1.5pt]
+		{\heiti $v_1$} & {\heiti $v_2$} & {\heiti $diff(v_2,v_1)$文件数} & {\heiti $v_2$文件} & {\heiti $v_1$文件} \\\midrule[1pt]
+		4.3.2 & 4.4	& 1088 & 1196 & 1200\\		
+		4.3.2 & 4.4.2 & 1097 & 1196	& 1200	\\
+		4.3.2 & 4.3 	 & 1126 & 1196	& 1200		\\
+		4.3.2 & 4.3.1  & 1126 & 1196 & 1200			\\
+		4.3.2 & 4.2 	& 1115 & 1196 & 1200		\\
+		4.3.2 & 4.2.1 & 1115 & 1196 & 1200		\\
+		4.3.2 & 4.2.2  & 1115 & 1196 & 1200		\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{Program Differ结果}
+	\label{data_differ_3}
+	\centering
+	\begin{tabular}{llccc}
+		\toprule[1.5pt]
+		{\heiti $v_4$} & {\heiti $v_2$} & {\heiti $diff(v_2,v_4)$文件数} & {\heiti $v_2$文件} & {\heiti $v_4$文件} \\\midrule[1pt]
+		基于4.4 & 4.4	& 1172 & 1196 &	\\		
+		基于4.4.2 & 4.4.2 & 1178 & 1196 & 1198		\\
+		基于4.3 & 4.3 	 & 1124 & 1196	& 1198		\\
+		基于4.3.1 & 4.3.1  & 1123 & 1196	& 1198		\\
+		基于4.2 & 4.2 	& 1117 & 1196 & 1198		\\
+		基于4.2.1 & 4.2.1 & 1116 & 1196	& 1198		\\
+		基于4.2.2 & 4.2.2  & 1116 & 1196 & 1198		\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+
 
 可见，我们的预处理器算法对原有的Program Differ工具输出结果进行了有效的过滤。
 
@@ -218,16 +276,16 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\caption{impact analyzer结果}
 	\label{data_impact_1}
 	\centering
-	\begin{tabular}{lllc}
+	\begin{tabular}{llcc}
 		\toprule[1.5pt]
 		{\heiti 代码} & {\heiti 发行版本} & {\heiti 分析结果数} & {\heiti 分析文件数} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4	 & 881	& 1127\\
-		Eclipse JDT Core & 4.4.2 & 892	& 1127 	\\
-		Eclipse JDT Core & 4.3	 & 930	& 1127		\\
-		Eclipse JDT Core & 4.3.1 & 930	& 1127 	\\
-		Eclipse JDT Core & 4.2 	 &	918 & 1127		\\
-		Eclipse JDT Core & 4.2.1 & 923	& 1127	\\
-		Eclipse JDT Core & 4.2.2  & 924	& 1127	\\
+		Eclipse JDT Core & 4.4	 & 881	& 1126\\
+		Eclipse JDT Core & 4.4.2 & 892	& 1126 	\\
+		Eclipse JDT Core & 4.3	 & 930	& 1126		\\
+		Eclipse JDT Core & 4.3.1 & 930	& 1126 	\\
+		Eclipse JDT Core & 4.2 	 &	918 & 1126		\\
+		Eclipse JDT Core & 4.2.1 & 923	& 1126	\\
+		Eclipse JDT Core & 4.2.2  & 924	& 1126	\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -238,16 +296,16 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\caption{impact analyzer结果}
 	\label{data_impact_2}
 	\centering
-	\begin{tabular}{lllc}
+	\begin{tabular}{llcc}
 		\toprule[1.5pt]
 		{\heiti 代码} & {\heiti 发行版本} & {\heiti 分析结果数} & {\heiti 分析文件数} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4	 & 881	& 1127\\
-		Eclipse JDT Core & 4.4.2 & 892	& 1127 	\\
-		Eclipse JDT Core & 4.3	 & 930	& 1127		\\
-		Eclipse JDT Core & 4.3.1 & 925	& 1127 	\\
-		Eclipse JDT Core & 4.2 	 & 916	& 1127		\\
-		Eclipse JDT Core & 4.2.1 	 & 924	& 1127	\\
-		Eclipse JDT Core & 4.2.2 	 & 928	& 1127	\\
+		Eclipse JDT Core & 4.4	 & 881	& 1126\\
+		Eclipse JDT Core & 4.4.2 & 892	& 1126 	\\
+		Eclipse JDT Core & 4.3	 & 930	& 1126		\\
+		Eclipse JDT Core & 4.3.1 & 925	& 1126 	\\
+		Eclipse JDT Core & 4.2 	 & 916	& 1126		\\
+		Eclipse JDT Core & 4.2.1 	 & 924	& 1126	\\
+		Eclipse JDT Core & 4.2.2 	 & 928	& 1126	\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -261,16 +319,16 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\caption{结果}
 	\label{data_compatible}
 	\centering
-	\begin{tabular}{llllc}
+	\begin{tabular}{llccc}
 		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数} & {\heiti 影响域重叠} & {\heiti 分析文件数} \\\midrule[1pt]
+		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数} & {\heiti 影响域重叠} & {\heiti 分析文件数（以较少者为基准）} \\\midrule[1pt]
 		Eclipse JDT Core & 4.4 	& 2 & 2 & 881\\
 		Eclipse JDT Core & 4.4.2 & 3 & 3 & 892\\
 		Eclipse JDT Core & 4.3 	& 3 & 3 & 930\\
 		Eclipse JDT Core & 4.3.1 & 3 & 3 & 925\\
 		Eclipse JDT Core & 4.2 	& 4 & 4 & 918\\
 		Eclipse JDT Core & 4.2.1 & 3  &	3 & 923\\
-		Eclipse JDT Core & 4.2.2 & 4 & 4 & 932\\
+		Eclipse JDT Core & 4.2.2 & 4 & 4 & 924\\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -281,14 +339,14 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\caption{结果}
 	\label{data_compatible_2}
 	\centering
-	\begin{tabular}{llllc}
+	\begin{tabular}{llccc}
 		\toprule[1.5pt]
 		{\heiti 代码} & {\heiti 发行版本} & {\heiti 冲突文件数} & {\heiti 影响域重叠} & {\heiti 分析文件数} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4 	& 2 & 59 &	892	\\
-		Eclipse JDT Core & 4.4.2 & 3 & 64 &  901 \\
-		Eclipse JDT Core & 4.3 	& & 69 & 930 \\
-		Eclipse JDT Core & 4.3.1 & & 66 & 925\\
-		Eclipse JDT Core & 4.2 	& 4 & & 918	\\
+		Eclipse JDT Core & 4.4 	& 2 & 59 &	881	\\
+		Eclipse JDT Core & 4.4.2 & 3 & 64 &  892 \\
+		Eclipse JDT Core & 4.3 	& 3 & 69 & 930 \\
+		Eclipse JDT Core & 4.3.1 & 3 & 66 & 925\\
+		Eclipse JDT Core & 4.2 	& 4 & 64 & 918	\\
 		Eclipse JDT Core & 4.2.1 & 3 & 63 & 923\\
 		Eclipse JDT Core & 4.2.2 & 4 & 65 & 924\\
 		\bottomrule[1.5pt]
