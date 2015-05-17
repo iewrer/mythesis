@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  16 MAY 2015 00:24
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  17 MAY 2015 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1606,78 +1606,89 @@ nment
 \@float@every@algorithm=\toks49
 \c@algorithm=\count319
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count320
-\c@ALC@line=\count321
-\c@ALC@rem=\count322
-\c@ALC@depth=\count323
-\ALC@tlm=\skip84
-\algorithmicindent=\skip85
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count320
+\c@ALG@rem=\count321
+\c@ALG@nested=\count322
+\ALG@tlm=\skip84
+\ALG@thistlm=\skip85
+\c@ALG@Lnr=\count323
+\c@ALG@blocknr=\count324
+\c@ALG@storecount=\count325
+\c@ALG@tmpcounter=\count326
+\ALG@tmplength=\skip86
 )
-(/usr/local/texlive/2014/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2014/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2014/05/13 v3.2.12 xeCJK patch file for listings
-\l__xeCJK_listings_flag_int=\count324
+\l__xeCJK_listings_flag_int=\count327
 )
 (./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux
 
 LaTeX Warning: Label `define_conflict' multiply defined.
 
-) (./data/chap04.aux) (./data/chap06.aux) (./data/chap07.aux) (./data/ack.aux)
-(./data/resume.aux))
+) (./data/chap04.aux
+
+LaTeX Warning: Label `diff' multiply defined.
+
+) (./data/chap06.aux) (./data/chap07.aux) (./data/ack.aux) (./data/resume.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 26.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 26.
-
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 27.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 27.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 27.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 27.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 27.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 27.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 27.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1689,7 +1700,7 @@ Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1697,17 +1708,17 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count325
+\c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c@lstlisting=\count326
+\c@lstlisting=\count329
  (./data/cover.tex)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
@@ -1715,9 +1726,9 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 )
 
 Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
-(hyperref)                instead of the value given on input line 36.
+(hyperref)                instead of the value given on input line 37.
 
-\g_fontspec_family_SimHei_int=\count327
+\g_fontspec_family_SimHei_int=\count330
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1748,7 +1759,7 @@ Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
 . 
 . This font family consists of the following shapes:
 .................................................
-\g_fontspec_family_FangSong_int=\count328
+\g_fontspec_family_FangSong_int=\count331
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1771,46 +1782,46 @@ Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
 . <->"FangSong/ICU:script=hani;language=DFLT;mapping=tex-text;embolden=4;slant=
 0.167;"
 .................................................
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 39.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 38.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 39.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 38.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 39.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 38.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 39.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 38.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 39.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 2134) detected at line 38
+Underfull \hbox (badness 2134) detected at line 39
 \EU1/FangSong(0)/m/n/16.06 培 养 单 位
  []
 
 
-Underfull \hbox (badness 10000) detected at line 38
+Underfull \hbox (badness 10000) detected at line 39
 \EU1/FangSong(0)/m/n/16.06 学 科
  []
 
 
-Underfull \hbox (badness 10000) detected at line 38
+Underfull \hbox (badness 10000) detected at line 39
 \EU1/FangSong(0)/m/n/16.06 研 究 生
  []
 
 
-Underfull \hbox (badness 2134) detected at line 38
+Underfull \hbox (badness 2134) detected at line 39
 \EU1/FangSong(0)/m/n/16.06 指 导 教 师
  []
 
@@ -1845,13 +1856,13 @@ Underfull \hbox (badness 2134) detected at line 38
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <15.05624> on input line 38
+LaTeX Font Info:    Calculating math sizes for size <15.05624> on input line 39
 .
  [3] [4
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 38.
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 39.
  [5] [6
 
 
@@ -1895,24 +1906,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-
-LaTeX Warning: Reference `sia' on page 3 undefined on input line 80.
-
-
+ [2])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
+ [3]
 \openout2 = `data/chap02.aux'.
 
 
 (./data/chap02.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5
+ [4
 
 
 
@@ -1922,7 +1926,7 @@ File: figures/chap02_02.png Graphic file (type QTm)
 <use  "figures/chap02_02.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
+ [5]
 File: figures/chap02_03.png Graphic file (type QTm)
 
 <use  "figures/chap02_03.png" >
@@ -1933,22 +1937,22 @@ Overfull \hbox (28.91003pt too wide) in paragraph at lines 60--61
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
+ [6]
 File: figures/chap02_01.png Graphic file (type QTm)
 
 <use  "figures/chap02_01.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
+ [9])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
+ [10]
 \openout2 = `data/chap03.aux'.
 
 
@@ -1960,124 +1964,125 @@ nput line 14.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12
+ [11
 
 
 
 ]
-Underfull \hbox (badness 8132) in paragraph at lines 70--71
-[]\EU1/SimSun(1)/m/n/12.045 给 定 $\OML/txmi/m/it/12.045 p[]$\EU1/SimSun(1)/m/n/1
-2.045 ，| $\OML/txmi/m/it/12.045 v[]$\EU1/SimSun(1)/m/n/12.045 ，|  问 $\OML/txmi/
-m/it/12.045 design\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 p[]; v[]\OT1/txr/m
-/n/12.045 ) == \OML/txmi/m/it/12.045 False$ \EU1/SimSun(1)/m/n/12.045 时，|  能 否 
-使 得
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+[]$\OML/txmi/m/it/12.045 conflict \OT1/txr/m/n/12.045 : \OML/txmi/m/it/12.045 P
+atch \OMS/txsy/m/n/12.045 ^^B \OML/txmi/m/it/12.045 Patch \OMS/txsy/m/n/12.045 
+7! \OML/txmi/m/it/12.045 Boolean$\EU1/SimSun(1)/m/n/12.045 。|  如 果
+ []
+
+
+Underfull \hbox (badness 2772) in paragraph at lines 146--147
+\OMS/txsy/m/n/12.045 9\OML/txmi/m/it/12.045 structure[]; structure[]; structure
+[] \OMS/txsy/m/n/12.045 ^^Z \OML/txmi/m/it/12.045 v[]$\EU1/SimSun(1)/m/n/12.045
+ ，|  使 得 $\OML/txmi/m/it/12.045 im\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 st
+ructure[]\OT1/txr/m/n/12.045 ) = \OML/txmi/m/it/12.045 structure[] \OMS/txsy/m/
+n/12.045 ^
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-Underfull \hbox (badness 1281) in paragraph at lines 147--148
-[]$\OML/txmi/m/it/12.045 conflict \OT1/txr/m/n/12.045 : \OML/txmi/m/it/12.045 P
-atch \OMS/txsy/m/n/12.045 ^^B \OML/txmi/m/it/12.045 Patch \OMS/txsy/m/n/12.045 
-7! \OML/txmi/m/it/12.045 Boolean$\EU1/SimSun(1)/m/n/12.045 。|  如 果 $\OMS/txsy/m
-/n/12.045 9\OML/txmi/m/it/12.045 im\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 s
-tructure[]\OT1/txr/m/n/12.045 ) =
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 147--148
-\OML/txmi/m/it/12.045 v[]; change\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 str
-ucture[]\OT1/txr/m/n/12.045 ) \OMS/txsy/m/n/12.045 ^^Z \OML/txmi/m/it/12.045 p[
-]; change\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 structure[]\OT1/txr/m/n/12.
-045 ) \OMS/txsy/m/n/12.045 ^^Z \OML/txmi/m/it/12.045 p[]; p[]; p[] \OMS/txsy/m/
-n/12.045 ^^Z \OML/txmi/m/it/12.045 Pat\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.04
-5 v[]\OT1/txr/m/n/12.045 )\OML/txmi/m/it/12.045 ; v[] \OMS/txsy/m/n/12.045 ^^Z
- []
-
 File: figures/chap03_git_branch.jpg Graphic file (type QTm)
+
 <use  "figures/chap03_git_branch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+[]$\OML/txmi/m/it/12.045 ia \OT1/txr/m/n/12.045 : \OML/txmi/m/it/12.045 Code \O
+MS/txsy/m/n/12.045 ^^B \OML/txmi/m/it/12.045 Code \OMS/txsy/m/n/12.045 7! []$\E
+U1/SimSun(1)/m/n/12.045 。| $\OML/txmi/m/it/12.045 s \OT1/txr/m/n/12.045 = \OML/
+txmi/m/it/12.045 ia\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 v[]; v[]\OT1/txr/
+m/n/12.045 ) =
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
+Missing character: There is no 、 in font txr!
+File: figures/chap03_all_flow_2.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_all_flow_2.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 30
+9.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 340.
 
-LaTeX Warning: Reference `impacted_area' on page 20 undefined on input line 314
-.
+
+LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
+(Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 350.
+
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-File: figures/chap03_differ.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_differ.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Underfull \hbox (badness 2653) in paragraph at lines 370--371
-[]$\OML/txmi/m/it/12.045 impact[]track\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.04
-5 ia\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 v[]; v[]\OT1/txr/m/n/12.045 )) :
-: (\OML/txmi/m/it/12.045 Code \OMS/txsy/m/n/12.045 ! \OML/txmi/m/it/12.045 Code
- \OMS/txsy/m/n/12.045 ! \OML/txmi/m/it/12.045 ImpactSet\OT1/txr/m/n/12.045 ) \O
-MS/txsy/m/n/12.045 !
- []
-
-File: figures/chap03_impact.jpg Graphic file (type QTm)
-<use  "figures/chap03_impact.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
+ [22])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 403.
-File: figures/chap03_isCompatible.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_isCompatible.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
+ [24]
 \openout2 = `data/chap04.aux'.
 
 
 (./data/chap04.tex
 File: figures/chap03_structure.jpg Graphic file (type QTm)
  <use  "figures/chap03_structure.jpg" >
-Overfull \hbox (7.79117pt too wide) in paragraph at lines 10--11
- [][] 
- []
-
 File: figures/chap03_all.jpg Graphic file (type QTm)
+
 <use  "figures/chap03_all.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26
+ [25
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [26]
+File: figures/chap03_version.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_version.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [27]
+File: figures/chap04_merge_internal.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_merge_internal.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 File: figures/chap04_work_dir.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_work_dir.jpg" >
@@ -2087,73 +2092,93 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 60.
-
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 159
+.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
+ [29]
 File: figures/chap04_git_merge.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_git_merge.jpg" >
-
-LaTeX Warning: Reference `impacted_area' on page 29 undefined on input line 102
-.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 15
-8.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30]
-Underfull \hbox (badness 10000) in alignment at lines 180--190
-[][] 
- []
+File: figures/chap03_differ.jpg Graphic file (type QTm)
 
-
+<use  "figures/chap03_differ.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
+File: figures/chap04_diff_des.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_diff_des.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Underfull \hbox (badness 10000) in alignment at lines 413--423
+[][] 
+ []
+
+File: figures/chap04_differ.jpg Graphic file (type QTm)
+<use  "figures/chap04_differ.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+File: figures/chap03_impact2.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_impact2.jpg" >
+File: figures/chap04_impact_internal.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_impact_internal.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
 File: figures/chap04_jpf_launch.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_launch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [40]
 File: figures/chap04_jpf_old.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_old.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
+ [41]
 File: figures/chap04_depend.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_depend.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
+ [42]
 File: figures/chap04_error.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_error.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [44]
 Missing character: There is no “ in font txr!
 Missing character: There is no ” in font txr!
 File: figures/chap04_run_all.jpg Graphic file (type QTm)
@@ -2163,59 +2188,96 @@ File: figures/chap04_run_jpf.jpg Graphic file (type QTm)
  <use  "figures/chap04_run_jpf.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40])
+ [46]
+File: figures/chap03_com.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_com.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
+ [47]
+File: figures/chap04_com_internal.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_com_internal.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+File: figures/chap04_diff.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_diff.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Overfull \hbox (57.96417pt too wide) in paragraph at lines 834--847
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+File: figures/chap04_com_flow.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_com_flow.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
 \openout2 = `data/chap06.aux'.
 
 
 (./data/chap06.tex
+File: figures/chap07_exp.jpg Graphic file (type QTm)
+ <use  "figures/chap07_exp.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42
+ [53
 
 
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
 Missing character: There is no — in font txr!
 Missing character: There is no — in font txr!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
+ [55]
 File: figures/chap07_git_merge.png Graphic file (type QTm)
 
 <use  "figures/chap07_git_merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
+ [57]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [58])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
+ [59]
 \openout2 = `data/chap07.aux'.
 
 
-(./data/chap07.tex)
+(./data/chap07.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49
+ [60
 
 
 
-]
+])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
 (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
@@ -2223,7 +2285,7 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50
+ [62
 
 
 
@@ -2233,21 +2295,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./data/ack.tex
-
-LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
-(Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 4.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51
+ [63
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52
+ [64
 
 
 ]
@@ -2258,31 +2315,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@thm=\write5
 \openout5 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
  (./main.aux (./data/chap01.aux)
 (./data/chap02.aux) (./data/chap03.aux) (./data/chap04.aux) (./data/chap06.aux)
 (./data/chap07.aux) (./data/ack.aux) (./data/resume.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 74.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 75.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 75.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 31877 strings out of 493734
- 588605 string characters out of 6146348
- 681884 words of memory out of 5000000
- 34640 multiletter control sequences out of 15000+600000
+ 32296 strings out of 493734
+ 595251 string characters out of 6146348
+ 691781 words of memory out of 5000000
+ 35045 multiletter control sequences out of 15000+600000
  51208 words of font info for 229 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
  69i,13n,60p,10351b,1407s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (62 pages).
+Output written on main.pdf (74 pages).

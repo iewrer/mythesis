@@ -36,14 +36,14 @@
 	\item 补丁程序中所提及的文件未找到。
 \end{enumerate}
 
-由于有这些可能的问题存在，导致我们无法直接将补丁程序应用到其他版本的补丁上。因此，我们可以考虑去解决这样一个子问题。
+由于有这些可能的问题存在，导致我们无法直接将补丁程序应用到其他版本的补丁上。因此，我们考虑如何去解决问题\ref {origin}的第一点。
 
 \begin{problem}
 	\label {patch_reversion}
 	由于补丁p针对版本$v_{1}$设计，当尝试将其应用到版本$v_{2}$上时，可能会出现程序语法结构上的错误。如何将p成功应用到版本$v_{2}$上，使得该过程不会出现引入程序语法错误？
 \end{problem}
 
-为了更清楚的描述该问题，我们可以将其进一步形式化定义如下：
+为了更清楚的描述，我们可以将其进一步形式化定义如下：
 
 \begin{definition}
 	$Code$——指源代码。
@@ -54,23 +54,23 @@
 \end{definition}
 
 \begin{definition}
-	$patch: Patch \times Code \mapsto Code$。$patch(p_i,v_k) = v_m,i,k,m \subset \mathbb{N}$。该函数用于表示补丁应用的过程。
+	$patch: Patch \times Code \mapsto Code$。$patch(p_i,v_k) = v_m,v_k,v_m \subset Code,i,k,m \subset \mathbb{N}$。该函数用于表示补丁应用的过程。
+\end{definition}
+
+\begin{definition}
+	$Pat: Code \mapsto \{Patch\}$。用于表示代码到其对应的补丁集合的映射。
 \end{definition}
 
 \begin{definition}
 	$compile: Code \mapsto Boolean$。compile函数用于表示对源代码的编译过程，如果成功编译则表示源代码中没有语法错误。
 \end{definition}
 
-\begin{definition}
-	$design: Patch \times Code \mapsto Boolean$。该函数用于表示某个补丁是否为某个版本的代码而设计。
-\end{definition}
-
 \begin{problem}
 	\label {app_formal}
-	给定$p_i$，$v_k$，问$design(p_i,v_k) == False$时，能否使得$compile(patch(p_i,v_k)) == True$？其中$p_i \subset Patch,v_k \subset Code,i,k \subset \mathbb{N}$。
+	给定$p_i$，$v_k$，问$p_i \not \subset Pat(v_k)$时，能否使得$compile(patch(p_i,v_k)) == True$？其中$p_i \subset Patch,v_k \subset Code,i,k \subset \mathbb{N}$。
 \end{problem}
 
-可见，该问题的核心在于如何给出合适的$patch(p_i,v_k)$函数。
+可见，要解决问题\ref {origin}的第一点，其核心在于如何给出合适的$patch(p_i,v_k)$函数。
 
 \subsection{补丁冲突}
 
@@ -82,7 +82,7 @@
 
 \begin{definition}
 	\label {define_diff}
-	$p = diff(v_i,v_j),i,j \subset \mathbb{N}$。该函数用于求解两个不同版本的程序$v_i$和$v_j$之间的差异性，其结果即为补丁p。
+	$diff : Code \times Code \mapsto Patch$。其中$p = diff(v_i,v_j) \iff patch(p,v_i) = v_j,i,j \subset \mathbb{N},p \subset Pat(v_i)$。该函数用于求解两个不同版本的程序$v_i$和$v_j$之间的差异性，其结果即为补丁p。
 \end{definition}
 
 从问题\ref {origin}中可以发现，$p_{1} = diff(v_{1},v_{3})$。如果同样给定$p_{2} = diff(v_{1},v_{2})$，并且已经解决了问题\ref {app_formal}，那么，如何检测补丁在应用于新版本之后是否会与该版本代码产生冲突这一问题就可以规约如下。
@@ -100,7 +100,9 @@
 	语义影响（Semantic Impact）——假如某个代码结构对其他代码结构存在依赖关系，那么就说这两者间存在语义影响。其中代码结构指程序的语法结构，包括类、方法、语句等不同的类型。
 \end{definition}
 
-事实上，如果给出不同的依赖关系的定义，那么就会得到不同类型的影响。可见，这里所谓的语义影响即是程序代码间的耦合关系。常见的依赖关系包括控制依赖和数据依赖等。下面给出语义影响的形式化定义。
+事实上，如果给出不同的依赖关系的定义，那么就会得到不同类型的影响。可见，这里所谓的语义影响即是程序代码间的耦合关系。常见的依赖关系包括控制依赖和数据依赖等。
+
+下面给出语义影响的形式化定义。
 
 \begin{definition}
 	$Structure \to Class \mid Method \mid Statement \mid ...$。Structure用于表示程序代码结构，可以任意替换为对应的子类型。
@@ -119,7 +121,7 @@
 \end{definition}
 
 \begin{definition}
-	$\forall structure_i,structure_j \subset Struct(v_k),  im(structure_i) = structure_j \iff depend(structure_i) = structure_j$，其中$v_k \subset Code$。
+	$\forall structure_i,structure_j \subset Struct(v_k),  im(structure_i) = structure_j \iff depend(structure_i) = structure_j$，其中$v_k \subset Code,i,j,k \subset \mathbb{N}$。
 \end{definition}
 
 
@@ -139,15 +141,12 @@
 	$change: Structure \mapsto Change$。用于表示代码结构和其所对应的变更的映射。
 \end{definition}
 
-\begin{definition}
-	$Pat: Code \mapsto \{Patch\}$。用于表示代码到其对应的补丁集合的映射。
-\end{definition}
 
 \begin{definition}
-	$conflict: Patch \times Patch \mapsto Boolean$。如果$\exists im(structure_i) = structure_k \land im(structure_j) = structure_k$，其中$structure_i,structure_j,structure_k \subset v_t,change(structure_i) \subset p_m,change(structure_j) \subset p_n,p_m,p_n \subset Pat(v_t),v_t \subset Code,i,j,k,m,n,t \subset \mathbb{N}$，那么$conflict(p_m,p_n) = True$。用于判断两个补丁是否发生语义冲突的函数。
+	$conflict: Patch \times Patch \mapsto Boolean$。如果$\exists structure_i,structure_j,structure_k \subset v_t$，使得$im(structure_i) = structure_k \land im(structure_j) = structure_k$，那么$conflict(p_m,p_n) = True$。其中$change(structure_i) \subset p_m,change(structure_j) \subset p_n,p_m,p_n \subset Pat(v_t),v_t \subset Code,i,j,k,m,n,t \subset \mathbb{N}$，。用于判断两个补丁是否发生语义冲突的函数。
 \end{definition}
 
-在有了语义影响和冲突的定义之后，问题\ref {compatible}就可以形式化的描述如下：
+在有了语义影响和冲突的定义之后，问题\ref {origin}的第二点就可以形式化的描述如下：
 
 \begin{problem}
 	\label {compatible_formal}
@@ -155,19 +154,21 @@
 \end{problem}
 
 \section{问题分析}
+\label {problem_analysis}
 
 \subsection{补丁应用}
+\label {patch_app}
 
-如前所述，为了解决这个问题，主要需要提供合适的$patch(p_i,v_k)$函数，实际上可以采用版本控制系统的版本合并功能来作为该函数的具体实现。
+如前所述，为了解决问题\ref {origin}的第一点，主要需要提供合适的$patch(p_i,v_k)$函数。实际上可以采用版本控制系统的版本合并功能来作为该函数的具体实现。
 
 版本控制系统中经常需要将其他分支中的版本合并到当前分支中，为了解决不同版本之间可能存在的语法冲突，通常会采用三路归并算法（3-way merge）来对两个不同版本的代码进行合并，合并时以二者共同的祖先版本作为依据进行。
 
 而我们所面临的问题也是类似的，由于$patch(p_1,v_1) = v_3$，为了将$p_1$应用到版本$v_2$上获得版本$v_4$，我们可以采用类似的想法，将版本$v_3$和版本$v_2$进行合并即可。合并后我们就等于同时拥有了$p_1 = diff(v_1,v_3)$和$p_2 = diff(v_1,v_2)$这两个补丁中的变更。
 
-整个过程可以形式化定义如下。也就是说我们用$merge(v_i,v_j)$函数实现了$patch(p_i,v_k)$的功能。
+整个过程可以形式化定义如下。实际上也就是说我们用$merge(v_i,v_j)$函数实现了$patch(p_i,v_k)$的功能。
 
 \begin{definition}
-	$merge(v_i,v_j): Code \times Code \mapsto Code$。$patch(p_i,v_k) = merge(v_m,v_k)$，其中$design(p_i,v_k) == False,design(p_i,v_n) == True,patch(p_i,v_n) = v_m,i,j,k,m,n \subset \mathbb{N}$。
+	$merge: Code \times Code \mapsto Code$。$v_s = patch(p_i,v_l) = merge(v_m,v_l)$，使得$\forall c_a \subset p_i,\forall c_b \subset p_j,c_a,c_b \subset p_k$，即$p_k = p_i \cup p_j$。其中$v_m = patch(p_i,v_n),p_j = diff(v_n,v_l),p_k = diff(v_l,v_s),p_i \not \subset Pat(v_l),p_i,p_j \subset Pat(v_n),p_k \subset Pat(v_l),v_l,v_m,v_n,v_s \subset Code,a,b,i,j,k,l,m,n,s \subset \mathbb{N}$。
 \end{definition}
 
 这实际上也是现在软件开发过程中的常见手段。例如使用git作为版本控制系统时，为了修复某个功能性的bug，我们可以新建一个分支FixBug，然后切换到该分支进行漏洞修复，等到修补完毕后，再将该分支合并到主分支Master中即可。
@@ -183,8 +184,17 @@
 
 
 \subsection{补丁冲突}
+\label {conflict}
 
-为了确定补丁之间是否存在语义冲突，我们需要找到变更对于代码的语义影响。
+可以发现，为了解决问题\ref {origin}的第二点，我们主要需要从代码中挖掘中两类信息：
+\begin{enumerate}
+	\item 代码的变更集合，即两个版本之间代码的差异性。用于进行问题规约。
+	\item 变更的影响集合，即变更集合对代码中其他哪些部分会造成影响。用于确定变更造成的语义影响。
+\end{enumerate}
+
+在有了这两类集合之后，我们就可以界定出软件变更在语义层面上对代码的语义影响域，我们可以将这整个过程称为语义影响域分析（Semantic Impacted Area Analysis）。
+
+下面首先给出语义影响域的概念。
 
 \begin{definition}
 	程序结构——指程序的基础语法结构，包括类、方法、基本块、语句等不同级别。
@@ -194,21 +204,13 @@
 	语义影响域（Sematic Impated Area）——在程序的某个限定范围中，直接或间接受到变更影响的程序结构集合。
 \end{definition}
 
-可见，语义影响域描述了变更对于程序中其他部分的影响。为了更清楚的理解，下面给出影响域的形式化定义。
+可见，语义影响域描述了变更对于程序中其他部分的语义影响。为了更清楚的理解，下面给出影响域的形式化定义。
 
 \begin{definition}
-	$impact: Patch \times Code \mapsto {Structure}$。$impact(p_m, v_k) = \{ \forall structure_j \subset Struct(v_k) \mid structure_j = im(sturcture_i), \exists change(structure_i) \subset p_m,structure_i,\subset Struct(v_k),v_k \subset Code,p_m \subset Pat(v_k), i,j,k,m \subset \mathbb{N} \}$。该函数用于描述补丁$p_m$对于其所应用的某个版本代码$v_k$的影响域。
+	$impact: Patch \times Code \mapsto \{Structure\}$。$impact(p_m, v_k) = \{ \forall structure_j \subset Struct(v_k) \mid structure_j = im(sturcture_i), \exists change(structure_i) \subset p_m,structure_i,\subset Struct(v_k),v_k \subset Code,p_m \subset Pat(v_k), i,j,k,m \subset \mathbb{N} \}$。该函数用于描述补丁$p_m$对于其所应用的某个版本代码$v_k$的影响域。
 \end{definition}
 
-可以发现，为了解决问题\ref {compatible_formal}，我们主要需要从代码中挖掘中两类信息：
-\begin{enumerate}
-	\item 代码的变更集合，即两个版本之间代码的差异性。
-	\item 变更的影响集合，即变更集合对代码中其他哪些部分会造成影响。
-\end{enumerate}
-
-在有了这两类集合之后，我们就可以界定出软件变更在语义层面上对代码的语义影响域，我们可以将这整个过程称为语义影响域分析（Semantic Impacted Area Analysis）。
-
-根据问题\ref {compatible_formal}中的描述，语义影响域分析可以划分为两个子过程：
+为了挖掘出这两类信息，可以将语义影响域分析划分为两个子过程：
 \begin{enumerate}
 	\item 程序间差异性分析：获取两个软件版本间的差异性，获得结构化的软件变更信息。该分析过程即为$diff(v_1,v_2)$函数的具体实现。
 	\item 变更影响分析：分析软件变更对软件其他部分是否存在影响，并找到受影响的集合。该分析过程即为$impact(p_1,v_1)$函数的具体实现。
@@ -217,7 +219,7 @@
 我们可以将整个语义影响域分析过程定义为如下的函数：
 
 \begin{definition}
-	$s = ia(v_i,v_j) = impact(diff(v_i,v_j),v_i),i \subset \mathbb{N}, j \subset \mathbb{N}$
+	$ia: Code \times Code \mapsto {Structure}$。$s = ia(v_i,v_j) = impact(diff(v_i,v_j),v_i),i,j \subset \mathbb{N}$。该分析过程先将版本演进的过程转化为补丁，再去计算补丁对程序代码的语义影响域。
 \end{definition}
 
 通过语义影响域分析，我们就可以从代码中挖掘出所需要的变更影响信息，从而可以进行后续的分析工作。
@@ -241,7 +243,7 @@
 
 在实际情况中，不同级别的影响范围均可分别采用不同的影响元素级别。
 
-在有了软件变更的语义影响域之后，我们可以通过简单地比较两个补丁对代码的影响范围是否存在重叠来判定其是否发生了语义冲突。因此可以给出更详细的语义冲突的定义。
+在有了软件变更的语义影响域之后，我们可以通过简单地比较两个补丁对代码的影响域是否存在重叠来判定其是否发生了语义冲突。因此可以给出更详细的语义冲突的定义。
 
 \begin{definition}
 	\label {define_conflict}
@@ -263,57 +265,108 @@
 
 实际上这样的影响是否能够兼容还需要人工的判定，因为在不同的情况下，他们可能是兼容的，也可能是不兼容的。而我们无法从代码中获取到足够的信息来进行这样的判定，需要人类对于变更的期望信息作为辅助。
 
-我们可以将这个过程定义为如下类型的函数。可见，我们采用了$isCompatible(p_i,p_j)$函数来作为$conflict(p_i,p_j)$的具体实现。
+我们可以将这个过程定义为如下类型的函数，并称之为冲突分析。可见，我们采用了$isCompatible(s_i,s_j)$函数来作为$conflict(p_i,p_j)$的具体实现。
 
 \begin{definition}
-	$isCompatible(p_i,p_j) : Patch \times Patch \mapsto Boolean$。其中$conflict(p_i,p_j) = isCompatible(p_i,p_j),i,j \subset \mathbb{N}$。
+	$isCompatible(s_i,s_j) : 、\{Structure\} \times \{Structure\} \mapsto Boolean$。其中$conflict(p_i,p_j) = isCompatible(impact(p_i,v_i),impact(p_j,v_j)),i,j \subset \mathbb{N}$。
 \end{definition}
 
-显然，可以发现，问题\ref {compatible_formal}的核心在于：
+显然，可以发现，对于问题\ref {origin}的第二点，其核心在于：
 \begin{itemize}
-	\item 如何规约该问题？即$diff(v_i,v_j)$函数的实现。
-	\item 如何计算影响域？即$impact(p_i,v_k)$函数的实现。
-	\item 如何判定发生了冲突？即$conflict(p_i,p_j)$函数的实现。
+	\item 如何规约该问题并计算影响域？即$diff(v_i,v_j)$和即$impact(p_i,v_k)$函数的具体实现。也就是整个语义影响域分析的过程。
+	\item 如何判定发生了冲突？即$conflict(p_i,p_j)$函数的实现。也就是整个冲突分析的过程。
 \end{itemize}
 
+
 \section{解决方案}
+\label {problem_solve}
 
 考虑前两节中所提到的应用场景和对问题的分析，我们可以给出一个通用的解决方案来解决整个兼容性问题的判定。
 
 \subsection{整体架构}
+\label {problem_all}
 
-可见，问题\ref{compatible}的解决主要需要采用对应的解决方法分别解决三个子问题，最后将再将其组合起来即可，是一个应用了分治法的解决方案。
+根据章节\ref {problem_analysis}中的问题分析，实际上整个问题\ref {origin}的解决过程可以参考图\ref {all_flow}。其输入输出的描述参考表\ref {all_io}。
 
+可见，整个解决方案的实现过程包括三个过程：
+\begin{itemize}
+	\item 补丁应用过程。即$merge$函数的实现过程。
+	\item 语义影响域分析过程。即$diff$函数和$impact$函数的实现过程。
+	\item 冲突分析过程。即$conflict$函数的实现过程。
+\end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{chap03_all_flow_2}
+	\caption {解决方案}
+	\label {all_flow}	
+\end{figure}
 
-可见，本文中给出了一个通用的补丁兼容性分析解决方案，可以通过更改相应的分析模块来提高解决方案的普遍适用性。解决方案中所涉及到的各个分析模块都可以更改其核心算法，采取不同的分析算法来完成相应的任务。
+\begin{table}[H]
+	\caption{输入输出对照表}
+	\label{all_io}
+	\centering
+	\begin{tabular}{lc}
+		\toprule[1.5pt]
+		{\heiti 输入输出} & {\heiti 描述}\\\midrule[1pt]
+		$v_1$ & 旧版本源代码，待检测的对象 \\
+		$v_2$ & 新版本源代码 \\
+		$v_3$ & 将补丁$p_2$应用于版本$v_2$后的源代码 \\
+		$v_4$ & 将补丁$p_2$中的变更应用于版本$v_1$后的源代码 \\
+		$p_2$ & 适用于$v_2$的补丁，待检测的对象 \\
+		$s_1$ & $diff(v_2,v_1)$对版本$v_2$的影响域 \\
+		$s_2$ & $diff(v_2,v_4)$对版本$v_2$的影响域 \\
+		Boolean & 是否冲突 \\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
 
 \subsection{补丁应用}
 
-如问题\ref {patch_reversion}中所述，我们可以采用常见的版本控制工具提供的三路归并算法进行补丁的版本迁移工作。具体来讲，其流程可以简述如下：
+如章节\ref {patch_app}中所述，我们可以采用常见的版本控制工具提供的三路归并算法进行补丁的版本迁移工作。具体来讲，其流程可以简述如下：
 \begin{enumerate}
-	\item 采用git进行代码的版本管理，在主分支master中提交代码版本$v_1$。
-	\item 切换到分支new，并提交新版本代码$v_2$。
 	\item 将补丁$p_1$应用到版本$v_1$，获得旧版本应用补丁后的代码，即其版本为$v_3 = patch(p_1,v_1)$。
-	\item 切换到分支patch，并提交代码版本$v_3$。
-	\item 切换回分支new，将分支patch进行入分支new，获得新版本应用补丁后的代码，其版本为$v_4$。
+	\item 采用三路归并算法实现$v_4 = merge(v_2,v_3)$过程，获得新版本应用补丁后的代码$v_4$。
 	\item 解决分支合并中可能出现的冲突问题。
 \end{enumerate}
-
 
 其中，通过三路归并算法进行的合并工作中可能会出现冲突，这说明版本$v_2$和$v_3$之间存在语法冲突，即这两个版本在语法层面上不兼容。我们可以通过人工修改的方式进行修复，实现语法层面上的兼容性。
 
 在解决冲突的过程中可以采用第三方的合并工具，利用现成工具的高效算法快速解决冲突。
 
+该补丁应用的过程主要用于解决补丁的版本适应性问题，整个过程可以用算法\ref {algo_patch}描述如下。
+
+\begin{algorithm}[H]
+	\caption{补丁应用}
+	\label{algo_patch}
+	\begin{algorithmic}[1]
+		\Require $v_1,v_2,p_1$
+		\Ensure $v_4$
+		\State $v_3 \gets patch(p_1,v_1)$
+		\State $v_4 \gets merge(v_2,v_3)$
+		\State $v_4 \gets resolve(v_4)$
+		\State\Return{$v_4$}
+		\State
+		\Function {merge}{$new,old\_patched$} 
+			\State\Return{$3-way-merge(old,new,old_patched)$}
+		\EndFunction
+		\State
+		\Function {resolve}{$version$} 
+			\State\Return{$mergetool(version)$}
+		\EndFunction		
+	\end{algorithmic}
+\end{algorithm}
+
 \subsection{语义影响域分析}
+\label {sia}
 
-如问题\ref {impacted_area}所述，我们需要进行语义影响域分析来获取两个补丁的影响范围，用于后续分析使用。
+如章节\ref {conflict}中所述，我们需要进行语义影响域分析来获取两个补丁的影响域，用于进行冲突分析使用。
 
-实际上，语义影响域分析主要分为两个分析过程，即程序间差异分析和变更影响分析，通过这两个分析的协作来完成整个语义影响范围的分析。
+实际上，语义影响域分析主要分为两个分析过程，即程序间差异分析和变更影响分析，通过这两个分析的协作来完成整个语义影响域的分析。
 
 \subsubsection{程序差异性分析}
 
-程序差异性分析主要用于分析两个不同版本的程序间的差异性，其结果即我们所需要的程序变更集合。近年来程序差异性分析方面有不少工作，实现了一些较为成熟的比较工具，我们可以使用这些工具来实现该分析过程。
+程序差异性分析是$diff$函数的实现。它主要用于分析两个不同版本的程序间的差异性，其结果即我们所需要的程序变更集合。近年来程序差异性分析方面有不少工作，实现了一些较为成熟的比较工具，我们可以使用这些工具来实现该分析过程。
 
 在本文的组合架构中，程序差异性分析的主要任务是接受两个不同版本的源代码，并返回代码间的结构化差异信息。结构化的差异信息可以视为补丁的一种，只不过它具有比常见的采用Unix diff工具生成的$.patch$类型的补丁文件更丰富的信息，能够描述以程序语法结构的形式对软件变更进行描述。
 
@@ -330,23 +383,20 @@
 
 一种比较好的选择是采用AST差异性分析，因为抽象语法树中包括了足够多的语法结构信息。
 
-该过程可以描述如图\ref {differ}。在实际过程中，Program Differ组件可以根据需要任意选择，只要其输入输出信息满足上述需求即可。图中所描述的软件变更集合可以定义如下：
-\begin{definition}
-	$ change\_set = \{ (old_i,new_i) \mid  old_i \subset Structure,new_i \subset Structure, i \subset \mathbb{N} \}$
-\end{definition}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics{chap03_differ}
-	\caption {程序间差异分析}
-	\label {differ}	
-\end{figure}
+
+%图中所描述的软件变更集合可以定义如下：
+%\begin{definition}
+%	$ change\_set = \{ (old_i,new_i) \mid  old_i \subset Structure,new_i \subset Structure, i \subset \mathbb{N} \}$
+%\end{definition}
+
+
 
 \subsubsection{变更影响分析}
 
-程序变更影响分析主要用于获取变更集合对其他程序结构的影响集合，该集合所包含的程序结构直接或间接地受到变更集合中的元素影响。近年来这方面比较成熟的工作也有不少，因而可以直接选择合适的变更影响分析算法作为该过分析过程的具体实现。
+程序变更影响分析是$impact$函数的具体实现。主要用于获取变更集合对其他程序结构的影响域，该集合所包含的程序结构直接或间接地受到变更集合中的元素影响。近年来这方面比较成熟的工作也有不少，因而可以直接选择合适的变更影响分析算法作为该过分析过程的具体实现。
 
-在本文的组合架构中，该分析过程应当接受两个不同版本代码间的变更集合作为输入，并输出变更集合所对应的影响集合，这也就是我们所需要的变更集合的语义影响范围。变更影响分析的过程可以通过控制流、数据流等信息分析出变更集合中每条变更对其他程序结构是否存在影响，并进行闭包计算即可。
+在本文的组合架构中，该分析过程应当接受两个不同版本代码间的变更集合作为输入，并输出变更集合所对应的影响集合，这也就是我们所需要的变更集合的语义影响域。变更影响分析的过程可以通过控制流、数据流等信息分析出变更集合中每条变更对其他程序结构是否存在影响，并进行闭包计算即可。
 
 本文对于该分析过程的要求如下：
 \begin{itemize}
@@ -354,73 +404,98 @@
 	\item 计算得到该变更集合所对应的影响集合。
 	\item 计算过程中可以指定受影响的范围和元素类型。
 	\item 影响集合中的元素按照其不同类型进行分类。
-	\item 具有影响追踪系统，将计算影响集合的过程进行记录。方便后续的兼容性分析过程进行回溯。
+	\item 具有影响追踪系统，将计算影响集合的过程进行记录。方便后续的冲突分析过程进行回溯。
 \end{itemize}
 
-其中影响追踪系统可以定义成如下类型的函数。该函数接受一个变更影响分析函数$ia(v_i,v_j)$，并返回对应的影响依赖关系集合。
+其中影响追踪系统可以定义成如下类型的函数。该函数接受一个影响域分析函数$ia(v_i,v_j)$，并返回对应的依赖关系集合。
 
 \begin{definition}
-	$impact\_track(ia(v_i,v_j))::(Code \rightarrow Code \rightarrow Impact Set) \rightarrow Impact Dependency$
+	$impact\_track(ia(v_i,v_j)):(Code \times Code \mapsto {Structure}) \mapsto {depend}$
 \end{definition}
 
 
-该分析过程如图\ref {impact_analyzer}所述，其中的impact analyzer组件可以任意选择某一能够满足上述要求的变更影响分析算法图中所描述的变更影响集合可以定义如下：
-\begin{definition}
-	$impact\_set = \{ (structure_i) \mid  structure_i \subset Structure, i \subset \mathbb{N}\}$
-\end{definition}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{chap03_impact}
-	\caption {程序间差异分析}
-	\label {impact_analyzer}	
-\end{figure}
+%该分析过程如图\ref {impact_analyzer}所述，其中的$impact$函数可以任意选择某一能够满足上述要求的变更影响分析算法。
+%
+%图中所描述的变更影响集合可以定义如下：
+%\begin{definition}
+%	$impact\_set = \{ (structure_i) \mid  structure_i \subset Structure, i \subset \mathbb{N}\}$
+%\end{definition}
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics{chap03_impact}
+%	\caption {程序间差异分析}
+%	\label {impact_analyzer}	
+%\end{figure}
 
 在完成了上述两项子分析过程后，我们就完成了整个语义影响域分析过程，并获得了两个不同版本代码的变更集合和对应的其语义影响范围。接下来就可以进行具体的兼容性分析工作。
 
+整个语义影响域分析过程可以用算法\ref {algo_impact}描述。
+
+\begin{algorithm}[H]
+	\caption{语义影响域分析算法}
+	\label{algo_impact}
+	\begin{algorithmic}[1]
+		\Require $v_i,v_j$	
+		\Ensure $s_i$
+		\Function {ia}{$v_i,v_j$}
+			\State $p \gets diff(v_i,v_j)$
+			\State $s \gets impact(p,v_i)$
+			\State\Return{$s_i$}
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
 \subsection{冲突分析}
 
-在冲突分析中，我们将对比两个版本代码的影响范围，确定他们是否重叠，以此为依据判断其兼容性。
+冲突分析即为$conflict$函数的具体实现。我们将对比两个版本代码的影响域，确定他们是否重叠，以此为依据判断其兼容性。
 
-理论上来讲，这种简单比对即可发现两个版本间的兼容性问题，因为一旦发生重叠，那么重叠的代码部分显然是会发生兼容性问题的。然而在实际情况中，受限于工具的精度，我们往往不能达到理论上的准确度，而可能会发生误报（false positive）等情况。
+理论上来讲，这种简单比对即可发现两个版本间的兼容性问题，因为一旦发生重叠，那么重叠的代码部分显然是会发生兼容性问题的。然而在实际情况中，受限于工具的精度，我们往往不能达到理论上的准确度，而可能会发生误报（False Positive）等情况。
 
 显然，如果重叠不存在，则兼容性是可以得到满足的。而对于如何界定重叠部分的兼容性，则需要人工分析的介入，因为这部分代码的兼容性与补丁的功能目标密切相关，而我们无法从代码中获取到这种信息，因而只有依靠外界来提供，并以此为依据进行详细分析过程，界定这部分代码是否真的存在冲突。
 
 在进行人工分析的过程中，我们不仅需要知道哪部分代码出现了重叠现象，而且还需要知道是哪些变更影响到了这部分代码，因而我们需要引入影响追踪系统来记录变更影响分析过程的轨迹。影响追踪系统可以记录下变更影响分析过程中的每一步，从而获取到程序结构间的影响关系链，事后通过回溯即可追踪到具体的软件变更可见，本过程中主要需要影响追踪系统的回溯模块的支持。
 
-可以看得出来，由于使用了更严格的冲突定义，我们的方法会造成一定的过高估计的结果。
+%可以看得出来，由于使用了更严格的冲突定义，我们的方法会造成一定的过高估计的结果。
 
 该分析过程可以参考算法\ref {algo_compatible}。
 
-\begin{algorithm}
+\begin{algorithm}[H]
 	\caption{冲突分析}
 	\label{algo_compatible}
 	\begin{algorithmic}[1]
-		\REQUIRE $s_1=ia(v_2,v_1)$,$s_2=ia(v_2,v_4)$\\
+		\Require $s_1=ia(v_2,v_1)$,$s_2=ia(v_2,v_4)$\\
 				 \quad \quad $t_1=impact\_track(ia(v_2,v_1))$, $t_2=impact\_track(ia(v_2,v_4))$
-		\ENSURE $isCompatible(diff(v_2,v_1), diff(v_2,v_4))$
-		\IF{$s_1 = \varnothing \lor s_2 = \varnothing$}
-			\STATE $result \gets True$
-		\ELSE
-			\STATE $s \gets s_1 \cap s_2$
-			\IF{$s = \varnothing$}
-				\STATE $result \gets True$
-			\ELSE				
-				\STATE $result \gets Manual\_analysis(s_1, s_2, t_1, t_2)$
-			\ENDIF 
-		\ENDIF
-		\RETURN $result$
+		\Ensure $isCompatible(diff(v_2,v_1), diff(v_2,v_4))$
+		\If{$s_1 = \varnothing \lor s_2 = \varnothing$}
+			\State $result \gets True$
+		\Else
+			\State $s \gets s_1 \cap s_2$
+			\If{$s = \varnothing$}
+				\State $result \gets True$
+			\Else				
+				\State $result \gets Manual\_analysis(s_1, s_2, t_1, t_2)$
+			\EndIf 
+		\EndIf
+		\Return $result$
 	\end{algorithmic}
 \end{algorithm}
 
-整个分析过程的架构如图\ref {isCompatible}所示。
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{chap03_isCompatible}
-	\caption {兼容性分析}
-	\label {isCompatible}	
-\end{figure}
+%整个分析过程的架构如图\ref {isCompatible}所示。
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics{chap03_isCompatible}
+%	\caption {兼容性分析}
+%	\label {isCompatible}	
+%\end{figure}
 
 
 \section{本章小结}
+本章主要介绍了软件补丁兼容性检测所关注的主要问题以及如何解决该问题。
+
+章节\ref {define_problem}介绍了问题定义。
+
+章节\ref {problem_analysis}中对问题进行了深入分析和讨论，提出了解决该问题所需要做的分析工作。
+
+章节\ref {problem_solve}介绍了如何将前一节中提到的分析方法进行整合，形成一套通用解决方案，同时还对其中每个分析方法所需要遵守的约定和算法进行了描述。
