@@ -127,11 +127,12 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 
 
 在版本合并的过程中，我们检测到的待解决冲突数量可以参见表\ref {data_git_merge}。通过Beyond Compare工具，这些冲突都能够得到解决。
-可以发现，冲突最少的是版本4.3.x，这可能是由于版本4.3到版本4.3.2的升级过程改动较少而造成的。而对于版本4.4.x来说，冲突数量陡增，这可能是由于版本升级较大的缘故。
+
+根据图\ref {data_merge}可以发现，冲突最少的是版本4.3.x，几乎为0\%，这可能是由于版本4.3到版本4.3.2的升级过程改动较少而造成的。而对于版本4.4.x来说，冲突百分比甚至高达20\%至30\%，这可能是由于版本升级较大的缘故。
 %根据实验结果，这些冲突95\%以上都可以采用Beyond Compare工具中推荐的方案进行解决，只有极少部分代码需要进行手工解决。
 
 \begin{table}
-	\caption{版本合并结果结果}
+	\caption{版本合并结果}
 	\label{data_git_merge}
 	\centering
 	\begin{tabular}{llcc}
@@ -148,6 +149,13 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{merge1}
+	\caption {版本合并结果}
+	\label {data_merge}	
+\end{figure}
+
 
 \begin{figure}[H]
 	\centering
@@ -156,7 +164,12 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\label {exp_git_merge}	
 \end{figure}
 
-在实际操作过程中，由于后续的影响域分析模块需要提供Java代码编译后产生的Class文件，我们对于合并后的版本$v_4$还需要进行编译。实验过程中，绝大多数的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。该部分数据可以参考表\ref {data_git_merge2}。对比编译过程中的错误数据与版本合并中的冲突数据，可见二者的变化过程是较为吻合的。
+在实际操作过程中，由于后续的影响域分析模块需要提供Java代码编译后产生的Class文件，我们对于合并后的版本$v_4$还需要进行编译。实验过程中，绝大多数的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。该部分数据可以参考表\ref {data_git_merge2}。
+
+同样，从图\ref {data_compile}可以看出，编译失败的文件，其所占的百分比很低。
+
+
+参考图\ref {data_merge_compile}，对比编译过程中的失败数据与版本合并中的冲突数据，可见二者的变化过程是较为吻合的。
 
 \begin{table}
 	\caption{编译结果}
@@ -175,6 +188,22 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{merge2}
+	\caption {编译结果}
+	\label {data_compile}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{merge}
+	\caption {编译结果}
+	\label {data_merge_compile}	
+\end{figure}
+
+
 
 如上所述，我们的版本迁移模块是可用且有效的。
 
@@ -211,7 +240,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 
 在差异性分析模块中，我们比较关注预处理算法的结果以及能够成功完成差异性分析的文件数量。
 
-对于预处理算法而言，实验结果如表\ref {data_differ_1}所示。
+对于预处理算法而言，实验结果如表\ref {data_differ_1}和图\ref {differ1}所示。
 
 \begin{table}[H]
 	\caption{Program Differ结果}
@@ -231,9 +260,16 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{differ1}
+	\caption {编译结果}
+	\label {differ1}	
+\end{figure}
+
 可见，我们的预处理算法对原有的ASTro工具的直接输出结果进行了有效的过滤。预处理算法的好处在之后的影响分析模块中体现得更为明显。
 
-整个差异性分析模块的输出结果如表\ref {data_differ_2}和表\ref {data_differ_3}所述。
+整个差异性分析模块的输出结果如表\ref {data_differ_2}和表\ref {data_differ_3}所述。更直观的输出结果可以参考图\ref {differ2}和\ref {differ3}。
 
 \begin{table}[H]
 	\caption{Program Differ结果}
@@ -253,6 +289,13 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{differ2}
+	\caption {编译结果}
+	\label {差异性分析模块}	
+\end{figure}
+
 \begin{table}[H]
 	\caption{Program Differ结果}
 	\label{data_differ_3}
@@ -271,6 +314,13 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{differ3}
+	\caption {差异性分析模块}
+	\label {differ3}	
+\end{figure}
+
 可见，绝大多数的文件都能够成功的进行差异性分析。
 
 
@@ -287,7 +337,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\centering
 	\begin{tabular}{llcc}
 		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti $v_2$} & {\heiti 分析结果数}  \\\midrule[1pt]
+		{\heiti 代码} & {\heiti $v_2$} & {\heiti 成功分析数}  \\\midrule[1pt]
 		Eclipse JDT Core & 4.4	 & 881	\\
 		Eclipse JDT Core & 4.4.2 & 892 	\\
 		Eclipse JDT Core & 4.3	 & 930		\\
@@ -299,6 +349,15 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
+综合考虑其输入数据的数量进行对比，其结果如图\ref {impact1}所示。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{impact1}
+	\caption {影响分析模块}
+	\label {impact1}	
+\end{figure}
+
 对$impact(diff(v_2,v_4),v_2)$过程而言，应用影响分析模块后，分析结果如表\ref {data_impact_2}所述。
 
 \begin{table}[H]
@@ -307,7 +366,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\centering
 	\begin{tabular}{llcc}
 		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti $v_2$} & {\heiti 分析结果数}  \\\midrule[1pt]
+		{\heiti 代码} & {\heiti $v_2$} & {\heiti 成功分析数}  \\\midrule[1pt]
 		Eclipse JDT Core & 4.4	 & 881	\\
 		Eclipse JDT Core & 4.4.2 & 892	 	\\
 		Eclipse JDT Core & 4.3	 & 930			\\
@@ -318,6 +377,15 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
+
+综合考虑其输入数据的数量进行对比，其结果如图\ref {impact2}所示。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{impact2}
+	\caption {影响分析模块}
+	\label {impact2}	
+\end{figure}
 
 
 \subsection{冲突判定模块}
@@ -342,7 +410,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
-然而，在不使用预处理器的情况下，实验结果如表\ref {data_compatible_2}所示。
+然而，在不使用预处理算法的情况下，实验结果如表\ref {data_compatible_2}所示。
 
 \begin{table}[H]
 	\caption{分析结果}
@@ -362,9 +430,16 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\end{tabular}
 \end{table}
 
-如表所示，误报的影响域重叠数量陡增，这主要是由于差异性分析模块的误差所导致的。可见，选择正确的差异性分析算法对于后续分析过程而言极为重要，前置模块的误差会在后续模块的结果中得到显著的体现。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\columnwidth]{conflict1}
+	\caption {冲突判定模块}
+	\label {conflict_data}	
+\end{figure}
 
-同时可以发现，由于运用了预处理算法，这里找到的冲突结果都是由于对不同行的变更影响到了相同的代码行而被挖掘出来的。事实上，如果存在对同一代码行的变更，其所导致的变更在版本合并的过程中就会暴露出来。
+如图\ref {conflict_data}所示，不使用预处理算法时误报的影响域重叠数量陡增，这主要是由于差异性分析模块的误差所导致的。可见，选择正确的差异性分析算法对于后续分析过程而言极为重要，前置模块的误差会在后续模块的结果中得到显著的体现。
+
+由于运用了预处理算法，这里找到的冲突结果都是由于针对不同行的变更影响到了相同的代码行而被挖掘出来的。事实上，如果存在对同一代码行的变更，它所导致的变更在版本合并的过程中就会暴露出来。
 
 从以上结果中可以发现，对本文中所提出的兼容性检测工具而言：
 \begin{itemize}
@@ -373,9 +448,10 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 	\item 确实能够找到补丁间的语义冲突。这些语义冲突分散并深藏在上千个文件的代码中，很难直接被肉眼所发现。
 	\item 目前能够找到的语义冲突数量较少，这可能是由于：
 		\begin{itemize}
-			\item 确实只有少量语义冲突存在。
-			\item 可能受限于工具的精度不够高、分析的变更影响范围不够广等因素。有待以后的工作中做进一步的实验。
+			\item 确实只有少量语义冲突存在
+			\item 可能受限于工具的精度不够高、分析的变更影响范围不够广等因素
 		\end{itemize}
+		具体是哪种情况还有待以后做进一步的分析。虽然不排除语义冲突的数量确实很少的情况，但本文认为第二种情况的可能性更高。
 \end{itemize}
 
 因此，本文中所实现的兼容性检测工具对于工业界的实际问题来说是可用的、正确的，然而其实用性还有待进一步的提高。
