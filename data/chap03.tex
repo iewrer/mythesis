@@ -36,12 +36,12 @@
 	\item 补丁程序中所提及的文件未找到。
 \end{enumerate}
 
-由于有这些可能的问题存在，导致我们无法直接将补丁程序应用到其他版本的补丁上。因此，我们考虑如何去解决问题\ref {origin}的第一点。
+由于有这些可能的问题存在，导致我们无法直接将补丁程序应用到其他版本的补丁上。因此，我们考虑如何去解决问题\ref {origin}的第一点:
 
-\begin{problem}
-	\label {patch_reversion}
+%\begin{problem}
+%	\label {patch_reversion}
 	由于补丁p针对版本$v_{1}$设计，当尝试将其应用到版本$v_{2}$上时，可能会出现程序语法结构上的错误。如何将p成功应用到版本$v_{2}$上，使得该过程不会出现引入程序语法错误？
-\end{problem}
+%\end{problem}
 
 为了更清楚的描述，我们可以将其进一步形式化定义如下：
 
@@ -50,7 +50,7 @@
 \end{definition}
 
 \begin{definition}
-	$Patch$——指补丁。
+	$Patch$——指补丁，即变更的集合。
 \end{definition}
 
 \begin{definition}
@@ -65,10 +65,10 @@
 	$compile: Code \mapsto Boolean$。compile函数用于表示对源代码的编译过程，如果成功编译则表示源代码中没有语法错误。
 \end{definition}
 
-\begin{problem}
+\begin{definition}
 	\label {app_formal}
 	给定$p_i$，$v_k$，问$p_i \not \subset Pat(v_k)$时，能否使得$compile(patch(p_i,v_k)) == True$？其中$p_i \subset Patch,v_k \subset Code,i,k \subset \mathbb{N}$。
-\end{problem}
+\end{definition}
 
 可见，要解决问题\ref {origin}的第一点，其核心在于如何给出合适的$patch(p_i,v_k)$函数。
 
@@ -85,14 +85,14 @@
 	$diff : Code \times Code \mapsto Patch$。其中$p = diff(v_i,v_j) \iff patch(p,v_i) = v_j,i,j \subset \mathbb{N},p \subset Pat(v_i)$。该函数用于求解两个不同版本的程序$v_i$和$v_j$之间的差异性，其结果即为补丁p。
 \end{definition}
 
-从问题\ref {origin}中可以发现，$p_{1} = diff(v_{1},v_{3})$。如果同样给定$p_{2} = diff(v_{1},v_{2})$，并且已经解决了问题\ref {app_formal}，那么，如何检测补丁在应用于新版本之后是否会与该版本代码产生冲突这一问题就可以规约如下。
+从问题\ref {origin}中可以发现，$p_{1} = diff(v_{1},v_{3})$。如果同样给定$p_{2} = diff(v_{1},v_{2})$，并且已经解决了问题\ref {origin}的第一点，那么，对于问题\ref {origin}的第二点而言，如何检测补丁在应用于新版本之后是否会与该版本代码产生冲突就可以规约如下:
 
-\begin{problem}
-	\label {compatible}
+%\begin{problem}
+%	\label {compatible}
 	给定针对某同一版本代码$v_k$的补丁$p_i$和$p_j$，问分别应用于$v_k$之后，这两个补丁对于该版本代码的语义影响是否会产生冲突？
-\end{problem}
+%\end{problem}
 
-这样一来，问题的实质就清楚了。显然，该问题是由于两个补丁同时对同一版本代码造成了语义影响而造成的。那么为了回答这个问题，我们需要明确的知道到底什么是补丁对代码的影响，以及什么是冲突？
+这样一来，问题的实质就清楚了。显然，该问题是由于两个补丁同时对同一版本代码造成了语义影响而造成的。那么为了回答这个问题，我们需要明确的知道到底什么是补丁对代码的语义影响，以及什么是冲突？
 
 本文首先讨论什么是补丁对代码的语义影响。
 
@@ -134,7 +134,7 @@
 下面给出其形式化的定义。
 
 \begin{definition}
-	$Change$——指变更。$Patch = {Change}$。
+	$Change$——指变更。$Patch = \{Change\}$。
 \end{definition}
 
 \begin{definition}
@@ -148,9 +148,15 @@
 
 在有了语义影响和冲突的定义之后，问题\ref {origin}的第二点就可以形式化的描述如下：
 
-\begin{problem}
-	\label {compatible_formal}
+%\begin{problem}
+%	\label {compatible_formal}
 	给定$v_k \subset Code, p_i,p_j \subset Pat(v_k),i,j,k \subset \mathbb{N}$，问是否有$conflict(p_i,p_j) == True$？
+%\end{problem}
+
+因此，问题\ref {origin}可以形式化的定义如问题\ref {origin_formal}所示。
+\begin{problem}
+	\label {origin_formal}
+	给定$p_i,v_k,v_m$，问当$p_i \not \subset Pat(v_k)$时，如果能够使得$compile(patch(p_i,v_k)) == True$，并且$\exists p_j = diff(v_k,v_m)$，那么是否有$conflict(p_i,p_j) == True$？其中$p_i \subset Patch,p_j \subset Pat(v_k),v_k,v_m \subset Code,i,j,k,m \subset \mathbb{N}$。
 \end{problem}
 
 \section{问题分析}
@@ -177,7 +183,7 @@
 
 \begin{figure}[H]	
 	\centering
-	\includegraphics[width=.8\columnwidth]{chap03_git_branch}
+	\includegraphics[height=.6\columnwidth]{chap03_git_branch}
 	\caption {git分支切换与合并}	
 	\label {git_branch}
 \end{figure}
@@ -207,7 +213,7 @@
 可见，语义影响域描述了变更对于程序中其他部分的语义影响。为了更清楚的理解，下面给出影响域的形式化定义。
 
 \begin{definition}
-	$impact: Patch \times Code \mapsto \{Structure\}$。$impact(p_m, v_k) = \{ \forall structure_j \subset Struct(v_k) \mid structure_j = im(sturcture_i), \exists change(structure_i) \subset p_m,structure_i,\subset Struct(v_k),v_k \subset Code,p_m \subset Pat(v_k), i,j,k,m \subset \mathbb{N} \}$。该函数用于描述补丁$p_m$对于其所应用的某个版本代码$v_k$的影响域。
+	$impact: Patch \times Code \mapsto \{Structure\}$。$impact(p_m, v_k) = \{ \forall structure_j \subset Struct(v_k) \mid structure_j = im(sturcture_i) \land (change(structure_i) \subset p_m \lor structure_i \subset impact(p_m,v_k)),structure_i,structure_j \subset Struct(v_k),v_k \subset Code,p_m \subset Pat(v_k), i,j,k,m \subset \mathbb{N} \}$。该函数用于描述补丁$p_m$对于其所应用的某个版本代码$v_k$的影响域。其中可以将影响关系$im$限定在不同$Structure$类型的范围内。
 \end{definition}
 
 为了挖掘出这两类信息，可以将语义影响域分析划分为两个子过程：
@@ -224,7 +230,7 @@
 
 通过语义影响域分析，我们就可以从代码中挖掘出所需要的变更影响信息，从而可以进行后续的分析工作。
 
-事实上，可以将程序中受变更影响的部分划分为不同的粒度，从而获得不同程度的影响，我们考虑对面向对象的编程方法中的影响元素级别进行划分：
+事实上，可以将程序中受变更影响的部分划分为不同的粒度，从而获得不同程度的影响\cite{petrenko2009variable}，我们考虑对面向对象的编程方法中的影响元素级别进行划分：
 
 \begin{enumerate}
 	\item 类：探讨变更对于其他类和对象的影响。对于面向对象的程序设计方法而言，这是最高级别的粒度。
@@ -263,9 +269,9 @@
 
 如果影响域发生了重叠，那么我们就可以认为补丁之间是不相容的，因为补丁所作的变更会对相同的程序结构产生影响。
 
-实际上这样的影响是否能够兼容还需要人工的判定，因为在不同的情况下，他们可能是兼容的，也可能是不兼容的。而我们无法从代码中获取到足够的信息来进行这样的判定，需要人类对于变更的期望信息作为辅助。
+实际上这样的影响是否能够兼容还需要人工的判定，因为在不同的情况下，他们可能是兼容的，也可能是不兼容的。而我们无法从代码中获取到足够的信息来进行这样的判定，需要外界对于变更的期望信息作为辅助。
 
-我们可以将这个过程定义为如下类型的函数，并称之为冲突分析。可见，我们采用了$isCompatible(s_i,s_j)$函数来作为$conflict(p_i,p_j)$的具体实现。
+我们可以将这个过程定义为如下类型的函数，并称之为冲突分析。可见，我们实际上是采用了$isCompatible(s_i,s_j)$函数来作为$conflict(p_i,p_j)$的具体实现。
 
 \begin{definition}
 	$isCompatible(s_i,s_j) : 、\{Structure\} \times \{Structure\} \mapsto Boolean$。其中$conflict(p_i,p_j) = isCompatible(impact(p_i,v_i),impact(p_j,v_j)),i,j \subset \mathbb{N}$。
@@ -297,7 +303,7 @@
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.8\columnwidth]{chap03_all_flow_2}
+	\includegraphics[height=.6\columnwidth]{chap03_all_flow_2}
 	\caption {解决方案}
 	\label {all_flow}	
 \end{figure}
@@ -404,7 +410,7 @@
 	\item 计算得到该变更集合所对应的影响集合。
 	\item 计算过程中可以指定受影响的范围和元素类型。
 	\item 影响集合中的元素按照其不同类型进行分类。
-	\item 具有影响追踪系统，将计算影响集合的过程进行记录。方便后续的冲突分析过程进行回溯。
+	\item 具有影响追踪系统，将计算影响域的过程进行记录。方便后续的冲突分析过程进行回溯。
 \end{itemize}
 
 其中影响追踪系统可以定义成如下类型的函数。该函数接受一个影响域分析函数$ia(v_i,v_j)$，并返回对应的依赖关系集合。
@@ -437,11 +443,11 @@
 	\label{algo_impact}
 	\begin{algorithmic}[1]
 		\Require $v_i,v_j$	
-		\Ensure $s_i$
+		\Ensure $s$
 		\Function {ia}{$v_i,v_j$}
 			\State $p \gets diff(v_i,v_j)$
 			\State $s \gets impact(p,v_i)$
-			\State\Return{$s_i$}
+			\State\Return{$s$}
 		\EndFunction
 	\end{algorithmic}
 \end{algorithm}
@@ -450,7 +456,7 @@
 
 冲突分析即为$conflict$函数的具体实现。我们将对比两个版本代码的影响域，确定他们是否重叠，以此为依据判断其兼容性。
 
-理论上来讲，这种简单比对即可发现两个版本间的兼容性问题，因为一旦发生重叠，那么重叠的代码部分显然是会发生兼容性问题的。然而在实际情况中，受限于工具的精度，我们往往不能达到理论上的准确度，而可能会发生误报（False Positive）等情况。
+理论上来讲，这种简单比对即可发现两个版本间的兼容性问题，因为一旦发生重叠，那么重叠的代码部分显然是会发生兼容性问题的。然而在实际情况中，受限于工具的精度，我们往往不能达到理论上的准确度，而可能会发生误报（False Negative）等情况。
 
 显然，如果重叠不存在，则兼容性是可以得到满足的。而对于如何界定重叠部分的兼容性，则需要人工分析的介入，因为这部分代码的兼容性与补丁的功能目标密切相关，而我们无法从代码中获取到这种信息，因而只有依靠外界来提供，并以此为依据进行详细分析过程，界定这部分代码是否真的存在冲突。
 

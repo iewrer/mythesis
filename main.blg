@@ -5,53 +5,61 @@ A level-1 auxiliary file: data/chap01.aux
 A level-1 auxiliary file: data/chap02.aux
 A level-1 auxiliary file: data/chap03.aux
 A level-1 auxiliary file: data/chap04.aux
-A level-1 auxiliary file: data/chap05.aux
 A level-1 auxiliary file: data/chap06.aux
 A level-1 auxiliary file: data/chap07.aux
 The style file: thubib.bst
 A level-1 auxiliary file: data/ack.aux
 A level-1 auxiliary file: data/resume.aux
-I found no \citation commands---while reading file main.aux
 Database file #1: ref/refs.bib
-You've used 0 entries,
+Repeated entry---line 139 of file ref/refs.bib
+ : @inproceedings{de2008traceability
+ :                                  ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "havelund2000mode"
+Warning--there's a publisher but no address in pigoski1996practical
+Warning--there's a publisher but no address in hunt1976algorithm
+Warning--empty journal in bohner1996software
+Warning--can't use both volume and number fields in ren2004chianti
+Warning--can't use both volume and number fields in person2011directed
+You've used 30 entries,
             2255 wiz_defined-function locations,
-            547 strings with 4243 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            719 strings with 9532 characters,
+and the built_in function-call counts, 15839 in all, are:
+= -- 1674
+> -- 357
+< -- 20
++ -- 166
+- -- 83
+* -- 1154
+:= -- 2050
+add.period$ -- 94
+call.type$ -- 30
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 35
+duplicate$ -- 1127
+empty$ -- 1607
+format.name$ -- 108
+if$ -- 3706
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 30
+missing$ -- 32
+newline$ -- 200
+num.names$ -- 30
+pop$ -- 148
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 344
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 2026
+swap$ -- 163
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
+warning$ -- 5
+while$ -- 177
+width$ -- 32
+write$ -- 392
 (There was 1 error message)

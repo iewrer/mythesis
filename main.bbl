@@ -1,3 +1,223 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{lehnert2011review}
+Lehnert S.
+\newblock A review of software change impact analysis.
+\newblock Ilmenau University of Technology, Tech. Rep, 2011.
+\thudot
+
+\bibitem{pigoski1996practical}
+Pigoski T~M.
+\newblock Practical software maintenance: best practices for managing your
+  software investment.
+\newblock John Wiley \& Sons, Inc., 1996
+\thudot
+
+\bibitem{le2014patch}
+Le W, Pattison S~D.
+\newblock Patch verification via multiversion interprocedural control flow
+  graphs.
+\newblock  Proceedings of the 36th International Conference on Software
+  Engineering. ACM, 2014.
+\newblock  1047--1058
+\thudot
+
+\bibitem{hunt1976algorithm}
+Hunt J~W, MacIlroy M.
+\newblock An algorithm for differential file comparison.
+\newblock Bell Laboratories, 1976
+\thudot
+
+\bibitem{buckley2005towards}
+Buckley J, Mens T, Zenger M, et~al.
+\newblock Towards a taxonomy of software change.
+\newblock Journal of Software Maintenance and Evolution: Research and Practice,
+  2005, 17(5):309--332
+\thudot
+
+\bibitem{wilkerson2012software}
+Wilkerson J~W.
+\newblock A software change impact analysis taxonomy.
+\newblock  Software Maintenance (ICSM), 2012 28th IEEE International Conference
+  on. IEEE, 2012.
+\newblock  625--628
+\thudot
+
+\bibitem{tao2012software}
+Tao Y, Dang Y, Xie T, et~al.
+\newblock How do software engineers understand code changes?: an exploratory
+  study in industry.
+\newblock  Proceedings of the ACM SIGSOFT 20th International Symposium on the
+  Foundations of Software Engineering. ACM, 2012.
+\newblock ~51
+\thudot
+
+\bibitem{kim2013identifying}
+Kim M, Notkin D, Grossman D, et~al.
+\newblock Identifying and summarizing systematic code changes via rule
+  inference.
+\newblock Software Engineering, IEEE Transactions on, 2013, 39(1):45--62
+\thudot
+
+\bibitem{lahiri2010differential}
+Lahiri S~K, Vaswani K, Hoare C~A.
+\newblock Differential static analysis: opportunities, applications, and
+  challenges.
+\newblock  Proceedings of the FSE/SDP workshop on Future of software
+  engineering research. ACM, 2010.
+\newblock  201--204
+\thudot
+
+\bibitem{winstead2003towards}
+Winstead J, Evans D.
+\newblock Towards differential program analysis.
+\newblock  Proc. ICSE 2003 Workshop on Dynamic Analysis, 2003.
+\newblock  37--40
+\thudot
+
+\bibitem{fluri2007change}
+Fluri B, Wursch M, PInzger M, et~al.
+\newblock Change distilling: Tree differencing for fine-grained source code
+  change extraction.
+\newblock Software Engineering, IEEE Transactions on, 2007, 33(11):725--743
+\thudot
+
+\bibitem{gall2009change}
+Gall H~C, Fluri B, Pinzger M.
+\newblock Change analysis with evolizer and changedistiller.
+\newblock IEEE Software, 2009, 26(1):26--33
+\thudot
+
+\bibitem{li2013survey}
+Li B, Sun X, Leung H, et~al.
+\newblock A survey of code-based change impact analysis techniques.
+\newblock Software Testing, Verification and Reliability, 2013, 23(8):613--646
+\thudot
+
+\bibitem{acharya2011practical}
+Acharya M, Robinson B.
+\newblock Practical change impact analysis based on static program slicing for
+  industrial software systems.
+\newblock  Proceedings of the 33rd international conference on software
+  engineering. ACM, 2011.
+\newblock  746--755
+\thudot
+
+\bibitem{de2008traceability}
+De~Lucia A, Fasano F, Oliveto R.
+\newblock Traceability management for impact analysis.
+\newblock  Frontiers of Software Maintenance, 2008. FoSM 2008. IEEE, 2008.
+\newblock  21--30
+\thudot
+
+\bibitem{law2003incremental}
+Law J, Rothermel G.
+\newblock Incremental dynamic impact analysis for evolving software systems.
+\newblock  Software Reliability Engineering, 2003. ISSRE 2003. 14th
+  International Symposium on. IEEE, 2003.
+\newblock  430--441
+\thudot
+
+\bibitem{bohner1996software}
+Bohner S~A.
+\newblock Software change impact analysis.
+\newblock 1996.
+\thudot
+
+\bibitem{bohner2002software}
+Bohner S~A.
+\newblock Software change impacts-an evolving perspective.
+\newblock  Software Maintenance, 2002. Proceedings. International Conference
+  on. IEEE, 2002.
+\newblock  263--272
+\thudot
+
+\bibitem{biggerstaff1993concept}
+Biggerstaff T~J, Mitbander B~G, Webster D.
+\newblock The concept assignment problem in program understanding.
+\newblock  Proceedings of the 15th international conference on Software
+  Engineering. IEEE Computer Society Press, 1993.
+\newblock  482--498
+\thudot
+
+\bibitem{sun2012comparative}
+Sun X, Li B, Li B, et~al.
+\newblock A comparative study of static cia techniques.
+\newblock  Proceedings of the Fourth Asia-Pacific Symposium on Internetware.
+  ACM, 2012.
+\newblock ~23
+\thudot
+
+\bibitem{kagdi2007survey}
+Kagdi H, Collard M~L, Maletic J~I.
+\newblock A survey and taxonomy of approaches for mining software repositories
+  in the context of software evolution.
+\newblock Journal of Software Maintenance and Evolution: Research and Practice,
+  2007, 19(2):77--131
+\thudot
+
+\bibitem{law2003whole}
+Law J, Rothermel G.
+\newblock Whole program path-based dynamic impact analysis.
+\newblock  Software Engineering, 2003. Proceedings. 25th International
+  Conference on. IEEE, 2003.
+\newblock  308--318
+\thudot
+
+\bibitem{ren2004chianti}
+Ren X, Shah F, Tip F, et~al.
+\newblock Chianti: a tool for change impact analysis of java programs.
+\newblock  ACM Sigplan Notices, volume~39. ACM, 2004.
+\newblock  432--448
+\thudot
+
+\bibitem{buckner2005jripples}
+Buckner J, Buchta J, Petrenko M, et~al.
+\newblock Jripples: A tool for program comprehension during incremental change.
+\newblock  IWPC, volume~5, 2005.
+\newblock  149--152
+\thudot
+
+\bibitem{rajlich2004incremental}
+Rajlich V, Gosavi P.
+\newblock Incremental change in object-oriented programming.
+\newblock Software, IEEE, 2004, 21(4):62--69
+\thudot
+
+\bibitem{zimmermann2005mining}
+Zimmermann T, Zeller A, Weissgerber P, et~al.
+\newblock Mining version histories to guide software changes.
+\newblock Software Engineering, IEEE Transactions on, 2005, 31(6):429--445
+\thudot
+
+\bibitem{person2011directed}
+Person S, Yang G, Rungta N, et~al.
+\newblock Directed incremental symbolic execution.
+\newblock  ACM SIGPLAN Notices, volume~46. ACM, 2011.
+\newblock  504--515
+\thudot
+
+\bibitem{rungta2012change}
+Rungta N, Person S, Branchaud J.
+\newblock A change impact analysis to characterize evolving program behaviors.
+\newblock  Software Maintenance (ICSM), 2012 28th IEEE International Conference
+  on. IEEE, 2012.
+\newblock  109--118
+\thudot
+
+\bibitem{yang2014directed}
+Yang G, Person S, Rungta N, et~al.
+\newblock Directed incremental symbolic execution.
+\newblock ACM Transactions on Software Engineering and Methodology (TOSEM),
+  2014, 24(1):3
+\thudot
+
+\bibitem{petrenko2009variable}
+Petrenko M, Rajlich V.
+\newblock Variable granularity for improving precision of impact analysis.
+\newblock  Program Comprehension, 2009. ICPC'09. IEEE 17th International
+  Conference on. IEEE, 2009.
+\newblock  10--19
+\thudot
 
 \end{thebibliography}

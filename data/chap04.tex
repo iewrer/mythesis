@@ -19,7 +19,7 @@
 	\item 影响域分析模块：分析并获取变更的语义影响域。
 	\begin{itemize}
 		\item 差异性分析模块：分析代码间的差异性，产生对应的变更集合。
-		\item 影响分析模块：根据变更集合，分析变更对于程序的语义影响，产生对应的语义变更集合。
+		\item 影响分析模块：根据变更集合，分析变更对于代码的语义影响，产生对应的语义影响域。
 	\end{itemize}
 	\item 冲突判定模块：根据影响域分析模块所得到的语义影响域，判定两个补丁之间是否产生冲突。
 \end{itemize}
@@ -44,10 +44,10 @@
 		$v_2$ & 新版本源代码 \\
 		$v_4$ & 将补丁$p_2$中的变更应用于版本$v_1$后的源代码 \\
 		$p_2$ & 适用于$v_2$的补丁，待检测的对象 \\
-		$c_1$ & 版本$v_1$和$v_2$之间的变更集合\\
-		$c_2$ & 版本$v_4$和$v_2$之间的变更集合\\
-		$s_1$ & 变更集合$c_1$对版本$v_2$的影响域 \\
-		$s_2$ & 变更集合$c_2$对版本$v_2$的影响域 \\
+		$p_1$ & 实质上是版本$v_1$和$v_2$之间的变更集合\\
+		$p_3$ & 实质上是版本$v_4$和$v_2$之间的变更集合\\
+		$s_1$ & 变更集合$p_1$对版本$v_2$的影响域 \\
+		$s_2$ & 变更集合$p_3$对版本$v_2$的影响域 \\
 		\bottomrule[1.5pt]
 	\end{tabular}
 \end{table}
@@ -117,7 +117,7 @@
 
 因而实际上该模块的输入输出可以参考表\ref {version_io2}。
 
-\begin{table}
+\begin{table}[H]
 	\caption{输入输出对照表}
 	\label{version_io2}
 	\centering
@@ -285,7 +285,7 @@ git commit -a -m "patched version from new version committed"
 
 因而实际上该模块的输入输出可以参考表\ref {differ_io2}。
 
-\begin{table}
+\begin{table}[H]
 	\caption{输入输出对照表}
 	\label{differ_io2}
 	\centering
@@ -425,14 +425,14 @@ OPTIONAL: -file <fileName> -ocp <classpath> -mcp <classpath>
 
 在使用shell脚本调用ASTro工具进行分析和输出影响分析模块的配置文件时，考虑到实际使用中，我们需要将新版本$v_2$作为对比的基准，以获取一致的行号。因而在进行变更影响分析时，我们需要进行相应配置，使得：
 \begin{itemize}
-	\item $s_1 = impact(diff(v_2,v_1),v_2)$，求得变更集合$c_1 = diff(v_2,v_1)$对版本$v_2$的影响范围$s_1$。
-	\item $s_2 = impact(diff(v_2,v_4),v_2)$，求得变更集合$c_2 = diff(v_2,v_4)$对版本$v_2$的影响范围$s_2$。
+	\item $s_1 = impact(diff(v_2,v_1),v_2)$，求得变更集合$p_1 = diff(v_2,v_1)$对版本$v_2$的影响范围$s_1$。
+	\item $s_2 = impact(diff(v_2,v_4),v_2)$，求得变更集合$p_3 = diff(v_2,v_4)$对版本$v_2$的影响范围$s_2$。
 \end{itemize}
 
 实际上，也就是说：
 \begin{itemize}
 	\item 补丁$p_1 = diff(v_2,v_1)$，即将版本$v_2$视为“旧版本”，将版本$v_1$视为“新版本”。
-	\item 补丁$p_2 = diff(v_2,v_4)$，即将版本$v_2$视为“旧版本”，将新版本应用补丁后的版本$v_4$视为“新版本”。
+	\item 补丁$p_3 = diff(v_2,v_4)$，即将版本$v_2$视为“旧版本”，将新版本应用补丁后的版本$v_4$视为“新版本”。
 \end{itemize}
 
 在实际操作中，我们只需做这样的版本交换即可。
@@ -510,7 +510,7 @@ OPTIONAL: -file <fileName> -ocp <classpath> -mcp <classpath>
 影响域的相关信息主要包括两类，
 \begin{itemize}
 	\item 受影响的CFG节点。这实际就是影响域中的元素。可见这里受影响元素的级别为基本块（Basic Block）。
-	\item 影响关系。这实际是记录了受影响元素与影响来源元素之间的关系。该关系的定义可以参考章节\ref {define_problem}中所提到的$depend$映射关系。
+	\item 影响的依赖关系。这实际是记录了受影响元素与影响来源元素之间的关系。该关系的定义可以参考章节\ref {define_problem}中所提到的$depend$映射关系。
 \end{itemize}
 
 该模块的实际输入输出可以参考表\ref {impact_io2}。
@@ -561,7 +561,7 @@ jpf-regression作为Java Path Finder框架的一个插件，事实上在使用�
 \end{figure}
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=.8\columnwidth]{chap04_jpf_old}
 	\caption {jpf-regression原流程及变化}
