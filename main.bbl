@@ -212,6 +212,13 @@ Yang G, Person S, Rungta N, et~al.
   2014, 24(1):3
 \thudot
 
+\bibitem{havelund2000model}
+Havelund K, Pressburger T.
+\newblock Model checking java programs using java pathfinder.
+\newblock International Journal on Software Tools for Technology Transfer,
+  2000, 2(4):366--381
+\thudot
+
 \bibitem{petrenko2009variable}
 Petrenko M, Rajlich V.
 \newblock Variable granularity for improving precision of impact analysis.

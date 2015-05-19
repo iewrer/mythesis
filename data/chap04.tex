@@ -4,63 +4,6 @@
 \section{整体架构}
 \label {tool_struct}
 
-根据章节\ref {problem_all}中的描述，工具可以设计成如图\ref {structure}所示的组合形式。
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.8\columnwidth]{chap03_structure}
-	\caption {整体架构}	
-	\label {structure}
-\end{figure}
-
-可见，兼容性检测工具可以拆分成三个模块：
-\begin{itemize}
-	\item 补丁版本迁移模块：将为某个版本而设计的专门补丁应用于其他版本代码。
-	\item 影响域分析模块：分析并获取变更的语义影响域。
-	\begin{itemize}
-		\item 差异性分析模块：分析代码间的差异性，产生对应的变更集合。
-		\item 影响分析模块：根据变更集合，分析变更对于代码的语义影响，产生对应的语义影响域。
-	\end{itemize}
-	\item 冲突判定模块：根据影响域分析模块所得到的语义影响域，判定两个补丁之间是否产生冲突。
-\end{itemize}
-
-整个工具的运作流程可以参考图\ref {solution_all}。其输入输出可以参考表\ref {all_io2}。
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.8\columnwidth]{chap03_all}
-	\caption {工具流程}
-	\label {solution_all}	
-\end{figure}
-
-\begin{table}[H]
-	\caption{输入输出对照表}
-	\label{all_io2}
-	\centering
-	\begin{tabular}{lc}
-		\toprule[1.5pt]
-		{\heiti 输入输出} & {\heiti 描述}\\\midrule[1pt]
-		$v_1$ & 旧版本源代码，待检测的对象 \\
-		$v_2$ & 新版本源代码 \\
-		$v_4$ & 将补丁$p_2$中的变更应用于版本$v_1$后的源代码 \\
-		$p_2$ & 适用于$v_2$的补丁，待检测的对象 \\
-		$p_1$ & 实质上是版本$v_1$和$v_2$之间的变更集合\\
-		$p_3$ & 实质上是版本$v_4$和$v_2$之间的变更集合\\
-		$s_1$ & 变更集合$p_1$对版本$v_2$的影响域 \\
-		$s_2$ & 变更集合$p_3$对版本$v_2$的影响域 \\
-		\bottomrule[1.5pt]
-	\end{tabular}
-\end{table}
-
-其整体流程可以简述如下：
-
-\begin{enumerate}
-	\item 采用版本控制系统进行代码版本管理，并进行补丁版本迁移，得到应用于新版本的补丁后代码版本$v_4$。
-	\item 根据得到的三个版本代码$v_1$、$v_2$、$v_4$，分别分析其程序间差异性，生成对应的程序变更集合。
-	\item 根据得到的程序变更集合，进行不同版本间的变更影响分析，生成语义影响域。
-	\item 根据得到的语义影响域，进行冲突分析。
-\end{enumerate}
-
 下面分别对工具中各个模块的设计与实现进行介绍。
 
 \section{版本迁移模块}

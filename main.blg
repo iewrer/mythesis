@@ -4,7 +4,8 @@ The top-level auxiliary file: main.aux
 A level-1 auxiliary file: data/chap01.aux
 A level-1 auxiliary file: data/chap02.aux
 A level-1 auxiliary file: data/chap03.aux
-A level-1 auxiliary file: data/chap04.aux
+A level-1 auxiliary file: data/chap05.aux
+A level-1 auxiliary file: data/chap08.aux
 A level-1 auxiliary file: data/chap06.aux
 A level-1 auxiliary file: data/chap07.aux
 The style file: thubib.bst
@@ -15,51 +16,50 @@ Repeated entry---line 139 of file ref/refs.bib
  : @inproceedings{de2008traceability
  :                                  ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "havelund2000mode"
 Warning--there's a publisher but no address in pigoski1996practical
 Warning--there's a publisher but no address in hunt1976algorithm
 Warning--empty journal in bohner1996software
 Warning--can't use both volume and number fields in ren2004chianti
 Warning--can't use both volume and number fields in person2011directed
-You've used 30 entries,
+You've used 31 entries,
             2255 wiz_defined-function locations,
-            719 strings with 9532 characters,
-and the built_in function-call counts, 15839 in all, are:
-= -- 1674
-> -- 357
+            726 strings with 9720 characters,
+and the built_in function-call counts, 16303 in all, are:
+= -- 1722
+> -- 366
 < -- 20
-+ -- 166
-- -- 83
-* -- 1154
-:= -- 2050
-add.period$ -- 94
-call.type$ -- 30
-change.case$ -- 28
++ -- 170
+- -- 85
+* -- 1194
+:= -- 2111
+add.period$ -- 96
+call.type$ -- 31
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 1127
-empty$ -- 1607
-format.name$ -- 108
-if$ -- 3706
+cite$ -- 36
+duplicate$ -- 1159
+empty$ -- 1657
+format.name$ -- 111
+if$ -- 3809
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 32
-newline$ -- 200
-num.names$ -- 30
-pop$ -- 148
+int.to.str$ -- 31
+missing$ -- 33
+newline$ -- 206
+num.names$ -- 31
+pop$ -- 152
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 344
+skip$ -- 349
 stack$ -- 0
-substring$ -- 2026
+substring$ -- 2097
 swap$ -- 163
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 177
-width$ -- 32
-write$ -- 392
+while$ -- 182
+width$ -- 33
+write$ -- 404
 (There was 1 error message)

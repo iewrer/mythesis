@@ -1,5 +1,7 @@
 \chapter{相关工作}
-\section{程序间差异分析}
+
+本章中主要介绍与本文相关的国内外工作，主要包括构成语义影响域分析的程序间差异性分析和变更应先分析等过程和相关工具的调研。
+\section{程序间差异性分析}
 
 对于软件演进分析而言，如何确定一个程序的不同版本之间的变更是一个关键性的问题\cite{kim2013identifying}。程序间差异分析能够通过分析同一程序的不同版本间的差异，来确定版本间的变更集合\cite{lahiri2010differential,winstead2003towards}。
 
@@ -19,23 +21,23 @@ Change Distilling中采用二元字符串相似性来匹配源代码语句，并
 \section{程序变更影响分析}
 软件维护是软件开发周期中最复杂、高成本和劳动密集的活动。软件产品天然的需要跟随系统需求的变更而进行适应和变化，以满足用户的需求。软件变更是软件维护中的基础组件。变更可能从新的需求、缺陷修复、变更请求等而来，当变更应用于软件时，他们不可避免的会带来一些副作用，也可能会与原软件的其他部分产生不协调。
 
-而CIA正是这样一类用于确定变更对于软件其他部分的影响的技术集合\cite{li2013survey}，它在软件开发、维护和回归测试等过程中都起到着重要的作用\cite{acharya2011practical}。一般而言，CIA可以用于程序理解、变更影响预测、影响追踪、变更传播、测试用例的选取等。
+而变更影响分析（Change Impact Analysis）正是这样一类用于确定变更对于软件其他部分的影响的技术集合\cite{li2013survey}，它在软件开发、维护和回归测试等过程中都起到着重要的作用\cite{acharya2011practical}。一般而言，变更影响分析可以用于程序理解、变更影响预测、影响追踪、变更传播、测试用例的选取等。
 
-CIA方法的分类：
+变更影响分析方法的分类：
 \begin{itemize}
-	\item 基于追踪性的CIA\cite{de2008traceability}，追踪两个不同抽象级别上的元素间的依赖性，目的在于链接不同类型的软件工件（需求、设计等）。
+	\item 基于追踪性的变更影响分析\cite{de2008traceability}，追踪两个不同抽象级别上的元素间的依赖性，目的在于链接不同类型的软件工件（需求、设计等）。
 
-	\item 基于依赖关系的CIA\cite{law2003incremental}，致力于衡量变更的潜在影响，通常尝试去分析程序的语法关系，他们表示了程序实体间的一些语义依赖关系，或者说他们在同一个抽象级别上对软件工件实施了影响分析。现在最主要的这类CIA主要在源代码级别上进行研究。
+	\item 基于依赖关系的变更影响分析\cite{law2003incremental}，致力于衡量变更的潜在影响，通常尝试去分析程序的语法关系，他们表示了程序实体间的一些语义依赖关系，或者说他们在同一个抽象级别上对软件工件实施了影响分析。现在最主要的这类变更影响分析主要在源代码级别上进行研究。
 \end{itemize}
 
-软件系统上的变更可能导致不可意料的副作用，CIA的目标就在于辨认这些副作用(side effect或者ripple effect)\cite{bohner1996software}，并防止之。
-CIA从分析变更请求和源代码开始，以便获得变更集合(change set)。最后实际获得的影响集合叫做EIS（estimated impact set），而真实的集合叫做AIS（actual impact set）。
+软件系统上的变更可能导致不可意料的副作用，变更影响分析的目标就在于辨认这些副作用(side effect或者ripple effect)\cite{bohner1996software}，并防止之。
+变更影响分析从分析变更请求和源代码开始，以便获得变更集合(change set)。最后实际获得的影响集合叫做EIS（estimated impact set），而真实的集合叫做AIS（actual impact set）。
 
-整个软件变更影响的分析过程可以大致分为以下流程，更详细的流程可以参考图2.3\cite{de2008traceability,bohner2002software}。
+整个软件变更影响的分析过程可以大致分为以下流程，更详细的流程可以参考图\ref {变更影响分析process} \cite{de2008traceability,bohner2002software}。
 
 \begin{enumerate}
 	\item 确定变更集合，需要针对变更请求进行分析，这步一般叫做特征定位(feature location)，用于确认源代码中实现了对应功能的起始位置\cite{biggerstaff1993concept}。
-	\item 衡量由变更集合引入的影响。这一步是目前大部分CIA技术的着重点。若按分析技术的类型划分，则主要的两类包括静态分析和动态分析。
+	\item 衡量由变更集合引入的影响。这一步是目前大部分变更影响分析技术的着重点。若按分析技术的类型划分，则主要的两类包括静态分析和动态分析。
 	\begin{itemize}
 	
 	\item 静态分析：历史分析、文本分析、结构分析\cite{sun2012comparative,kagdi2007survey}。静态分析通过分析程序的语法、语义或者历史依赖实现，通常会产生很多错报（False Positive）。
@@ -44,29 +46,29 @@ CIA从分析变更请求和源代码开始，以便获得变更集合(change set
 		\item 文本分析根据注释和标识符提取出概念依赖性
 		\item 历史分析从多个软件演进版本中挖掘出信息
 		\end{itemize}
-		\begin{figure}[H]
-			\centering
-			\includegraphics{chap02_02}
-			\caption {静态分析过程}
-		\end{figure}
+%		\begin{figure}[H]
+%			\centering
+%			\includegraphics{chap02_02}
+%			\caption {静态分析过程}
+%		\end{figure}
 	
 	\item 动态分析：在线分析和离线分析。考虑特定的输入，并且依赖于程序运行时收集到的信息进行分析（如运行时的追踪信息、覆盖信息等）\cite{law2003whole}。其得到的影响集合往往比静态分析精度更高，但其开销也相应更大，而且通常包括错报（False Negative）。
 		\begin{itemize}
-		\item 在线CIA使用程序运行时收集的信息实施所有的分析
+		\item 在线变更影响分析使用程序运行时收集的信息实施所有的分析
 		\end{itemize}
 		
-		\begin{figure}[H]
-			\centering
-			\includegraphics{chap02_03}
-			\caption {动态分析过程}
-		\end{figure}	
+%		\begin{figure}[H]
+%			\centering
+%			\includegraphics{chap02_03}
+%			\caption {动态分析过程}
+%		\end{figure}	
 
 		
 	\end{itemize}
 \end{enumerate}
 
 
-近年来，涌现出一些以CIA技术作为支撑而实现的工具，它们一般在实现CIA技术之后，利用得到的影响集合进行后续分析，帮助进行软件维护和演进。下面对它们进行简要的介绍：
+近年来，涌现出一些以变更影响分析技术作为支撑而实现的工具，它们一般在实现变更影响分析技术之后，利用得到的影响集合进行后续分析，帮助进行软件维护和演进。下面对它们进行简要的介绍：
 \begin{enumerate}
 	\item Chianti：应用于Java程序，Eclipse插件\cite{ren2004chianti}。
 
@@ -95,7 +97,8 @@ CIA从分析变更请求和源代码开始，以便获得变更集合(change set
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.8\columnwidth]{chap02_01}
-	\caption {CIA过程}
+	\caption {变更影响分析过程}
+	\label {变更影响分析process} 
 \end{figure}
 
 \section{相关工具}
@@ -118,7 +121,7 @@ Beyond Compare 是一款内容比较工具，可以用于文件、目录、压�
 
 
 	\subsection{jpf-regression} 
-变更影响分析常用于衡量软件变更的潜在影响。CIA的结果通常可用做其他程序分析技术的输入，例如回归测试可利用CIA来确定程序的哪些部分需要进行再分析。而由于软件开发过程的演进特性，并且软件系统的大小和复杂性越来越高，刺激了人们对于有效的变更影响分析的需求。\cite{rungta2012change}
+变更影响分析常用于衡量软件变更的潜在影响。变更影响分析的结果通常可用做其他程序分析技术的输入，例如回归测试可利用变更影响分析来确定程序的哪些部分需要进行再分析。而由于软件开发过程的演进特性，并且软件系统的大小和复杂性越来越高，刺激了人们对于有效的变更影响分析的需求。\cite{rungta2012change}
 
 一般而言，“单行变更”就足以引发广泛而未知的影响，因而变更影响分析在软件演进和维护过程中扮演着重要的作用。
 
@@ -154,7 +157,7 @@ DiSE中，受影响的集合主要分为两类：
 
 \end{enumerate}
 
-jpf-regression是DiSE的工具实现，它是基于Java Path Finder框架\cite{havelund2000mode}而实现的工具，可作为Eclipse的插件使用，支持Java语言。
+jpf-regression是DiSE的工具实现，它是基于Java Path Finder框架\cite{havelund2000model}而实现的工具，可作为Eclipse的插件使用，支持Java语言。
 
 \subsection{ASTro}	
 

@@ -1,6 +1,6 @@
 \chapter{实验结果与分析}
 \label {exp}
-本章主要介绍如何对本文中所提出的补丁兼容性检测方法的工具实现进行实验，并且给出了实验结果和分析。
+本章主要介绍如何对本文所提出的补丁兼容性检测工具进行实验，并且给出了实验结果和分析。
 
 \section{实验设计}
 \label {exp_des}
@@ -9,9 +9,9 @@
 
 可见，实验应当回答如下的问题：
 \begin{itemize}
-	\item 检测工具是否能够成功对实际项目进行分析？该项可以说明本文方法的可用性。
-	\item 检测工具是否能够找到补丁的兼容性问题？找到的冲突是否存在误报的情况？该项可以说明本文方法的正确性。
-	\item 检测工具能找到的兼容性问题有多少？该项可以说明本文方法的实用性。
+	\item 检测工具是否能够成功对实际项目进行分析。该项可以说明本文方法的可用性。
+	\item 检测工具是否能够找到补丁的兼容性问题，找到的冲突是否存在误报的情况。该项可以说明本文方法的正确性。
+	\item 检测工具能找到的兼容性问题有多少。该项可以说明本文方法的实用性。
 \end{itemize}
 
 因此，本章中应当对这些问题给予回答，并给出相应的量化表述。
@@ -39,17 +39,7 @@
 
 为了使实验结果更具有说服力，本文在实验案例的选择中考虑采用工业界中的实际项目来进行实验，以测试检测工具的可靠性和可用性。
 
-因此，本文中将采用Eclipse JDT Core项目作为实验案例。JDT Core是Eclipse工具的Java基础组件，它主要提供了如下功能：
-\begin{itemize}
-	\item Java编译器。
-	\item Java文档模型。
-	\item Java模型。
-	\item 编程帮助。
-	\item 搜索。
-	\item 源代码排版。
-\end{itemize}
-
-该项目的相关信息可以参见表\ref {jdt_core}。
+因此，本文中将采用Eclipse JDT Core项目作为实验案例。JDT Core是Eclipse工具的Java基础组件。该项目的相关信息可以参见表\ref {jdt_core}。
 
 \begin{table}[H]
 	\caption{Eclipse JDT Core}
@@ -73,11 +63,11 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 
 从表\ref {exp_data}中可见，我们一共选择了7个发行版本作为逻辑版本$v_2$的来源。也就是说，我们将以固定的逻辑版本$v_1$和$v_3$为基准，并选择不断变化的逻辑版本$v_2$来进行实验。
 
-这样做的好处是我们可以更加清晰的了解本文中所提出的补丁兼容性分析方法，包括：
+这样做的好处是我们可以对本文中所提出的补丁兼容性检测工具进行详细的测试，包括：
 \begin{itemize}
-	\item 是否可针对工业界实际项目进行分析？
-	\item 是否切实贴合工业界的实际需求？
-	\item 是否对同一软件系统的多个不同版本具有普遍适用性？
+	\item 能否针对工业界实际项目进行分析。
+	\item 能否切实贴合工业界的实际需求。
+	\item 能否对同一软件系统的多个不同版本具有普遍适用性。
 \end{itemize}
 
 \begin{table}
@@ -243,7 +233,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 对于预处理算法而言，实验结果如表\ref {data_differ_1}和图\ref {differ1}所示。
 
 \begin{table}[H]
-	\caption{Program Differ结果}
+	\caption{差异性分析模块结果}
 	\label{data_differ_1}
 	\centering
 	\begin{tabular}{llccc}
@@ -272,7 +262,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 整个差异性分析模块的输出结果如表\ref {data_differ_2}和表\ref {data_differ_3}所述。更直观的输出结果可以参考图\ref {differ2}和\ref {differ3}。
 
 \begin{table}[H]
-	\caption{Program Differ结果}
+	\caption{差异性分析模块结果}
 	\label{data_differ_2}
 	\centering
 	\begin{tabular}{llccc}
@@ -297,7 +287,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 \end{figure}
 
 \begin{table}[H]
-	\caption{Program Differ结果}
+	\caption{差异性分析模块结果}
 	\label{data_differ_3}
 	\centering
 	\begin{tabular}{llccc}
@@ -332,7 +322,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 对$impact(diff(v_2,v_1),v_2)$过程而言，应用影响分析模块后，分析结果如表\ref {data_impact_1}所述。
 
 \begin{table}[H]
-	\caption{impact analyzer结果}
+	\caption{影响分析模块结果}
 	\label{data_impact_1}
 	\centering
 	\begin{tabular}{llcc}
@@ -361,7 +351,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 对$impact(diff(v_2,v_4),v_2)$过程而言，应用影响分析模块后，分析结果如表\ref {data_impact_2}所述。
 
 \begin{table}[H]
-	\caption{impact analyzer结果}
+	\caption{影响分析模块结果}
 	\label{data_impact_2}
 	\centering
 	\begin{tabular}{llcc}
@@ -393,7 +383,7 @@ JDT Core项目截止目前已推出发行版4.4.2，我们从中选择了若干�
 在冲突判定模块中，应用本文提出的冲突分析算法后，再通过影响追踪系统进行辅助人工分析，可以得到如表\ref {data_compatible}的结果。
 
 \begin{table}[H]
-	\caption{分析结果}
+	\caption{冲突判定结果}
 	\label{data_compatible}
 	\centering
 	\begin{tabular}{llccc}
