@@ -13,9 +13,9 @@
 
 % 定义中英文摘要和关键字
 \begin{cabstract} 
-	众所周知，软件维护是软件开发周期中耗时最长，也是开销最大的过程。软件维护过程中，经常伴随着软件版本不断演进的过程。在实际应用中，补丁程序是最常见的用于软件版本演进的一类程序，它能够实现软件功能增强、漏洞修复等。
+	软件维护是软件开发周期中耗时耗力最大的过程。版本演进是其中常见的一类活动，常使用补丁来完成。因此，为将软件应用于某些特定场景，常需要开发专门的补丁。然而随着软件版本的演进，为每个软件版本开发专门的补丁将耗费极大的人力物力。
 	
-	为将软件应用于某些特定场景，常常需要开发专门的补丁。伴随着软件本身的不断演进，为每个软件版本开发专门的补丁耗费的人力物力极大。本文研究在软件演化的背景下，不同版本软件的补丁能否共享。
+	因此，本文研究在软件演化的背景下，不同软件版本的补丁能否共享，该问题的核心在于确定补丁对其他软件版本的兼容性。通过分析，我们发现该兼容性问题是由于补丁引入的变更可能会与版本演进引入的变更发生语义冲突而造成的。因此，确定补丁兼容性的过程也就是检测多次变更间语义冲突的过程。
 	
 	在解决该兼容性问题的过程中，本文的主要贡献在于以下几点。
 	
@@ -29,9 +29,9 @@
 \ckeywords {软件维护,变更影响域,补丁,兼容性检测,软件演进}
 
 \begin{eabstract} 
-		As well known,software maintenance is the longest and most cost activity in the software developing cycle.In software maintenance,the software system sometimes is always evolving.In pratical application,patch is one of the most common program which is used for software evolving,like enhancing it's functionality,fixing bug and so on.
+		Software maintenance is the longest and most cost activity in the software developing cycle.Software evolving is a common kind of maintenaning activity which usually accomplished by patch. For the purpose of applicating software under specific circumstances,a special patch is needed.However,during the whole evolving process,developing this special patch for each version of the software is too costly.
 		
-		For the purpose of applicating software under specific circumstances,a special patch is needed.But during the whole evolving process of the software,developing this special patch for each version of the software is too costly.Under the circumstance of software evolving,This paper focus on the prolem of sharing the patch between different software versions.
+		So under the circumstance of software evolving,This paper focus on the prolem of sharing the patch between different software versions which the core issue is determine wether the patch is compatible with other software versions.By analyzing this problem,we find out that the compatibility problem is due to the changes introduced by patch will somehow be conflict with other changes introduced by software evolving.According to this,the compatibility checking process is acutally the semantic conflict checking process between changes.
 		
 		The major work and contribution of this paper are as follows.
 		
