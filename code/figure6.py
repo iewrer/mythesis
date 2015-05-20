@@ -1,7 +1,7 @@
 import plotly.plotly as py
 from plotly.graph_objs import *
 
-axe = ['v_2 = 4.4','v_2 = 4.4.2','v_2 = 4.3','v_2 = 4.3.1','v_2 = 4.2','v_2 = 4.2.1','v_2 = 4.2.2']
+axe = ['v2 = 4.4','v2 = 4.4.2','v2 = 4.3','v2 = 4.3.1','v2 = 4.2','v2 = 4.2.1','v2 = 4.2.2']
 
 trace2 = Scatter(
     x = axe,

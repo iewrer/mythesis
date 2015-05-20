@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  19 MAY 2015 16:28
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  20 MAY 2015 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1625,11 +1625,295 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip86
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 59.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/txsya/m/n --> U/msa/m/n on input line 59.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/txsya/bx/n --> U/msa/m/n on input line 59.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 60.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/txsyb/m/n --> U/msb/m/n on input line 60.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/txsyb/bx/n --> U/msb/m/n on input line 60.
+LaTeX Font Info:    Redeclaring math delimiter \ulcorner on input line 74.
+LaTeX Font Info:    Redeclaring math delimiter \urcorner on input line 75.
+LaTeX Font Info:    Redeclaring math delimiter \llcorner on input line 76.
+LaTeX Font Info:    Redeclaring math delimiter \lrcorner on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \lozenge on input line 142.
+)
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \centerdot on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \blacklozenge on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 52.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 53.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 59.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 60.
+LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 61
+.
+LaTeX Font Info:    Redeclaring math symbol \twoheadleftarrow on input line 62.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 64.
+
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 65.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 66.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 67.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 69.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 70.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \rightarrowtail on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \leftarrowtail on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 74.
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 76.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+79.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 80.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 82.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \multimap on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 87.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 88.
+LaTeX Font Info:    Redeclaring math symbol \doteqdot on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 91.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 93.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 95.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 98.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 99.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 102.
+LaTeX Font Info:    Redeclaring math symbol \backprime on input line 103.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 106.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 107.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 117.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 11
+9.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 1
+20.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 12
+1.
+LaTeX Font Info:    Redeclaring math symbol \vartriangle on input line 122.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangle on input line 123.
+LaTeX Font Info:    Redeclaring math symbol \triangledown on input line 124.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 128.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 129.
+LaTeX Font Info:    Redeclaring math symbol \Rrightarrow on input line 130.
+LaTeX Font Info:    Redeclaring math symbol \Lleftarrow on input line 131.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 138.
+LaTeX Font Info:    Redeclaring math symbol \varpropto on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \smallsmile on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \smallfrown on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 142.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \Cup on input line 144.
+LaTeX Font Info:    Redeclaring math symbol \Cap on input line 146.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 150.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 151.
+
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \bumpeq on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \Bumpeq on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \circledS on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \backsim on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \backsimeq on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 165.
+LaTeX Font Info:    Redeclaring math symbol \intercal on input line 166.
+LaTeX Font Info:    Redeclaring math symbol \circledcirc on input line 167.
+LaTeX Font Info:    Redeclaring math symbol \circledast on input line 168.
+LaTeX Font Info:    Redeclaring math symbol \circleddash on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 173.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 179.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 180.
+LaTeX Font Info:    Redeclaring math symbol \nleqslant on input line 181.
+LaTeX Font Info:    Redeclaring math symbol \ngeqslant on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 183.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 185.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 186.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 191.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 192.
+LaTeX Font Info:    Redeclaring math symbol \precneqq on input line 193.
+LaTeX Font Info:    Redeclaring math symbol \succneqq on input line 194.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 195.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 196.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 197.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 198.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 199.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 201.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 205.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 206.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 207.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 208.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 209.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 210.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 211.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 212.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 214.
+LaTeX Font Info:    Redeclaring math symbol \nparallel on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \nmid on input line 216.
+LaTeX Font Info:    Redeclaring math symbol \nshortmid on input line 217.
+LaTeX Font Info:    Redeclaring math symbol \nshortparallel on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 219.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 220.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 221.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 223
+.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 224.
+
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 225.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 226.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 227.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 228.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 229.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 230.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 231.
+
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 232.
+
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 233.
+LaTeX Font Info:    Redeclaring math symbol \varnothing on input line 234.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 235.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 236.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 237.
+LaTeX Font Info:    Redeclaring math symbol \eth on input line 240.
+LaTeX Font Info:    Redeclaring math symbol \eqsim on input line 241.
+LaTeX Font Info:    Redeclaring math symbol \beth on input line 242.
+LaTeX Font Info:    Redeclaring math symbol \gimel on input line 243.
+LaTeX Font Info:    Redeclaring math symbol \daleth on input line 244.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 245.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 246.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 247.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 248.
+LaTeX Font Info:    Redeclaring math symbol \shortmid on input line 249.
+LaTeX Font Info:    Redeclaring math symbol \shortparallel on input line 250.
+LaTeX Font Info:    Redeclaring math symbol \smallsetminus on input line 251.
+LaTeX Font Info:    Redeclaring math symbol \thicksim on input line 252.
+LaTeX Font Info:    Redeclaring math symbol \thickapprox on input line 253.
+LaTeX Font Info:    Redeclaring math symbol \approxeq on input line 254.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 255.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 256.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 257.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 258.
+
+LaTeX Font Info:    Redeclaring math symbol \digamma on input line 259.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 260.
+LaTeX Font Info:    Redeclaring math symbol \Bbbk on input line 261.
+LaTeX Font Info:    Redeclaring math symbol \hslash on input line 262.
+LaTeX Font Info:    Redeclaring math symbol \backepsilon on input line 265.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
+Package: CJKfntef 2012/05/07 4.8.3
+\CJK@fntefSkip=\skip87
+\CJK@nest=\count327
+\CJK@fntefDimen=\dimen281
+\CJK@underdotBox=\box58
+\CJK@ULbox=\box59
+\CJK@underanyskip=\dimen282
+)
+(/usr/local/texlive/2014/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty
+Package: xeCJKfntef 2014/05/13 v3.2.12 xeCJK patch file for ulem/CJKfntef
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box60
+\UL@hyphenbox=\box61
+\UL@skip=\skip88
+\UL@hook=\toks50
+\UL@height=\dimen283
+\UL@pe=\count328
+\UL@pixel=\dimen284
+\ULC@box=\box62
+Package: ulem 2012/05/18
+\ULdepth=\dimen285
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+*************************************************
+* LaTeX warning: "xparse/redefine-command"
+* 
+* Redefining document command \CJKunderdot with arg. spec. 'm' on line 395.
+*************************************************
+\g__xeCJK_under_symbol_box=\box63
+*************************************************
+* LaTeX warning: "xparse/redefine-command"
+* 
+* Redefining document command \CJKunderanysymbol with arg. spec. 'mmm' on line
+* 418.
+*************************************************
+*************************************************
+* LaTeX warning: "xparse/redefine-environment"
+* 
+* Redefining document environment 'CJKfilltwosides' with arg. spec. 'O{c}m' on
+* line 462.
+*************************************************
 ) (/usr/local/texlive/2014/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2014/05/13 v3.2.12 xeCJK patch file for listings
-\l__xeCJK_listings_flag_int=\count327
+\l__xeCJK_listings_flag_int=\count329
 )
-(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux)
+(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap09.aux)
 (./data/chap05.aux
 
 LaTeX Warning: Label `chap_impact' multiply defined.
@@ -1648,56 +1932,56 @@ LaTeX Warning: Label `exp_data' multiply defined.
 ) (./data/chap07.aux) (./data/ack.aux) (./data/resume.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 27.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 27.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 29.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 29.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 27.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 29.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 27.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 29.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 27.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 29.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 27.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 29.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1708,8 +1992,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 27.
+\AtBeginShipoutBox=\box64
+Package hyperref Info: Link coloring OFF on input line 29.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1717,17 +2001,17 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count328
+\c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c@lstlisting=\count329
+\c@lstlisting=\count331
  (./data/cover.tex)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
@@ -1735,9 +2019,9 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 )
 
 Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
-(hyperref)                instead of the value given on input line 37.
+(hyperref)                instead of the value given on input line 39.
 
-\g_fontspec_family_SimHei_int=\count330
+\g_fontspec_family_SimHei_int=\count332
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1768,7 +2052,7 @@ Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
 . 
 . This font family consists of the following shapes:
 .................................................
-\g_fontspec_family_FangSong_int=\count331
+\g_fontspec_family_FangSong_int=\count333
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1791,46 +2075,46 @@ Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
 . <->"FangSong/ICU:script=hani;language=DFLT;mapping=tex-text;embolden=4;slant=
 0.167;"
 .................................................
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 41.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 39.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 41.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 39.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsya.fd
-File: utxsya.fd 2000/12/15 v3.1
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyb.fd
-File: utxsyb.fd 2000/12/15 v3.1
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 39.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 41.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 2134) detected at line 39
+Underfull \hbox (badness 2134) detected at line 41
 \EU1/FangSong(0)/m/n/16.06 培 养 单 位
  []
 
 
-Underfull \hbox (badness 10000) detected at line 39
+Underfull \hbox (badness 10000) detected at line 41
 \EU1/FangSong(0)/m/n/16.06 学 科
  []
 
 
-Underfull \hbox (badness 10000) detected at line 39
+Underfull \hbox (badness 10000) detected at line 41
 \EU1/FangSong(0)/m/n/16.06 研 究 生
  []
 
 
-Underfull \hbox (badness 2134) detected at line 39
+Underfull \hbox (badness 2134) detected at line 41
 \EU1/FangSong(0)/m/n/16.06 指 导 教 师
  []
 
@@ -1865,13 +2149,13 @@ Underfull \hbox (badness 2134) detected at line 39
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <15.05624> on input line 39
+LaTeX Font Info:    Calculating math sizes for size <15.05624> on input line 41
 .
  [3] [4
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 39.
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 41.
  [5] [6
 
 
@@ -1882,6 +2166,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Underfull \hbox (badness 2027) in paragraph at lines 41--42
+[]\EU1/TimesNewRoman(0)/m/n/12.045 software maintenance;change impacted area;pa
+tch;compatibility check-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2
@@ -1933,9 +2223,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-File: figures/chap02_01.png Graphic file (type QTm)
+File: figures/chap02_01.jpg Graphic file (type QTm)
 
-<use  "figures/chap02_01.png" >
+<use  "figures/chap02_01.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
@@ -1948,13 +2238,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-\openout2 = `data/chap03.aux'.
+\openout2 = `data/chap09.aux'.
 
 
-(./data/chap03.tex
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 14.
-
+(./data/chap09.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10
@@ -1962,144 +2249,80 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+File: figures/chap03_all_now.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_all_now.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-[]$\OML/txmi/m/it/12.045 conflict \OT1/txr/m/n/12.045 : \OML/txmi/m/it/12.045 P
-atch \OMS/txsy/m/n/12.045 ^^B \OML/txmi/m/it/12.045 Patch \OMS/txsy/m/n/12.045 
-7! \OML/txmi/m/it/12.045 Boolean$\EU1/SimSun(1)/m/n/12.045 。|  如 果
- []
-
-
-Underfull \hbox (badness 2772) in paragraph at lines 160--161
-\OMS/txsy/m/n/12.045 9\OML/txmi/m/it/12.045 structure[]; structure[]; structure
-[] \OMS/txsy/m/n/12.045 ^^Z \OML/txmi/m/it/12.045 v[]$\EU1/SimSun(1)/m/n/12.045
- ，|  使 得 $\OML/txmi/m/it/12.045 im\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 st
-ructure[]\OT1/txr/m/n/12.045 ) = \OML/txmi/m/it/12.045 structure[] \OMS/txsy/m/
-n/12.045 ^
- []
-
-
+ [12])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-File: figures/chap03_all_flow_2.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_all_flow_2.jpg" >
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 31
-6.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-File: figures/chap03_structure.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_structure.jpg" >
-File: figures/chap03_all.jpg Graphic file (type QTm)
- <use  "figures/chap03_all.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
 \openout2 = `data/chap05.aux'.
 
 
 (./data/chap05.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21
+ [14
 
 
 
 ]
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 114.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 51.
-
-
-LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
-(Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 56.
-
+put line 242.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-File: figures/chap03_differ.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_differ.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
-File: figures/chap04_diff_des.jpg Graphic file (type QTm)
-
-<use  "figures/chap04_diff_des.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
+ [17]
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-Underfull \hbox (badness 10000) in alignment at lines 276--286
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 30
+9.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \hbox (badness 10000) in alignment at lines 331--341
 [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
 File: figures/chap04_differ.jpg Graphic file (type QTm)
-
 <use  "figures/chap04_differ.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
+ [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-File: figures/chap03_impact2.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_impact2.jpg" >
-File: figures/chap04_impact_internal.jpg Graphic file (type QTm)
-
-<use  "figures/chap04_impact_internal.jpg" >
+ [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
+ [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [22]
 File: figures/chap04_jpf_launch.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_launch.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [23]
 File: figures/chap04_jpf_old.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_old.jpg" >
@@ -2107,16 +2330,16 @@ File: figures/chap04_depend.jpg Graphic file (type QTm)
  <use  "figures/chap04_depend.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [25]
 File: figures/chap04_error.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_error.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
+ [26]
 Missing character: There is no “ in font txr!
 Missing character: There is no ” in font txr!
 File: figures/chap04_run_all.jpg Graphic file (type QTm)
@@ -2124,61 +2347,50 @@ File: figures/chap04_run_all.jpg Graphic file (type QTm)
 <use  "figures/chap04_run_all.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
+ [27]
 File: figures/chap04_run_jpf.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_run_jpf.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37])
+ [28])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [29]
 \openout2 = `data/chap08.aux'.
 
 
 (./data/chap08.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39
+ [30
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40]
-File: figures/chap03_com.jpg Graphic file (type QTm)
-
-<use  "figures/chap03_com.jpg" >
-File: figures/chap04_com_internal.jpg Graphic file (type QTm)
- <use  "figures/chap04_com_internal.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
+ [31]
 File: figures/chap04_diff.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_diff.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42]
-Overfull \hbox (57.96417pt too wide) in paragraph at lines 148--161
+Overfull \hbox (57.96417pt too wide) in paragraph at lines 167--180
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
+ [32]
 File: figures/chap04_com_flow.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_com_flow.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44])
+ [33])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
+ [34]
 \openout2 = `data/chap06.aux'.
 
 
@@ -2187,97 +2399,96 @@ File: figures/chap07_exp.jpg Graphic file (type QTm)
  <use  "figures/chap07_exp.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46
+ [35
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
 File: figures/merge1.png Graphic file (type QTm)
 
 <use  "figures/merge1.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
 File: figures/chap07_git_merge.png Graphic file (type QTm)
-
-<use  "figures/chap07_git_merge.png" >
+ <use  "figures/chap07_git_merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
+ [38]
 File: figures/merge2.png Graphic file (type QTm)
 
 <use  "figures/merge2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]
+ [39]
 File: figures/merge.png Graphic file (type QTm)
 
 <use  "figures/merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
+ [40]
 File: figures/differ1.png Graphic file (type QTm)
 
 <use  "figures/differ1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
+ [41]
 
-LaTeX Warning: Reference `differ2' on page 53 undefined on input line 262.
+LaTeX Warning: Reference `differ2' on page 42 undefined on input line 262.
 
 File: figures/differ2.png Graphic file (type QTm)
 <use  "figures/differ2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
+ [42]
 File: figures/differ3.png Graphic file (type QTm)
 
 <use  "figures/differ3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
+ [43]
 File: figures/impact1.png Graphic file (type QTm)
 
 <use  "figures/impact1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
+ [44]
 File: figures/impact2.png Graphic file (type QTm)
 
 <use  "figures/impact2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56]
+ [45]
 File: figures/conflict1.png Graphic file (type QTm)
 
 <use  "figures/conflict1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57])
+ [46])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
+ [47]
 \openout2 = `data/chap07.aux'.
 
 
 (./data/chap07.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59
+ [48
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60]
+ [49]
 (./main.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61
+ [50
 
 
 
@@ -2285,21 +2496,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62]
+ [51]
 \openout2 = `data/ack.aux'.
 
 
 (./data/ack.tex
+
+LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
+(Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 6.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
+ [52
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64
+ [53
 
 
 ]
@@ -2309,7 +2525,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./data/resume.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65
+ [54
 
 
 
@@ -2318,14 +2534,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@thm=\write5
 \openout5 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
 
-(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux)
+(./main.aux (./data/chap01.aux) (./data/chap02.aux) (./data/chap09.aux)
 (./data/chap05.aux) (./data/chap08.aux) (./data/chap06.aux) (./data/chap07.aux)
 (./data/ack.aux) (./data/resume.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 76.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 81.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 81.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2338,12 +2554,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32320 strings out of 493734
- 595863 string characters out of 6146348
- 689860 words of memory out of 5000000
- 35067 multiletter control sequences out of 15000+600000
- 51192 words of font info for 227 fonts, out of 8000000 for 9000
+ 32517 strings out of 493734
+ 598933 string characters out of 6146348
+ 695610 words of memory out of 5000000
+ 35241 multiletter control sequences out of 15000+600000
+ 50886 words of font info for 228 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
  69i,13n,60p,10351b,1192s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (75 pages).
+Output written on main.pdf (64 pages).

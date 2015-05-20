@@ -3,8 +3,9 @@
 \cdepartment[软件]{软件学院}
 \cmajor{软件工程}
 \cauthor{潘晓梦} 
-\csupervisor{贺飞 副教授}
+\csupervisor{贺　飞 ~ 副教授}
 
+\etitle{Software Patch Compatibility Checking Based On Impacted Area Analysis}
 \edegree{Master of Software Engineering} 
 \emajor{Software Engineering} 
 \eauthor{Pan Xiaomeng} 
@@ -16,19 +17,35 @@
 	
 	为将软件应用于某些特定场景，常常需要开发专门的补丁。伴随着软件本身的不断演进，为每个软件版本开发专门的补丁耗费的人力物力极大。本文研究在软件演化的背景下，不同版本软件的补丁能否共享。
 	
-	为此，本文中提出了一套基于语义影响域分析的软件补丁兼容性检测方案，并且实现了相应的工具。语义影响域分析可以挖掘变更对于软件代码的语义影响，根据该分析过程中得到的语义影响域，我们能够进行补丁间的语义冲突检测。通过在Eclipse JDT Core上的实验，我们发现该工具确实能够发现软件补丁的兼容性问题，本文中所提出的解决方案是可用的、可靠的。
+	在解决该兼容性问题的过程中，本文的主要贡献在于以下几点。
+	
+	首先，本文对软件补丁兼容性问题进行了分析和讨论，发现该问题的难点在于如何找到变更之间的语义冲突。
+	
+	其次，为了解决该问题，本文提出了一套基于影响域分析的软件补丁兼容性检测方案，并且实现了相应的工具。该检测方案主要包括两个步骤。第一步是变更影响域分析，它可以分析不同代码版本间的变更集合，并挖掘这些变更对于软件代码的语义影响，也就是所谓的变更影响域。第二步是软件变更冲突检测，该过程根据上一步中得到的变更影响域，完成补丁间的语义冲突检测。
+	
+	最后，通过在Eclipse JDT Core项目上的实验，我们发现该工具确实能够发现软件补丁的兼容性问题，说明本文中所提出的解决方案是可用的、可靠的。
 \end{cabstract}
-\ckeywords {软件维护,语义影响域,补丁,兼容性检测,软件演进}
+
+\ckeywords {软件维护,变更影响域,补丁,兼容性检测,软件演进}
+
 \begin{eabstract} 
-		As well known,software maintenance is the longest and most cost activity in the software developing cycle.In software maintenance,the software system sometimes got evolved.In pratical application,patch is the most common program which used for software evolving,it can enhance it's functionality,fix it's bug and so on.
+		As well known,software maintenance is the longest and most cost activity in the software developing cycle.In software maintenance,the software system sometimes is always evolving.In pratical application,patch is one of the most common program which is used for software evolving,like enhancing it's functionality,fixing bug and so on.
 		
-		For the purpose of applicating software under specific circumstances,a special patch is needed.But during the whole evolving process of the software,developing this special patch for each version of the software is costly.Under the circumstance of software evolving,This paper focus on the sharing of patch between different software versions.
+		For the purpose of applicating software under specific circumstances,a special patch is needed.But during the whole evolving process of the software,developing this special patch for each version of the software is too costly.Under the circumstance of software evolving,This paper focus on the prolem of sharing the patch between different software versions.
 		
-		As said above,we here propose a solution called software patch compatibility checking based on semantic impacted area analysis for this problem and develop a corresponding tool.The semantic impacted aread analysis can mines semantic impact introduced by software change from the code.And using it's result we could check if there is a semantic confltct issue between the patches.After experimenting on the Eclipse JDT Core project,the tool is proven to having the ability to find out compatibility issues between the patches and this solution is applicable and sound.  
+		The major work and contribution of this paper are as follows.
+		
+		First of all,after analyzing the problem,we found out that the core of this problem is how to find out the semantic conflicts btween the changes.
+		
+		Secondly,we have proposed a solution called software patch compatibility checking based on impacted area analysis for this problem and developed a corresponding tool.The solution contains two sub-analysises.At first we use a so called software change impacted area analysis to get the change set between different versions of codes and try to find out it's semantic impact on other syntatic structrues,namely change impacted area.Then we use the change impacted area to accomplish the software change conflict checking process,this process will check whether there exsits semantic confict between the patches.
+		
+		And at last,after experimenting on the Eclipse JDT Core project,the tool is proven to having the ability to find out compatibility issues between the patches so that this solution is applicable and sound.
+		
+%		As said above,we here propose a solution called software patch compatibility checking based on semantic impacted area analysis for this problem and develop a corresponding tool.The semantic impacted aread analysis can mines semantic impact introduced by software change from the code.And using it's result we could check if there is a semantic confltct issue between the patches.After experimenting on the Eclipse JDT Core project,the tool is proven to having the ability to find out compatibility issues between the patches and this solution is applicable and sound.  
 		
 		
-%		The software system will continue evolving in its whole lift time,and patch is a common way to accomplish the task to update or fix bug and so on.As the software evolving is rapid, how to identify whether a patch for a specific version of software is applicable for an newer version of the same software.We here present a so called patch compatibility analysis to try to fix this problem.It consists of three kind of analysis—program differencing which is used to output the structural difference of the two versions,change impact analysis which is used to analysis the impact of every change including dependency and impacted expressions/statements and so on.And at last,the conflict analysis used to determine whether the two patches’ impact are confictual.
+%		The software system will continue evolving in its whole lift time,and patch is a common way to accomplish the task to update or fix bug and so on.As the software evolving is rapid, how to identify whether a patch for a specific version of software is applicable for an newer version of the same software.We here present a so called patch compatibility analysis to try to fix this problem.It consists of three kind of analysis—program differencing which is used to output the structural difference of the two versions,change impact analysis which is used to analysis the impact of every change including dependency and impacted expressions/statements and so on.
 \end{eabstract}
 
 
-\ekeywords{software maintenance,semantic impacted area,patch,compatibility checking}
+\ekeywords{software maintenance,change impacted area,patch,compatibility checking,software evolving}
