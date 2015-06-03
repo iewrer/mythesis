@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {第\nobreakspace {}1\nobreakspace {}章}绪论}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}研究背景和意义}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}本文所要解决的问题与主要工作}{2}{section.1.2}
+\contentsline {section}{\numberline {1.1}研究背景}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}研究内容}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}本文组织结构}{3}{section.1.3}
 \contentsline {chapter}{\numberline {第\nobreakspace {}2\nobreakspace {}章}相关工作}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}程序间差异性分析}{4}{section.2.1}
@@ -34,15 +34,15 @@
 \contentsline {section}{\numberline {6.2}实验案例}{36}{section.6.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{37}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}版本迁移}{37}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}影响域分析模块}{41}{subsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.2.1}差异性分析模块}{41}{subsubsection.6.3.2.1}
-\contentsline {subsubsection}{\numberline {6.3.2.2}影响分析模块}{43}{subsubsection.6.3.2.2}
-\contentsline {subsection}{\numberline {6.3.3}冲突判定模块}{45}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}本章小结}{47}{section.6.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}结论}{48}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{48}{section.7.1}
+\contentsline {subsection}{\numberline {6.3.2}影响域分析模块}{40}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}差异性分析模块}{40}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}影响分析模块}{42}{subsubsection.6.3.2.2}
+\contentsline {subsection}{\numberline {6.3.3}冲突判定模块}{43}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}本章小结}{46}{section.6.4}
+\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}结论}{47}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{47}{section.7.1}
 \contentsline {section}{\numberline {7.2}未来工作}{48}{section.7.2}
-\contentsline {chapter}{参考文献}{50}{section*.60}
-\contentsline {chapter}{致\hspace {1em}谢}{52}{section*.62}
-\contentsline {chapter}{声\hspace {1em}明}{53}{section*.64}
-\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{54}{section*.66}
+\contentsline {chapter}{参考文献}{49}{section*.60}
+\contentsline {chapter}{致\hspace {1em}谢}{51}{section*.62}
+\contentsline {chapter}{声\hspace {1em}明}{52}{section*.64}
+\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{53}{section*.66}
