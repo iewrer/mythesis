@@ -16,7 +16,7 @@
 根据前文中的讨论，冲突实际上是指两个补丁所对应的不同变更集合之间存在某两条互斥的变更，即这两条变更的影响域发生了重叠。因此，冲突可以较形式化的定义如下，其中$\mathcal{C}$是某个版本的源代码文件中按照该语言的合法语法结构组织起来的代码，$\mathcal{P}$是变更集合，$impact$是求解影响域的函数：
 
 \begin{definition}
-	$conflict:\mathcal{P} \times \mathcal{P} \mapsto {T,F}$。$\forall p_i,p_j \subset \mathcal{P}$，如果$impact(p_i,v) \cap impact(p_j,v) \neq \varnothing$，那么就有$conflict(p_i,p_j) = T$，其中$v \subset \mathcal{C},i,j \subset \mathbb{N}$。即如果两个补丁分别对应的变更集合在某相同版本代码上的变更影响域之间产生了交集，那么就认为补丁间发生了冲突。
+	$conflict:\mathcal{P} \times \mathcal{P} \mapsto \{T,F\}$。$\forall p_i,p_j \subset \mathcal{P}$，如果$impact(p_i,v) \cap impact(p_j,v) \neq \varnothing$，那么就有$conflict(p_i,p_j) = T$，其中$v \subset \mathcal{C},i,j \subset \mathbb{N}$。即如果两个补丁分别对应的变更集合在某相同版本代码上的变更影响域之间产生了交集，那么就认为补丁间发生了冲突。
 \end{definition}
 
 综上所述，冲突是由于来自两个变更集合的某两条不同变更分别直接或间接的影响到了某个相同的语法结构而造成的，可见$conflict$函数描述了变更冲突检测的过程，它接受两个变更集合作为输入，并根据变更影响域计算其是否发生了冲突。

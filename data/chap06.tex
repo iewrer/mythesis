@@ -114,7 +114,7 @@ Eclipse JDT Core项目截止目前已推出至发行版4.4.2，本文从中选�
 
 版本合并过程中检测到的待解决冲突数量可以参见表\ref {data_git_merge}。通过Beyond Compare工具，这些冲突都能够得到解决。
 
-根据图\ref {data_merge}可以发现，冲突最少的是版本4.3.x，几乎为0\%，这可能是由于版本4.3到版本4.3.2的升级过程改动较少而造成的。而对于版本4.4.x来说，冲突百分比甚至高达20\%至30\%，这可能是由于版本升级较大的缘故。
+根据图\ref {data_merge_compile}可以发现，冲突最少的是版本4.3.x，几乎为0\%，这可能是由于版本4.3到版本4.3.2的升级过程改动较少而造成的。而对于版本4.4.x来说，冲突百分比甚至高达20\%至30\%，这可能是由于版本升级较大的缘故。
 %根据实验结果，这些冲突95\%以上都可以采用Beyond Compare工具中推荐的方案进行解决，只有极少部分代码需要进行手工解决。
 
 
@@ -145,15 +145,15 @@ Eclipse JDT Core项目截止目前已推出至发行版4.4.2，本文从中选�
 	\label {exp_git_merge}	
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.6\columnwidth]{merge1}
-	\caption {版本合并结果}
-	\label {data_merge}	
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=.6\columnwidth]{merge1}
+%	\caption {版本合并结果}
+%	\label {data_merge}	
+%\end{figure}
 
 
-在实验过程中，由于后续的影响域分析模块需要提供Java代码编译后产生的Class文件，合并后的版本$v_4$还需要编译。实验结果表明，绝大多数的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。该部分数据可以参考表\ref {data_git_merge2}。同样，从图\ref {data_compile}可以看出，编译失败的文件数量所占的百分比很低。
+在实验过程中，由于后续的影响域分析模块需要提供Java代码编译后产生的Class文件，合并后的版本$v_4$还需要编译。实验结果表明，绝大多数的文件都能够正常编译通过，只有极少部分文件由于合并出错等原因而无法编译通过。该部分数据可以参考表\ref {data_git_merge2}。同样，从图\ref {data_merge_compile}可以看出，编译失败的文件数量所占的百分比很低。
 
 
 参考图\ref {data_merge_compile}，对比编译过程中的失败数据与版本合并中的冲突数据，可见二者的变化过程是较为吻合的。
@@ -176,12 +176,12 @@ Eclipse JDT Core项目截止目前已推出至发行版4.4.2，本文从中选�
 	\end{tabular}
 \end{table}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.6\columnwidth]{merge2}
-	\caption {编译结果}
-	\label {data_compile}	
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=.6\columnwidth]{merge2}
+%	\caption {编译结果}
+%	\label {data_compile}	
+%\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -225,37 +225,37 @@ Eclipse JDT Core项目截止目前已推出至发行版4.4.2，本文从中选�
 
 \subsubsection{差异性分析模块}
 
-在差异性分析模块中，本文主要关注过滤算法的结果以及能够成功完成程序间语法差异性分析的文件数量。
+在差异性分析模块中，本文主要关注能够成功完成程序间语法差异性分析的文件数量。
 
-过滤算法的实验结果如表\ref {data_differ_1}和图\ref {differ1}所示。从结果来看，本文的过滤算法对原有的ASTro工具的直接输出结果进行了有效的过滤，有将近10\%的文件出现了伪变更，并被成功过滤。
-
-\begin{table}[H]
-	\caption{差异性分析模块结果}
-	\label{data_differ_1}
-	\centering
-	\begin{tabular}{llccc}
-		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti 发行版本} & {\heiti 过滤数} & {\heiti $diff(v_2,v_1)$文件数} & {\heiti $diff(v_2,v_4)$文件数} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4	& 91 & 1088 & 1172	\\		
-		Eclipse JDT Core & 4.4.2 & 94 & 1097 & 1178		\\
-		Eclipse JDT Core & 4.3 	& 110 & 1126 & 1124			\\
-		Eclipse JDT Core & 4.3.1 & 110 & 1126 & 1123			\\
-		Eclipse JDT Core & 4.2 	& 99 & 1115 & 1117		\\
-		Eclipse JDT Core & 4.2.1 & 99 & 1115 & 1116			\\
-		Eclipse JDT Core & 4.2.2 & 99 & 1115 & 1116		\\
-		\bottomrule[1.5pt]
-	\end{tabular}
-\end{table}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.7\columnwidth]{differ1}
-	\caption {差异性分析模块结果}
-	\label {differ1}	
-\end{figure}
-
-
-整个差异性分析模块的输出结果如表\ref {data_differ_2}和表\ref {data_differ_3}所述。更直观的表示可以参考图\ref {differ2}和\ref {differ3}。结果表明，绝大多数的文件都能够成功的进行程序间语法差异性分析，该差异性分析模块是可用的，其结果的正确性被过滤算法提高了。
+%过滤算法的实验结果如表\ref {data_differ_1}和图\ref {differ1}所示。从结果来看，本文的过滤算法对原有的ASTro工具的直接输出结果进行了有效的过滤，有将近10\%的文件出现了伪变更，并被成功过滤。
+%
+%\begin{table}[H]
+%	\caption{差异性分析模块结果}
+%	\label{data_differ_1}
+%	\centering
+%	\begin{tabular}{llccc}
+%		\toprule[1.5pt]
+%		{\heiti 代码} & {\heiti 发行版本} & {\heiti 过滤数} & {\heiti $diff(v_2,v_1)$文件数} & {\heiti $diff(v_2,v_4)$文件数} \\\midrule[1pt]
+%		Eclipse JDT Core & 4.4	& 91 & 1088 & 1172	\\		
+%		Eclipse JDT Core & 4.4.2 & 94 & 1097 & 1178		\\
+%		Eclipse JDT Core & 4.3 	& 110 & 1126 & 1124			\\
+%		Eclipse JDT Core & 4.3.1 & 110 & 1126 & 1123			\\
+%		Eclipse JDT Core & 4.2 	& 99 & 1115 & 1117		\\
+%		Eclipse JDT Core & 4.2.1 & 99 & 1115 & 1116			\\
+%		Eclipse JDT Core & 4.2.2 & 99 & 1115 & 1116		\\
+%		\bottomrule[1.5pt]
+%	\end{tabular}
+%\end{table}
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=.7\columnwidth]{differ1}
+%	\caption {差异性分析模块结果}
+%	\label {differ1}	
+%\end{figure}
+%
+%
+整个差异性分析模块的输出结果如表\ref {data_differ_2}和表\ref {data_differ_3}所述。更直观的表示可以参考图\ref {differ2}和\ref {differ3}。结果表明，绝大多数的文件都能够成功的进行程序间语法差异性分析，该差异性分析模块是可用的。
 
 \begin{table}[H]
 	\caption{差异性分析模块结果}
@@ -398,36 +398,36 @@ Eclipse JDT Core项目截止目前已推出至发行版4.4.2，本文从中选�
 	\end{tabular}
 \end{table}
 
-然而，在不使用过滤算法的情况下，实验结果如表\ref {data_compatible_2}所示。将表\ref {data_compatible}和表\ref {data_compatible_2}中的数据进行对比，如图\ref {conflict_data}所示，冲突判定模块确实能够找到补丁间的语义冲突。但是在不使用过滤算法时误报的影响域重叠数量陡增，这主要是差异性分析模块的误差所导致的。可见，程序间语法差异性分析算法的正确性对于后续分析过程而言极为重要，前置模块的误差会在后续模块的结果中得到显著体现。
-
-\begin{table}[H]
-	\caption{冲突判定结果}
-	\label{data_compatible_2}
-	\centering
-	\begin{tabular}{llccc}
-		\toprule[1.5pt]
-		{\heiti 代码} & {\heiti $v_2$} & {\heiti 冲突文件数} & {\heiti 影响域重叠} \\\midrule[1pt]
-		Eclipse JDT Core & 4.4 	& 2 & 59 \\
-		Eclipse JDT Core & 4.4.2 & 3 & 64 \\
-		Eclipse JDT Core & 4.3 	& 3 & 69 \\
-		Eclipse JDT Core & 4.3.1 & 3 & 66 \\
-		Eclipse JDT Core & 4.2 	& 4 & 64 \\
-		Eclipse JDT Core & 4.2.1 & 3 & 63 \\
-		Eclipse JDT Core & 4.2.2 & 4 & 65 \\
-		\bottomrule[1.5pt]
-	\end{tabular}
-\end{table}
+%然而，在不使用过滤算法的情况下，实验结果如表\ref {data_compatible_2}所示。将表\ref {data_compatible}和表\ref {data_compatible_2}中的数据进行对比，如图\ref {conflict_data}所示，冲突判定模块确实能够找到补丁间的语义冲突。但是在不使用过滤算法时误报的影响域重叠数量陡增，这主要是差异性分析模块的误差所导致的。可见，程序间语法差异性分析算法的正确性对于后续分析过程而言极为重要，前置模块的误差会在后续模块的结果中得到显著体现。
+%
+%\begin{table}[H]
+%	\caption{冲突判定结果}
+%	\label{data_compatible_2}
+%	\centering
+%	\begin{tabular}{llccc}
+%		\toprule[1.5pt]
+%		{\heiti 代码} & {\heiti $v_2$} & {\heiti 冲突文件数} & {\heiti 影响域重叠} \\\midrule[1pt]
+%		Eclipse JDT Core & 4.4 	& 2 & 59 \\
+%		Eclipse JDT Core & 4.4.2 & 3 & 64 \\
+%		Eclipse JDT Core & 4.3 	& 3 & 69 \\
+%		Eclipse JDT Core & 4.3.1 & 3 & 66 \\
+%		Eclipse JDT Core & 4.2 	& 4 & 64 \\
+%		Eclipse JDT Core & 4.2.1 & 3 & 63 \\
+%		Eclipse JDT Core & 4.2.2 & 4 & 65 \\
+%		\bottomrule[1.5pt]
+%	\end{tabular}
+%\end{table}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.7\columnwidth]{conflict1}
+	\includegraphics[width=.8\columnwidth]{conflict1}
 	\caption {冲突判定模块}
 	\label {conflict_data}	
 \end{figure}
 
 
-
-由于运用了过滤算法，实验中找到的冲突结果都是由于针对不同语句的变更影响到了相同的语句而被挖掘出来的。事实上，如果存在修改相同语句的多个变更，其所导致的冲突在版本合并的过程中就会暴露出来。
+%
+%由于运用了过滤算法，实验中找到的冲突结果都是由于针对不同语句的变更影响到了相同的语句而被挖掘出来的。事实上，如果存在修改相同语句的多个变更，其所导致的冲突在版本合并的过程中就会暴露出来。
 
 由于前置的影响域分析模块中的变更语义影响分析算法所计算得到的是限制在变更所处方法内部的，以基本块为单位的变更影响域，因而可能会导致对冲突的漏报，这可能是造成找到的语义冲突数量较少的主要原因。
 

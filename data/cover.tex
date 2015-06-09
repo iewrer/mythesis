@@ -1,15 +1,17 @@
-\ctitle{基于影响域分析的软件补丁兼容性检测}
+\ctitle{基于变更影响域的软件补丁兼容性检测}
 \cdegree{工程硕士}
 \cdepartment[软件]{软件学院}
 \cmajor{软件工程}
 \cauthor{潘晓梦} 
 \csupervisor{贺　飞 ~ 副教授}
 
-\etitle{Compatibility checking of software patches by impacted analysis}
+
+\etitle{Compatibility checking of software patches based on change impacted area}
 \edegree{Master of Software Engineering} 
 \emajor{Software Engineering} 
 \eauthor{Pan Xiaomeng} 
 \esupervisor{Associate Professor He Fei}
+\edate{May,~~~2015}
 
 % 定义中英文摘要和关键字
 \begin{cabstract} 
@@ -18,8 +20,8 @@
 	本文从语法和语义两个层面分析补丁和不同版本软件之间的兼容性问题，采用静态分析的方法，并引入变更影响域分析技术，能够有效识别与不同版本兼容的软件补丁，避免了重复的补丁开发工作。本文完成的主要工作归纳如下：
 	
 	\begin{enumerate}
-		\item 补丁兼容性问题归结为不同变更之间的冲突问题。注意到软件补丁和软件演化都是针对软件原始版本的变更，所以补丁兼容性问题的实质就是两次变更之间是否存在冲突的问题。
-		\item 设计并实现了一套基于影响域分析的补丁兼容性检测方法。主要包含两个步骤。第一步是变更影响域分析，它可以分析不同代码版本间的变更集合，并挖掘这些变更对于软件代码的语义影响，也就是所谓的变更影响域。第二步是软件变更冲突检测，该过程根据上一步中得到的变更影响域，完成变更间的语义冲突检测。
+		\item 将补丁兼容性问题归结为不同变更之间的语义冲突问题。注意到软件补丁和软件演化都是针对软件原始版本的变更，而变更的语义影响间可能会存在冲突，所以补丁兼容性问题的实质就是两次变更之间是否存在冲突的问题。
+		\item 设计并实现了一套基于变更影响域的补丁兼容性检测方法。主要包含两个步骤。第一步是变更影响域分析，它可以分析不同代码版本间的变更集合，并挖掘这些变更对于软件代码的语义影响，也就是所谓的变更影响域。第二步是软件变更冲突检测，该过程根据上一步中得到的变更影响域，完成变更间的语义冲突检测。
 		\item 在Eclipse JDT Core项目上进行了实验。实验结果表明了该工具的可用性和有效性。
 	\end{enumerate}
 	
@@ -43,7 +45,7 @@
 		This thesis analyzes the compatibility problem between patch and different software versions viewed from both syntatic and semantic perspectives and propose a static analysis method combined with impacted analysis,making the process of recognizing the patch which is compatible with another software version effective and avoiding replicate patch developing work.The major work of this thesis are as follows.
 		
 		\begin{enumerate}
-			\item The compatibility checking process is acutally the conflict checking process between changes.Considering that the patch and software evolving process are both changes on the original software version,the compatibility problem is essentially the problem of determing whether the two changes are conflicted.
+			\item The compatibility checking process is acutally the conflict checking process between changes.Considering that the patch and software evolving process are both changes on the original software version and that the semantic impact introduced by change may be conflict,the compatibility problem is essentially the problem of determing whether the two changes are conflicted.
 			\item Ddesign and accomplish a patch compatibility checking method by impacted analysis.The method contains two sub-analysises.At first we use a so called software change impacted area analysis to get the change set between different versions of codes and try to find out it's semantic impact on other syntatic structures,namely change impacted area.Then we use the change impacted area to accomplish the software change conflict checking process,this process will check whether there exsits semantic confict between the changes.
 			\item After experimenting on the Eclipse JDT Core project,the tool is proven to having the ability to find out compatibility issues between the patches so that this solution is applicable and sound.
 		\end{enumerate}

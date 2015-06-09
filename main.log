@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  22 MAY 2015 15:21
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  8 JUN 2015 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2252,6 +2252,9 @@ File: figures/chap03_all_now.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
+File: figures/chap03_tool.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_tool.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12])
@@ -2416,26 +2419,15 @@ File: figures/chap07_git_merge.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-File: figures/merge1.png Graphic file (type QTm)
-
-<use  "figures/merge1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38]
-File: figures/merge2.png Graphic file (type QTm)
-
-<use  "figures/merge2.png" >
 File: figures/merge.png Graphic file (type QTm)
- <use  "figures/merge.png" >
+
+<use  "figures/merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-File: figures/differ1.png Graphic file (type QTm)
-
-<use  "figures/differ1.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40]
 File: figures/differ2.png Graphic file (type QTm)
 
 <use  "figures/differ2.png" >
@@ -2443,38 +2435,47 @@ File: figures/differ3.png Graphic file (type QTm)
  <use  "figures/differ3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
+ [40]
 File: figures/impact1.png Graphic file (type QTm)
 
 <use  "figures/impact1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42]
+ [41]
 File: figures/impact2.png Graphic file (type QTm)
 
 <use  "figures/impact2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
+ [42]
 File: figures/conflict1.png Graphic file (type QTm)
 
 <use  "figures/conflict1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45])
+ [43])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [44]
 \openout2 = `data/chap07.aux'.
 
 
 (./data/chap07.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [45
+
+
+
+])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+(./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [47
+
 
 
 
@@ -2482,18 +2483,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [48]
-(./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [49
-
-
-
-
-])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
 \openout2 = `data/ack.aux'.
 
 
@@ -2505,14 +2494,14 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51
+ [49
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52
+ [50
 
 
 ]
@@ -2522,7 +2511,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./data/resume.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53
+ [51
 
 
 
@@ -2548,12 +2537,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32493 strings out of 493734
- 598445 string characters out of 6146348
- 699660 words of memory out of 5000000
- 35219 multiletter control sequences out of 15000+600000
+ 32490 strings out of 493734
+ 598408 string characters out of 6146348
+ 699768 words of memory out of 5000000
+ 35218 multiletter control sequences out of 15000+600000
  50870 words of font info for 226 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
  69i,12n,60p,10351b,1192s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (63 pages).
+Output written on main.pdf (61 pages).

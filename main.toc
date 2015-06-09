@@ -10,6 +10,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Beyond Compare}{7}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}jpf-regression}{7}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}ASTro}{9}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}本章小结}{9}{section.2.4}
 \contentsline {chapter}{\numberline {第\nobreakspace {}3\nobreakspace {}章}软件补丁兼容性检测方法}{10}{chapter.3}
 \contentsline {section}{\numberline {3.1}兼容性问题}{10}{section.3.1}
 \contentsline {section}{\numberline {3.2}检测方法概述}{11}{section.3.2}
@@ -34,15 +35,15 @@
 \contentsline {section}{\numberline {6.2}实验案例}{36}{section.6.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{37}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}版本迁移}{37}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}影响域分析模块}{40}{subsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.2.1}差异性分析模块}{40}{subsubsection.6.3.2.1}
-\contentsline {subsubsection}{\numberline {6.3.2.2}影响分析模块}{42}{subsubsection.6.3.2.2}
-\contentsline {subsection}{\numberline {6.3.3}冲突判定模块}{43}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}本章小结}{46}{section.6.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}结论}{47}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{47}{section.7.1}
-\contentsline {section}{\numberline {7.2}未来工作}{48}{section.7.2}
-\contentsline {chapter}{参考文献}{49}{section*.60}
-\contentsline {chapter}{致\hspace {1em}谢}{51}{section*.62}
-\contentsline {chapter}{声\hspace {1em}明}{52}{section*.64}
-\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{53}{section*.66}
+\contentsline {subsection}{\numberline {6.3.2}影响域分析模块}{39}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}差异性分析模块}{39}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}影响分析模块}{41}{subsubsection.6.3.2.2}
+\contentsline {subsection}{\numberline {6.3.3}冲突判定模块}{42}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}本章小结}{44}{section.6.4}
+\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}结论}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}未来工作}{46}{section.7.2}
+\contentsline {chapter}{参考文献}{47}{section*.56}
+\contentsline {chapter}{致\hspace {1em}谢}{49}{section*.58}
+\contentsline {chapter}{声\hspace {1em}明}{50}{section*.60}
+\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{51}{section*.62}
