@@ -18,36 +18,38 @@
 \BOOKMARK [0][]{chapter.3}{第 3 章 软件补丁兼容性检测方法}{ctitle.-1}% 18
 \BOOKMARK [1][-]{section.3.1}{3.1 兼容性问题}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.2}{3.2 检测方法概述}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.3}{3.3 本章小结}{chapter.3}% 21
-\BOOKMARK [0][]{chapter.4}{第 4 章 软件变更影响域分析}{ctitle.-1}% 22
-\BOOKMARK [1][-]{section.4.1}{4.1 程序间语法差异性分析}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 相关定义}{section.4.1}% 24
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 分析方法}{section.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 模块设计与实现}{section.4.1}% 26
-\BOOKMARK [1][-]{section.4.2}{4.2 变更语义影响分析}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 相关定义}{section.4.2}% 28
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 分析方法}{section.4.2}% 29
-\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 模块设计与实现}{section.4.2}% 30
-\BOOKMARK [1][-]{section.4.3}{4.3 本章小结}{chapter.4}% 31
-\BOOKMARK [0][]{chapter.5}{第 5 章 软件变更冲突检测方法}{ctitle.-1}% 32
-\BOOKMARK [1][-]{section.5.1}{5.1 相关定义}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{5.2 分析方法}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.3}{5.3 模块设计与实现}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.4}{5.4 本章小结}{chapter.5}% 36
-\BOOKMARK [0][]{chapter.6}{第 6 章 实验结果与分析}{ctitle.-1}% 37
-\BOOKMARK [1][-]{section.6.1}{6.1 实验设计}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.2}{6.2 实验案例}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.3}{6.3 实验结果与分析}{chapter.6}% 40
-\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 版本迁移}{section.6.3}% 41
-\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 影响域分析模块}{section.6.3}% 42
-\BOOKMARK [3][-]{subsubsection.6.3.2.1}{6.3.2.1 差异性分析模块}{subsection.6.3.2}% 43
-\BOOKMARK [3][-]{subsubsection.6.3.2.2}{6.3.2.2 影响分析模块}{subsection.6.3.2}% 44
-\BOOKMARK [2][-]{subsection.6.3.3}{6.3.3 冲突判定模块}{section.6.3}% 45
-\BOOKMARK [1][-]{section.6.4}{6.4 本章小结}{chapter.6}% 46
-\BOOKMARK [0][]{chapter.7}{第 7 章 结论}{ctitle.-1}% 47
-\BOOKMARK [1][-]{section.7.1}{7.1 工作总结}{chapter.7}% 48
-\BOOKMARK [1][-]{section.7.2}{7.2 未来工作}{chapter.7}% 49
-\BOOKMARK [0][]{section*.56}{参考文献}{ctitle.-1}% 50
-\BOOKMARK [0][]{section*.58}{致 谢}{ctitle.-1}% 51
-\BOOKMARK [0][]{section*.60}{声 明}{ctitle.-1}% 52
-\BOOKMARK [0][]{section*.62}{个人简历、在学期间发表的学术论文与研究成果}{ctitle.-1}% 53
+\BOOKMARK [1][-]{section.3.3}{3.3 工具设计}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.4}{3.4 本章小结}{chapter.3}% 22
+\BOOKMARK [0][]{chapter.4}{第 4 章 软件变更影响域分析}{ctitle.-1}% 23
+\BOOKMARK [1][-]{section.4.1}{4.1 程序间语法差异性分析}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 相关定义}{section.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 分析方法}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 模块设计与实现}{section.4.1}% 27
+\BOOKMARK [1][-]{section.4.2}{4.2 变更语义影响分析}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 相关定义}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 分析方法}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 模块设计与实现}{section.4.2}% 31
+\BOOKMARK [1][-]{section.4.3}{4.3 本章小结}{chapter.4}% 32
+\BOOKMARK [0][]{chapter.5}{第 5 章 软件变更冲突检测方法}{ctitle.-1}% 33
+\BOOKMARK [1][-]{section.5.1}{5.1 相关定义}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.2}{5.2 分析方法}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.3}{5.3 模块设计与实现}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.4}{5.4 本章小结}{chapter.5}% 37
+\BOOKMARK [0][]{chapter.6}{第 6 章 实验结果与分析}{ctitle.-1}% 38
+\BOOKMARK [1][-]{section.6.1}{6.1 工具架构}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.2}{6.2 实验设计}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.3}{6.3 实验案例}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.4}{6.4 实验结果与分析}{chapter.6}% 42
+\BOOKMARK [2][-]{subsection.6.4.1}{6.4.1 版本迁移}{section.6.4}% 43
+\BOOKMARK [2][-]{subsection.6.4.2}{6.4.2 影响域分析模块}{section.6.4}% 44
+\BOOKMARK [3][-]{subsubsection.6.4.2.1}{6.4.2.1 差异性分析子模块}{subsection.6.4.2}% 45
+\BOOKMARK [3][-]{subsubsection.6.4.2.2}{6.4.2.2 影响分析子模块}{subsection.6.4.2}% 46
+\BOOKMARK [2][-]{subsection.6.4.3}{6.4.3 冲突判定模块}{section.6.4}% 47
+\BOOKMARK [1][-]{section.6.5}{6.5 本章小结}{chapter.6}% 48
+\BOOKMARK [0][]{chapter.7}{第 7 章 结论}{ctitle.-1}% 49
+\BOOKMARK [1][-]{section.7.1}{7.1 工作总结}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.2}{7.2 未来工作}{chapter.7}% 51
+\BOOKMARK [0][]{section*.58}{参考文献}{ctitle.-1}% 52
+\BOOKMARK [0][]{section*.60}{致 谢}{ctitle.-1}% 53
+\BOOKMARK [0][]{section*.62}{声 明}{ctitle.-1}% 54
+\BOOKMARK [0][]{section*.64}{个人简历、在学期间发表的学术论文与研究成果}{ctitle.-1}% 55

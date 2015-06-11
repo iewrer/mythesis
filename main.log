@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  8 JUN 2015 15:17
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2015.4.21)  10 JUN 2015 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2246,9 +2246,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: figures/chap03_all_now.jpg Graphic file (type QTm)
+File: figures/chap03_method.jpg Graphic file (type QTm)
 
-<use  "figures/chap03_all_now.jpg" >
+<use  "figures/chap03_method.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
@@ -2257,17 +2257,23 @@ File: figures/chap03_tool.jpg Graphic file (type QTm)
 <use  "figures/chap03_tool.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12])
+ [12]
+File: figures/chap03_tool_io.jpg Graphic file (type QTm)
+
+<use  "figures/chap03_tool_io.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [13])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
 \openout2 = `data/chap05.aux'.
 
 
 (./data/chap05.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14
+ [15
 
 
 
@@ -2277,47 +2283,44 @@ nput line 99.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [16]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 227.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-
- []
-
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 228.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 29
-2.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
-Underfull \hbox (badness 10000) in alignment at lines 314--324
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 29
+3.
+
+Underfull \hbox (badness 10000) in alignment at lines 315--325
 [][] 
  []
 
 File: figures/chap04_differ.jpg Graphic file (type QTm)
 <use  "figures/chap04_differ.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
@@ -2327,12 +2330,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
 File: figures/chap04_jpf_launch_new.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_launch_new.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
+ [24]
 File: figures/chap04_jpf_old.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_jpf_old.jpg" >
@@ -2340,16 +2346,16 @@ File: figures/chap04_depend.jpg Graphic file (type QTm)
  <use  "figures/chap04_depend.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [26]
 File: figures/chap04_error.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_error.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
+ [27]
 File: figures/chap04_run_all.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_run_all.jpg" >
@@ -2357,27 +2363,27 @@ File: figures/chap04_run_jpf.jpg Graphic file (type QTm)
  <use  "figures/chap04_run_jpf.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28])
+ [29])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
+ [30]
 \openout2 = `data/chap08.aux'.
 
 
 (./data/chap08.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30
+ [31
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [32]
 Overfull \hbox (57.96417pt too wide) in paragraph at lines 158--171
  [][] 
  []
@@ -2385,49 +2391,62 @@ Overfull \hbox (57.96417pt too wide) in paragraph at lines 158--171
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [33]
 File: figures/chap04_diff.jpg Graphic file (type QTm)
 
 <use  "figures/chap04_diff.jpg" >
-File: figures/chap04_com_flow.jpg Graphic file (type QTm)
- <use  "figures/chap04_com_flow.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34]
+File: figures/chap04_com_flow.jpg Graphic file (type QTm)
+
+<use  "figures/chap04_com_flow.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
 \openout2 = `data/chap06.aux'.
 
 
 (./data/chap06.tex
-File: figures/chap07_exp.jpg Graphic file (type QTm)
- <use  "figures/chap07_exp.jpg" >
+File: figures/tool_structure.jpg Graphic file (type QTm)
+ <use  "figures/tool_structure.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35
+ [37
 
 
 
 ]
+File: figures/exp_design.jpg Graphic file (type QTm)
+
+<use  "figures/exp_design.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
 File: figures/chap07_git_merge.png Graphic file (type QTm)
 
 <use  "figures/chap07_git_merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [42]
 File: figures/merge.png Graphic file (type QTm)
 
 <use  "figures/merge.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [43]
 File: figures/differ2.png Graphic file (type QTm)
 
 <use  "figures/differ2.png" >
@@ -2435,46 +2454,46 @@ File: figures/differ3.png Graphic file (type QTm)
  <use  "figures/differ3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40]
+ [44]
 File: figures/impact1.png Graphic file (type QTm)
 
 <use  "figures/impact1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
+ [45]
 File: figures/impact2.png Graphic file (type QTm)
 
 <use  "figures/impact2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42]
+ [46]
 File: figures/conflict1.png Graphic file (type QTm)
 
 <use  "figures/conflict1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43])
+ [47])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [48]
 \openout2 = `data/chap07.aux'.
 
 
 (./data/chap07.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45
+ [49
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [50]
 (./main.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47
+ [51
 
 
 
@@ -2482,7 +2501,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
+ [52]
 \openout2 = `data/ack.aux'.
 
 
@@ -2494,14 +2513,14 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49
+ [53
 
 
 
 ])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50
+ [54
 
 
 ]
@@ -2511,7 +2530,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./data/resume.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51
+ [55
 
 
 
@@ -2537,12 +2556,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32490 strings out of 493734
- 598408 string characters out of 6146348
- 699768 words of memory out of 5000000
- 35218 multiletter control sequences out of 15000+600000
+ 32498 strings out of 493734
+ 598548 string characters out of 6146348
+ 699945 words of memory out of 5000000
+ 35224 multiletter control sequences out of 15000+600000
  50870 words of font info for 226 fonts, out of 8000000 for 9000
  1329 hyphenation exceptions out of 8191
  69i,12n,60p,10351b,1192s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (61 pages).
+Output written on main.pdf (65 pages).
